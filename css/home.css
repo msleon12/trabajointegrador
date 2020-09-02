@@ -1,0 +1,48 @@
+body{
+    margin: 30px 50px 30px 40px;
+    background-color: #804ADE;
+    color: white;
+    font-family:arial;
+}
+.encabezado{
+    font-size: 20px;
+    display:flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Sacarle el underline a los links y le pongo  */
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: white;
+    font-style:bold;
+    justify-items: center;
+    align-items: center;
+}
+
+#superfilms{
+font-style: italic;
+}
+
+.tirapeliculas{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+img{
+    width: 160px;
+    height: 220px; 
+}
+
+.textopelis{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    text-align: center;
+    font-size: 15px; 
+    margin: 0px 10px 0px 15px;
+}
