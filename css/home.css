@@ -53,10 +53,6 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-.primera{
-    
-}
-
 .tira1{
     padding-top: 120px;
 }
@@ -84,6 +80,6 @@ img{
 .footer{
     background-color:black;
     font: bold;
-    font size: 30px;
+    font-size: 30px;
     font-style: italic;
 }
