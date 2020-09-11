@@ -5,15 +5,11 @@ body{
     font-family: arial;
 }
 
-h2 {
-    margin: 30px;
-}
-
 .superior{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: #424874;
+    background-color: black;
 }
 
 .lista-sup{
@@ -53,7 +49,17 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-.tira1{
+.titulo{
+    background-color: #424874;
+    padding: 1px;
+    margin-bottom: 20px;
+}
+
+.titulo h2{
+    margin: 20px;
+}
+
+.tira-uno{
     padding-top: 120px;
 }
 
@@ -72,14 +78,24 @@ a:link, a:visited, a:active {
 .peliculas h3{
     text-align: center;
 }
+
 img{
     width: 160px;
     height: 220px; 
 }
 
 .footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
     background-color:black;
     font: bold;
     font-size: 30px;
     font-style: italic;
+    margin: 40px 0 0 0;
+}
+
+.footer a{
+    margin: 0 0 0 20px;
 }
