@@ -1,5 +1,5 @@
 *{
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 body{
@@ -53,41 +53,102 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-.titulo{
-    background-color: #424874;
-    padding: 1px;
-    margin-bottom: 20px;
-}
-
-.titulo h2{
-    margin: 20px;
-}
-
-/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
-.tira-uno{
-    padding-top: 110px;
-}
-
 #superfilms{
     font-style: italic;
     font-size: 40px;
 }
 
-.peliculas{
+/*Pelicula*/
+
+.peli{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 13%;
+    margin: 0 5% 5% 5%;
+}
+
+.imagen-peli{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagen-peli img{
+    width: 80%;
+}
+
+.info-peli{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+
+.info-peli li{
+    list-style-type: square;
+    padding: 10px;
+    margin: 0px;
+}
+
+.info-fila{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.descripcion{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Relacionadas*/
+
+.relacionadas{
+    margin: 0px;
+}
+
+.titulo{
+    justify-content: left;
+    background-color: #424874;
+    margin: 0 0 5% 0;
+    padding: 3% 0 0 3%;
+    width: 100%;
+}
+
+.rela{
+    padding: 2% 0 2% 2%;
+    width: 100%;
+}
+
+.tirarelacionadas{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
+
 }
 
-.peliculas h3{
+.tirarelacionadas h3{
     text-align: center;
     width: 160px;
 }
 
-.peliculas img{
+.tirarelacionadas img{
     width: 160px;
     height: 220px; 
+}
+
+.relacion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .footer{

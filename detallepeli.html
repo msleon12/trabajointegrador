@@ -4,34 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle Peli</title>
+    <link rel="stylesheet" href="css/detallepeli.css">
 </head>
 <body>
     <!-- Encabezado -->
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
-                <li><a id="superfilms" href="./home.html">Superfilms</a></li>
-                <li><a href="./generos.html">Géneros</a></li>
+                <li><a id="superfilms" href="./home.html">SuperFilms</a></li>
+                <li><a href="./mundos.html">Mundos</a></li>
                 <li><a href="./superheroes.html">Superhéroes</a></li>
+                <li><a href="./series.html">Series</a></li>
             </ul>
         </nav>
-    </header> 
+    </header>
 
-    <section class="detalle">
-        <img src="./imagenes/marvel/avengersendg.jpeg" alt="">
-        <h1>Avengers: End Game</h1>
-        <p>Ranking + duración +fecha de creación </p>
-        <h3>Director:</h3>
-        <h3>Género</h3>
-        <h3>Actores</h3>
-    </section>  
-    
-    <section class="relacionados">
-        <img src="./imagenes/marvel/avengersinfinitywar.jpeg" alt="">
-        <img src="/imagenes/marvel/civilwar.jpeg" alt="">
-        <img src="/imagenes/marvel/blackpanther.jpeg" alt="">
-        <img src="/imagenes/lomasvisto/ironman.jpg" alt="">
+    <!--Pelicula-->
+    <section class="peli">
+        <article class="imagen-peli">
+            <a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8"><img class="imagen" src="imagenes/marvel/avengersinfinitywar.jpeg" alt="avengersinfinitywar"></a>
+        </article>
+        <article class="info-peli">
+            <h2 class="titulo pelicula">Avengers: Infinity War</h2>
+            <ul class="info-fila">
+                <li>Calificación:</li>
+                <li>Duración:</li>
+                <li>Año:</li>
+            </ul>
+            <article class="descripcion">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ut suscipit esse similique iure maxime fugiat vel, itaque laborum molestiae ratione! Dolorum, veniam rem id laboriosam exercitationem vero sit nisi.</p>  
+            </article>
+            <ul class="info-columna">
+                <li>Director</li>
+                <li>Género</li>
+                <li>Actores</li>
+            </ul>
+        </article>
+    </section>
+
+    <!--Relacionadas-->
+    <section class="relacionadas">
+        <h2 class="titulo rela">Relacionadas</h2>
+        <section class="tirarelacionadas">
+            <article class="relacion">
+                <a href="detallepeli.html"><img src="imagenes/marvel/avengersendg.jpeg" alt="avengersendgame">
+                <h3>Avengers: End Game</h3>
+                </a>
+            </article>
+            <article class="relacion">
+                <a href="detallepeli.html"><img src="imagenes/lomasvisto/avengers.jpg" alt="avengers">
+                <h3>Avengers</h3>
+                </a>
+            </article>
+            <article class="relacion">
+                <a href="detallepeli.html"><img src="imagenes/marvel/civilwar.jpeg" alt="civilwar">
+                <h3>Captain America: Civil War</h3>
+                </a>
+            </article>
+            <article class="relacion">
+                <a href="detallepeli.html"><img src="imagenes/marvel/doctorstrange.jpg" alt="doctorstrange">
+                <h3>Doctor Strange</h3>
+                </a>
+            </article>
+            <article class="relacion">
+                <a href="detallepeli.html"><img src="imagenes/marvel/blackpanther.jpeg" alt="blackpanther">
+                <h3>Pantera Negra</h3>
+                </a>
+            </article>
+            <article class="relacion">
+                <a href="detalleserie.html".html"><img src="imagenes/series/spidermanserie.jpg" alt="spidermanserie">
+                <h3>Peter Parker: The Spectacular Spider-Man</h3>
+                </a>
+            </article>
+        </section>
     </section>
     
+    <!--Footer-->
+    <footer class="footer">
+        <a href="./home.html"><h3>SuperFilms</h3></a>
+    </footer>
+
 </body>
 </html>
