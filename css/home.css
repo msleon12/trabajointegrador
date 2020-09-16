@@ -28,6 +28,7 @@ body{
     font-size: 20px;
 }
 
+/* Hover */
 .lista-sup li:hover{
     font-size: 35px;
     font-style: italic;
@@ -43,6 +44,11 @@ body{
     position:fixed;
     z-index: auto;
     width:100%;
+}
+
+/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
+.tira-uno{
+    padding-top: 110px;
 }
 /* Sacarle el underline a los links y le pongo*/
 a:link, a:visited, a:active {
@@ -61,11 +67,6 @@ a:link, a:visited, a:active {
 
 .titulo h2{
     margin: 20px;
-}
-
-/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
-.tira-uno{
-    padding-top: 110px;
 }
 
 #superfilms{
