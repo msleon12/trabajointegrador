@@ -106,3 +106,30 @@ a:link, a:visited, a:active {
 .footer a{
     margin: 0 0 0 20px;
 }
+
+@media(max-width:768px){
+    .peliculas{
+        margin: 5px 10px 5px 20px;
+        gap: 25px;
+    }
+
+    .size-responsive{
+        width: 30%;
+    }
+
+}
+
+@media(max-width:425px){
+    
+    .tira-uno{
+        padding-top: 55%;
+    }
+    .peliculas{
+        justify-content: center;
+    }
+    
+    .size-responsive{
+       width: 50%;
+       justify-content: center;
+    }
+}
