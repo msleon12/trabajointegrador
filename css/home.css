@@ -1,12 +1,16 @@
 *{
     box-sizing: border-box;
+    font-weight: lighter;
 }
 
 body{
     margin: 0;
-    background-color: #804ADE;
+    background-image: url(../imagenes/background/purple.jpg);
+    background-color:  #804ADE;
+    background-size: cover;
+    background-position: center;
     color: white;
-    font-family: arial;
+    font-family: 'Ranchers';
 }
 
 .superior{
@@ -48,7 +52,6 @@ body{
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;
-    font-style:bold;
     justify-items: center;
     align-items: center;
 }
@@ -56,7 +59,7 @@ a:link, a:visited, a:active {
 .titulo{
     background-color: #424874;
     padding: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .titulo h2{
@@ -90,16 +93,21 @@ a:link, a:visited, a:active {
     height: 220px; 
 }
 
+.peli{
+    border-color: black;
+    border-style: double;
+    background-color:  #424874;
+}
+
 .footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
     background-color:black;
-    font: bold;
     font-size: 30px;
     font-style: italic;
-    margin: 40px 0 0 0;
+    margin: 0px 0 0 0;
 }
 
 .footer a{
