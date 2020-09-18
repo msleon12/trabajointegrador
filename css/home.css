@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
-    font-weight: lighter;
+    font-family: 'Bangers', cursive;
+    font-weight: normal;
 }
 
 body{
@@ -10,7 +11,6 @@ body{
     background-size: cover;
     background-position: center;
     color: white;
-    font-family: 'Ranchers';
 }
 
 .superior{
@@ -52,9 +52,9 @@ body{
 
 /*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
 .tira-uno{
-    padding-top: 110px;
+    padding-top: 108px;
 }
-/* Sacarle el underline a los links y le pongo*/
+/* Sacarle el underline a los links y le cambio de color*/
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;

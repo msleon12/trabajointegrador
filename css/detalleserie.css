@@ -1,13 +1,19 @@
 *{
     box-sizing: border-box;
+    font-family: 'Bangers', cursive;
+    font-weight: normal;
 }
 
 body{
     margin: 0;
-    background-color: #804ADE;
+    background-image: url(../imagenes/background/purple.jpg);
+    background-color:  #804ADE;
+    background-size: cover;
+    background-position: center;
     color: white;
-    font-family: bangers;
 }
+
+/*Encabezado*/
 
 .superior{
     display: flex;
@@ -44,7 +50,7 @@ body{
     z-index: auto;
     width:100%;
 }
-/* Sacarle el underline a los links y le pongo*/
+/* Sacarle el underline a los links y le cambio de color*/
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;
@@ -53,9 +59,12 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-.superfilms-titulo{
+#superfilms{
     font-style: italic;
+    font-size: 40px;
 }
+
+/*Serie*/
 
 .serie{
     display: flex;

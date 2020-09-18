@@ -1,12 +1,18 @@
 *{
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Bangers', cursive;
+    font-weight: normal;
 }
+
+/*Encabezado*/
 
 body{
     margin: 0;
-    background-color: #804ADE;
+    background-image: url(../imagenes/background/purple.jpg);
+    background-color:  #804ADE;
+    background-size: cover;
+    background-position: center;
     color: white;
-    font-family: arial;
 }
 
 .superior{
@@ -44,7 +50,7 @@ body{
     z-index: auto;
     width:100%;
 }
-/* Sacarle el underline a los links y le pongo*/
+/* Sacarle el underline a los links y le cambio de color*/
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;
@@ -104,6 +110,10 @@ a:link, a:visited, a:active {
     font-size: 20px;
     margin: 0px;
     padding: 0px;
+}
+
+.info-columna li{
+    text-decoration: underline
 }
 
 /*Relacionadas*/

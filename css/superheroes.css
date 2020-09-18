@@ -1,31 +1,18 @@
-body{
-    margin: 0;
-    background-color: #804ADE;
-    color: white;
-    font-family: arial;
-}
-
 *{
     box-sizing: border-box;
-}
-.encabezado{
-    position:fixed;
-    z-index: auto;
-    width:100%;
+    font-family: 'Bangers', cursive;
+    font-weight: normal;
 }
 
-#superheroes{
-    font-style: italic;
-    font-size: 40px;
-}
+/*Encabezado*/
 
-/* Sacarle el underline a los links y le cambio de color*/
-a:link, a:visited, a:active {
-    text-decoration:none;
+body{
+    margin: 0;
+    background-image: url(../imagenes/background/purple.jpg);
+    background-color:  #804ADE;
+    background-size: cover;
+    background-position: center;
     color: white;
-    font-style:bold;
-    justify-items: center;
-    align-items: center;
 }
 
 .superior{
@@ -56,6 +43,28 @@ a:link, a:visited, a:active {
     padding: 10px;
     margin-right: 30px;
 }
+
+/* Establecer un menú fijo */
+.encabezado{
+    position:fixed;
+    z-index: auto;
+    width:100%;
+}
+/* Sacarle el underline a los links y le cambio de color*/
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: white;
+    font-style:bold;
+    justify-items: center;
+    align-items: center;
+}
+
+#superheroes{
+    font-style: italic;
+    font-size: 40px;
+}
+
+/*Superhéroes*/
 
 .grid-peliculas{
     display: grid;
