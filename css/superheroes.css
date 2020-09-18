@@ -1,99 +1,13 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Bangers', cursive;
-    font-weight: normal;
-}
-
-/*Encabezado*/
-
-body{
-    margin: 0;
-    background-image: url(../imagenes/background/purple.jpg);
-    background-color:  #804ADE;
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.superior{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: black;
-    padding: 3px;
-}
-
-.lista-sup{
-    width: 100%;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: baseline;
-    font-size: 20px;
-}
-
-.lista-sup li:hover{
-    font-size: 35px;
-    font-style: italic;
-}
-
-.lista-sup li{
-    padding: 10px;
-    margin-right: 30px;
-}
-
-/* Establecer un menú fijo */
-.encabezado{
-    position:fixed;
-    z-index: auto;
-    width:100%;
-}
-/* Sacarle el underline a los links y le cambio de color*/
-a:link, a:visited, a:active {
-    text-decoration:none;
-    color: white;
-    font-style:bold;
-    justify-items: center;
-    align-items: center;
-}
-
 #superheroes{
     font-style: italic;
     font-size: 40px;
 }
 
-/*Superhéroes*/
-
-.grid-peliculas{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5%;
-    row-gap: 5%;
-    padding: 180px 50px 50px 10px;
-    margin-left: 80px;
-    margin-right: 80px;
-    
+/*Achico y aplico hover*/
+#superfilms{
+    font-size: 20px;
 }
-
-.footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    background-color:black;
-    font: bold;
-    font-size: 30px;
+#superfilms:hover{
+    font-size: 35px;
     font-style: italic;
-    margin: 40px 0 0 0;
-}
-
-.footer a{
-    margin: 0 0 0 20px;
-}
-
-.nombre{
-    display: grid;
-    justify-content: center;
 }

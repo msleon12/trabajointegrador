@@ -4,8 +4,6 @@
     font-weight: normal;
 }
 
-/*Encabezado*/
-
 body{
     margin: 0;
     background-image: url(../imagenes/background/purple.jpg);
@@ -14,6 +12,8 @@ body{
     background-position: center;
     color: white;
 }
+
+/*Encabezado*/
 
 .superior{
     display: flex;
@@ -34,6 +34,7 @@ body{
     font-size: 20px;
 }
 
+/* Hover */
 .lista-sup li:hover{
     font-size: 35px;
     font-style: italic;
@@ -50,7 +51,8 @@ body{
     z-index: auto;
     width:100%;
 }
-/* Sacarle el underline a los links y le cambio de color*/
+
+/* Sacarle el underline a los links y cambio de color*/
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;
@@ -64,9 +66,9 @@ a:link, a:visited, a:active {
     font-size: 40px;
 }
 
-/*Pelicula*/
+/*Peli-serie*/
 
-.peli{
+.obra{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -74,23 +76,20 @@ a:link, a:visited, a:active {
     margin: 0 5% 5% 5%;
 }
 
-.imagen-peli{
+.imagen-obra img{
     display: flex;
     flex-wrap: wrap;
-}
-
-.imagen-peli img{
     width: 80%;
 }
 
-.info-peli{
+.info-obra{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 0px;
 }
 
-.info-peli li{
+.info-obra li{
     list-style-type: square;
     padding: 10px;
     margin: 0px;
@@ -116,7 +115,7 @@ a:link, a:visited, a:active {
     text-decoration: underline
 }
 
-/*Relacionadas*/
+/*Relacionadas peli-serie*/
 
 .relacionadas{
     margin: 0px;
@@ -160,6 +159,25 @@ a:link, a:visited, a:active {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+/*Superhéroes*/
+
+.grid-peliculas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 5%;
+    padding: 180px 50px 50px 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.nombre{
+    display: grid;
+    justify-content: center;
+}
+
+/*Footer*/
 
 .footer{
     display: flex;

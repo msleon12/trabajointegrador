@@ -13,6 +13,8 @@ body{
     color: white;
 }
 
+/*Encabezado*/
+
 .superior{
     display: flex;
     flex-direction: row;
@@ -50,16 +52,18 @@ body{
     width:100%;
 }
 
-/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
-.tira-uno{
-    padding-top: 108px;
-}
 /* Sacarle el underline a los links y le cambio de color*/
 a:link, a:visited, a:active {
     text-decoration:none;
     color: white;
     justify-items: center;
     align-items: center;
+}
+
+
+/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
+.tira-uno{
+    padding-top: 108px;
 }
 
 .titulo{
