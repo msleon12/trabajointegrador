@@ -73,7 +73,7 @@ a:link, a:visited, a:active {
 
 .titulo{
     justify-content: left;
-    background-color: #424874;
+    background-color: #5850A1;
     padding: 1%;
     width: 100%;
 }
@@ -105,7 +105,7 @@ a:link, a:visited, a:active {
 .peli{
     border-color: black;
     border-style: double;
-    background-color:  #424874;
+    background-color:  #5850A1;
 }
 
 @media(max-width:768px){
