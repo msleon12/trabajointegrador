@@ -210,7 +210,7 @@ a:link, a:visited, a:active {
 }
 
 .info-columna li{
-    text-decoration: underline
+    text-decoration: underline;
     margin: 0;
 }
 
