@@ -192,13 +192,14 @@ a:link, a:visited, a:active {
     column-gap: 5%;
     row-gap: 5%;
     padding: 180px 50px 50px 10px;
-    margin-left: 80px;
+    margin-left: 12%;
     margin-right: 80px;
 }
 
 .nombre{
     display: grid;
     justify-content: center;
+    width: 75%
 }
 
 /*Footer*/
