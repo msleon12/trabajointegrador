@@ -67,7 +67,7 @@ a:link, a:visited, a:active {
 /*Home*/
 
 /*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
-.tira-uno{
+.uno{
     padding-top: 10%;
 }
 
@@ -106,33 +106,6 @@ a:link, a:visited, a:active {
     border-color: black;
     border-style: double;
     background-color:  #5850A1;
-}
-
-@media(max-width:768px){
-    .peliculas{
-        margin: 5px 10px 5px 20px;
-        gap: 25px;
-    }
-
-    .peli{
-        width: 30%;
-    }
-
-}
-
-@media(max-width:425px){
-    
-    .tira-uno{
-        padding-top: 55%;
-    }
-    .peliculas{
-        justify-content: center;
-    }
-    
-    .peli{
-       width: 50%;
-       justify-content: center;
-    }
 }
 
 /*Peli-serie*/
@@ -185,7 +158,6 @@ a:link, a:visited, a:active {
 }
 
 /*Superhéroes*/
-
 .grid-peliculas{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -203,7 +175,6 @@ a:link, a:visited, a:active {
 }
 
 /*Footer*/
-
 .footer{
     display: flex;
     flex-direction: row;
@@ -213,9 +184,126 @@ a:link, a:visited, a:active {
     font: bold;
     font-size: 30px;
     font-style: italic;
-    margin: 40px 0 0 0;
+    margin-top: 30%;
+}
+.footer a{
+    width: 20%;
 }
 
-.footer a{
-    margin: 0 0 0 20px;
+/* Slider */
+.slider{
+    overflow: hidden;
+}
+
+.slider figure{
+    position: absolute;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+.slider img{
+    background-size: cover;
+    height: 500px;
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider{
+    0%{
+        left: 0%;
+    }
+
+    20%{
+        left: 0%;
+    }
+
+    25%{
+        left: -100%;
+    }
+
+    45%{
+        left: -100%;
+    }
+
+    50%{
+        left: -200%;
+    }
+
+    70%{
+        left: -200%;
+    }
+
+    75%{
+        left: -300%;
+    }
+
+    95%{
+        left: -300%;
+    }
+
+    100%{
+        left: -400%;
+    }
+}
+
+.slider{
+    padding: 20%;
+}
+
+.figure{
+    width: 80%;
+}
+
+/* Series html */
+.padding-slider{
+    padding-top: 20%;
+}
+
+#series{
+    font-style: italic;
+    font-size: 50px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .peliculas{
+        margin: 5px 10px 5px 20px;
+        gap: 25px;
+    }
+
+    .peli{
+        width: 30%;
+    }
+
+}
+
+/* Superheroes */
+#superheroes{
+    font-style: italic;
+    font-size: 50px;
+}
+
+@media(max-width:425px){
+    
+    .uno{
+        padding-top: 60%;
+    }
+    .peliculas{
+        justify-content: center;
+    }
+    
+    .peli{
+       width: 50%;
+       justify-content: center;
+    }
+
+    .tira{
+        margin-top: 5%;
+    }
+
+    .titulo{
+        padding-top: 100%;
+    }
 }
