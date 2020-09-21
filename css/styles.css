@@ -33,16 +33,35 @@ body{
     justify-content: start;
     align-items: baseline;
     font-size: 30px;
+    position: relative;
 }
 
-/* Hover */
-.lista-sup li:hover{
-    font-size: 45px;
-    font-style: italic;
+.submenu {
+    position: absolute;
+    font-size: 60%;
+    list-style: none;
+    display: none;
 }
 
 .lista-sup li{
     margin-right: 4%;
+}
+/* Hover */
+.lista-sup li a:hover{
+    font-size: 45px;
+    font-style: italic;
+    transition: all .2s;
+    color: #ce7d35;
+}
+
+.lista-sup li:hover{
+    font-size: 45px;
+    font-style: italic;
+    transition: all .2s;
+}
+
+.lista-sup li:hover .submenu{
+    display: block;
 }
 
 /* Establecer un menú fijo */
