@@ -266,8 +266,8 @@ a:link, a:visited, a:active {
 /* Slider */
 .slider {
     overflow: hidden;
-    padding-top: 20%;
-    height: 700px;
+    padding-top: 10%;
+    height: 600px;
 }
 .slider figure {
 	position: relative;
@@ -278,8 +278,9 @@ a:link, a:visited, a:active {
 }
 .slider figure img {
     width: 20%;
+    height: 100%;
     float: left;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 @keyframes slider {
@@ -313,8 +314,21 @@ a:link, a:visited, a:active {
 }
 
 /* Series html */
-.padding-slider{
-    padding-top: 20%;
+.series-slider{
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items:center;
+    gap: 5%;
+    margin: 10% 1.5% 13% 1.5%;
+}
+
+.series-slider article{
+    width: 63%;
+}
+
+.series-slider img{
+    object-fit: fill;
 }
 
 #series{
