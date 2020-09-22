@@ -14,6 +14,7 @@ body{
     color: white;
 }
 
+
 /*Encabezado*/
 
 .superior{
@@ -38,7 +39,7 @@ body{
 
 .submenu {
     position: absolute;
-    font-size: 60%;
+    font-size: 30px;
     list-style: none;
     display: none;
 }
@@ -46,7 +47,10 @@ body{
 .lista-sup li{
     margin-right: 4%;
 }
+
+
 /* Hover */
+
 .lista-sup li a:hover{
     font-size: 45px;
     font-style: italic;
@@ -70,6 +74,7 @@ body{
     z-index: auto;
     width: 100%;
     display: block;
+    top: 0;
 }
 
 /* Sacarle el underline a los links y cambio de color*/
@@ -80,10 +85,12 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-#superfilms{
+#principal{
     font-style: italic;
     font-size: 50px;
+    color: #ce7d35;
 }
+
 
 /*Home*/
 
@@ -100,9 +107,8 @@ a:link, a:visited, a:active {
 }
 
 .titulo h2{
-    margin: 20px;
+    margin: 1%;
 }
-
 
 .peliculas{
     display: flex;
@@ -113,6 +119,11 @@ a:link, a:visited, a:active {
     margin-bottom: 3%;
 }
 
+.art-peli{
+    width: 160px;
+    height: 300px;
+}
+
 .peli{
     border-color: black;
     border-style: double;
@@ -121,8 +132,8 @@ a:link, a:visited, a:active {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 160px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -147,23 +158,29 @@ a:link, a:visited, a:active {
     margin: 0;
 }
 
-/*Peli-serie*/
+
+/*Detalle peli-serie*/
 
 .obra{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    padding-top: 16%;
-    margin: 0 0 5% 5%;
+    margin: 15% 0 5% 5%;
+}
+
+.imagen-obra{
+    border-color: black;
+    border-style: double;
+    background-color:  #5850A1;
+    margin: 0 5% 0 0;
 }
 
 .imagen-obra img{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    border-color: black;
-    border-style: double;
-    background-color:  #5850A1;
+    object-fit: fill;
+    width: 300px;
+    height: 400px
 }
 
 .info-obra{
@@ -179,7 +196,6 @@ a:link, a:visited, a:active {
     align-content: center;
     margin: 0 0 2% 0;
     padding: 0 0 0 2%;
-    
 }
 
 .info-obra li{
@@ -209,21 +225,20 @@ a:link, a:visited, a:active {
     margin: 0;
 }
 
+
 /*Superhéroes*/
-.grid-peliculas{
+
+.grid-heroe{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     column-gap: 10%;
     row-gap: 5%;
-    padding-top: 15%;
-    margin: 0 5% 20% 5%;
-    
+    margin: 200px 5% 20% 5%;
 }
 
-/* Superheroes */
-#superheroes{
-    font-style: italic;
-    font-size: 50px;
+.art-heroe{
+    width: 300px;
+    height: 500px;
 }
 
 .heroe{
@@ -234,8 +249,8 @@ a:link, a:visited, a:active {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 300px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
 }
 
 .heroe img{
@@ -257,12 +272,9 @@ a:link, a:visited, a:active {
     margin: 0;
 }
 
-.nombre{
-    display: grid;
-    justify-content: center;
-}
 
 /*Footer*/
+
 .footer{
     display: flex;
     flex-direction: row;
@@ -282,7 +294,9 @@ a:link, a:visited, a:active {
     margin-left: 10%;
 }
 
+
 /* Slider */
+
 .slider {
     overflow: hidden;
     padding-top: 10%;
@@ -332,62 +346,160 @@ a:link, a:visited, a:active {
 	}
 }
 
+
 /* Series html */
+
 .series-slider{
-    padding-top: 5%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    justify-items:center;
-    gap: 5%;
-    margin: 10% 1.5% 13% 1.5%;
-}
-
-.series-slider article{
-    width: 63%;
-}
-
-.series-slider img{
-    object-fit: fill;
-}
-
-#series{
-    font-style: italic;
-    font-size: 50px;
+    column-gap: 10%;
+    row-gap: 5%;
+    margin: 10% 5% 20% 5%;
 }
 
 
 /* Responsive */
+
 @media(max-width:768px){
-    .peliculas{
-        margin: 5px 10px 5px 20px;
-        gap: 5%;
+    body{
+        background-image: none;
+    }
+
+    .uno{
+        margin-top: 13%;
     }
 
     .art-peli{
         width: 30%;
+        margin: 0 0 3% 3%;
     }
 
-}
-
-@media(max-width:425px){
-    
-    .uno{
-        padding-top: 60%;
+    #mundos{
+        display: none;
     }
+
+    .submenu{
+        display: block;
+        position: relative;
+        padding: 0;
+    }
+
+    /* Hover */
+    .lista-sup li a:hover{
+        font-size: 30px;
+        font-style: normal;
+        color: white;
+        transition: none;
+    }
+
+    .lista-sup li:hover{
+        font-size: 30px;
+        font-style: normal;
+        transition: none;
+    }
+
     .peliculas{
         justify-content: center;
     }
-    
-    .art-peli{
-       width: 50%;
-       justify-content: center;
+
+    .grid-heroe{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 10%;
+        row-gap: 2%;
+        margin: 200px 5% 180px 5%;
+    }
+}
+
+@media(max-width:425px){
+    body{
+        background-image: none;
+    }
+
+    .lista-sup{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: baseline;
+        font-size: 30px;
+        position: relative;
+    }
+
+    #mundos{
+        display: none;
+    }
+
+    .submenu{
+        display: block;
+        position: relative;
+        padding: 0;
+    }
+
+    /* Hover */
+    .lista-sup li a:hover{
+        font-size: 30px;
+        font-style: normal;
+        color: white;
+        transition: none;
+    }
+
+    .lista-sup li:hover{
+        font-size: 30px;
+        font-style: normal;
+        transition: none;
+    }
+
+    .uno{
+        padding-top: 60%;
     }
 
     .tira{
-        margin-top: 5%;
+        margin-top: 3%;
+        margin-bottom: 3%;
     }
 
-    .titulo{
-        padding-top: 100%;
+    .peliculas{
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .art-peli{
+       justify-content: center;
+       width: 160px;
+       height: 300px;
+       margin: 5%
+    }
+
+    .grid-heroe{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 10%;
+        row-gap: 2%;
+        margin: 275px 5% 125px 5%;
+    }
+
+    .art-heroe{
+        width: 160px;
+        height: 300px;
+    }
+    
+    .heroe{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .heroe img{
+        width: 100%;
+        height: 100%;
+        max-height: 220px;
+        object-fit: fill;
+    }
+    
+    .heroe h3{
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        max-height: 80px;
     }
 }
