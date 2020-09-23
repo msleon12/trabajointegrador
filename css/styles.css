@@ -12,6 +12,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -21,7 +22,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: black;
+    background-image: linear-gradient(black, #5850A1);
     padding: 1%;
 }
 
@@ -46,6 +47,7 @@ body{
 
 .lista-sup li{
     margin-right: 4%;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -71,7 +73,7 @@ body{
 /* Establecer un menú fijo */
 .encabezado{
     position: fixed;
-    z-index: auto;
+    z-index: 2;
     width: 100%;
     display: block;
     top: 0;
@@ -173,20 +175,24 @@ a:link, a:visited, a:active {
     border-style: double;
     background-color:  #5850A1;
     margin: 0 5% 0 0;
+    width: 400px;
+    height: 500px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .imagen-obra img{
     display: flex;
     flex-wrap: wrap;
     object-fit: fill;
-    width: 300px;
-    height: 400px
+    width: 100%;
+    height: 100%;
 }
 
 .info-obra{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    background-color: #804ADE;
 }
 
 .titulo.obra{
@@ -195,7 +201,7 @@ a:link, a:visited, a:active {
     justify-content: start;
     align-content: center;
     margin: 0 0 2% 0;
-    padding: 0 0 0 2%;
+    padding: 2%;
 }
 
 .info-obra li{
@@ -216,12 +222,12 @@ a:link, a:visited, a:active {
 
 .descripcion{
     font-size: 20px;
-    margin: 0;
+    margin: 0 3% 0 3%;
     padding: 0;
+    text-align: justify;
 }
 
 .info-columna li{
-    text-decoration: underline;
     margin: 0;
 }
 
@@ -245,10 +251,12 @@ a:link, a:visited, a:active {
     border-color: black;
     border-style: double;
     background-color:  #5850A1;
+    box-shadow: 5px 5px 5px black;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    text-align: center;
     width: 100%;
     height: 100%;
 }
@@ -261,6 +269,7 @@ a:link, a:visited, a:active {
 }
 
 .heroe h3{
+    font-size: 30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -281,7 +290,6 @@ a:link, a:visited, a:active {
     flex-wrap: wrap;
     justify-content: start;
     background-color:black;
-    font: bold;
     font-size: 30px;
     font-style: italic;
     margin-top: 10px;
@@ -292,6 +300,7 @@ a:link, a:visited, a:active {
 
 .footer h3{
     margin-left: 10%;
+    color: white;
 }
 
 
@@ -303,7 +312,8 @@ a:link, a:visited, a:active {
     height: 600px;
 }
 .slider figure {
-	position: relative;
+    position: relative;
+    z-index: 1;
 	width: 500%;
 	margin: 0;
 	left: 0;
@@ -355,6 +365,21 @@ a:link, a:visited, a:active {
     column-gap: 10%;
     row-gap: 5%;
     margin: 10% 5% 20% 5%;
+}
+
+
+/*Mundos html*/
+
+.portada{
+    width: 100%;
+    height: 500px;
+    margin: 0 0 3% 0;
+}
+
+.portada img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
