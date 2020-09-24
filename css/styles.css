@@ -24,6 +24,7 @@ body{
     flex-wrap: wrap;
     background-image: linear-gradient(black, #5850A1);
     padding: 1%;
+    padding-bottom: 3%;
 }
 
 .lista-sup{
@@ -108,7 +109,8 @@ a:link, a:visited, a:active {
 .titulo{
     justify-content: left;
     background-color: #5850A1;
-    padding: 1%;
+    padding-top: 2%;
+    padding-bottom: 3%;
     width: 100%;
 }
 
@@ -456,7 +458,7 @@ a:link, a:visited, a:active {
         margin-left: 65%;
     }
 
-    /* DC Marvel */
+        /* DC Marvel */
     .md{margin: 0 5% 0 5%;
     }
 }
