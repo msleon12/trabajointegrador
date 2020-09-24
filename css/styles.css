@@ -446,10 +446,14 @@ a:link, a:visited, a:active {
 
     /* Superheroes */
     .grid-heroe{
+        display: grid;
         grid-template-columns: repeat(2,1fr);
-        column-gap: 10%;
-        row-gap: 2%;
-        margin: 200px 5% 280px 5%;
+        row-gap: 4%;
+        margin: 200px 5% 65% 5%;
+    }
+
+    .batman{
+        margin-left: 65%;
     }
 
     /* DC Marvel */
