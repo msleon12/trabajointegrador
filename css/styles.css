@@ -23,7 +23,6 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     background-image: linear-gradient(black, #5850A1);
-    padding: 1%;
 }
 
 .lista-sup{
@@ -39,11 +38,9 @@ body{
 }
 
 .submenu {
-    position: absolute;
     font-size: 30px;
     list-style: none;
     display: none;
-    padding: 1% 2% 1% 2%;
 }
 
 .lista-sup li{
@@ -68,14 +65,6 @@ body{
 
 .lista-sup li:hover .submenu{
     display: block;
-}
-
-#mundos:hover + .submenu{
-    background-image: linear-gradient(#5850A1,#28235b);
-}
-
-.submenu:hover{
-    background-image: linear-gradient(#5850A1,#28235b);
 }
 
 
@@ -106,9 +95,8 @@ a:link, a:visited, a:active {
 
 /*Home*/
 
-/*SACARLO CUANDO EL ENCABEZADO OCUPE ESPACIO*/
 .uno{
-    padding-top: 10%;
+    padding-top: 100px;
 }
 
 .titulo{
@@ -248,16 +236,18 @@ a:link, a:visited, a:active {
 /*Superhéroes*/
 
 .grid-heroe{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 10%;
-    row-gap: 5%;
-    margin: 200px 5% 20% 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 120px;
+    padding-bottom: 30px;
 }
 
 .art-heroe{
-    width: 300px;
+    width: 30%;
     height: 500px;
+    margin: 30px 0px 10px 0px;
 }
 
 .heroe{
@@ -307,6 +297,7 @@ a:link, a:visited, a:active {
     font-style: italic;
     margin-top: 10px;
 }
+
 .footer a{
     width: 20%;
 }
@@ -321,9 +312,10 @@ a:link, a:visited, a:active {
 
 .slider {
     overflow: hidden;
-    padding-top: 10%;
+    padding-top: 100px;
     height: 600px;
 }
+
 .slider figure {
     position: relative;
     z-index: 1;
@@ -332,6 +324,7 @@ a:link, a:visited, a:active {
 	left: 0;
 	animation: 15s slider infinite;
 }
+
 .slider figure img {
     width: 20%;
     height: 100%;
@@ -373,11 +366,12 @@ a:link, a:visited, a:active {
 /* Series html */
 
 .series-slider{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 10%;
-    row-gap: 5%;
-    margin: 5% 5% 15% 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 
@@ -406,7 +400,7 @@ a:link, a:visited, a:active {
 
     /* Home */
     .uno{
-        margin-top: 13%;
+        padding-top: 120px;
     }
 
     .art-peli{
@@ -427,15 +421,12 @@ a:link, a:visited, a:active {
 
     /* Series */
     .slider{
-        margin-top: 10%;
+        margin-top: 40px;
         max-height: 350px;
     }
 
     .series-slider{
-        margin-bottom: 30%;
-        grid-template-columns: repeat(2,1fr);
-        row-gap: 2%;
-        column-gap: 10%;
+        padding-top: 0;
     }
 
     /* Hover */
@@ -466,14 +457,7 @@ a:link, a:visited, a:active {
 
     /* Superheroes */
     .grid-heroe{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        row-gap: 4%;
-        margin: 200px 5% 65% 5%;
-    }
-
-    .batman{
-        margin-left: 65%;
+        padding-top: 140px;
     }
 
     /* DC Marvel */
@@ -540,7 +524,7 @@ a:link, a:visited, a:active {
     }
 
     .uno{
-        padding-top: 60%;
+        padding-top: 220px;
     }
 
     .tira{
@@ -562,10 +546,7 @@ a:link, a:visited, a:active {
 
     /* Superhéroes */
     .grid-heroe{
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 10%;
-        row-gap: 2%;
-        margin: 70% 5% 40% 5%;
+        padding-top: 250px;
     }
 
     .art-heroe{
@@ -601,11 +582,7 @@ a:link, a:visited, a:active {
     }
 
     .series-slider{
-        margin-top: 70%;
-        margin-bottom: 40%;
-        grid-template-columns: repeat(2,1fr);
-        row-gap: 2%;
-        column-gap: 10%;
+        padding-top: 250px;
     }
 
     /* DC Marvel */
