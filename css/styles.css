@@ -79,6 +79,7 @@ body{
 }
 
 
+
 /* Establecer un menú fijo */
 .encabezado{
     position: fixed;
@@ -328,7 +329,7 @@ a:link, a:visited, a:active {
 	width: 500%;
 	margin: 0;
 	left: 0;
-	animation: 20s slider infinite;
+	animation: 15s slider infinite;
 }
 .slider figure img {
     width: 20%;
@@ -443,7 +444,6 @@ a:link, a:visited, a:active {
         color: white;
         transition: none;
     }
-
     .lista-sup li:hover{
         font-size: 30px;
         font-style: normal;
