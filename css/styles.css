@@ -24,7 +24,6 @@ body{
     flex-wrap: wrap;
     background-image: linear-gradient(black, #5850A1);
     padding: 1%;
-    padding-bottom: 3%;
 }
 
 .lista-sup{
@@ -44,6 +43,7 @@ body{
     font-size: 30px;
     list-style: none;
     display: none;
+    padding: 1% 2% 1% 2%;
 }
 
 .lista-sup li{
@@ -70,8 +70,12 @@ body{
     display: block;
 }
 
-.superior:hover #mundos{
-    padding-bottom: 20%;
+#mundos:hover + .submenu{
+    background-image: linear-gradient(#5850A1,#28235b);
+}
+
+.submenu:hover{
+    background-image: linear-gradient(#5850A1,#28235b);
 }
 
 
@@ -110,12 +114,14 @@ a:link, a:visited, a:active {
     justify-content: left;
     background-color: #5850A1;
     padding-top: 2%;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
     width: 100%;
+    font-size: 110%;
 }
 
 .titulo h2{
-    margin: 1%;
+    margin: 0;
+    margin-left: 3%;
 }
 
 .peliculas{
@@ -208,6 +214,7 @@ a:link, a:visited, a:active {
     align-content: center;
     margin: 0 0 2% 0;
     padding: 2%;
+    font-size: 200%;
 }
 
 .info-obra li{
@@ -222,8 +229,6 @@ a:link, a:visited, a:active {
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
-    margin: 0;
-    padding: 0;
 }
 
 .descripcion{
@@ -426,6 +431,9 @@ a:link, a:visited, a:active {
 
     .series-slider{
         margin-bottom: 30%;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 2%;
+        column-gap: 10%;
     }
 
     /* Hover */
@@ -442,8 +450,17 @@ a:link, a:visited, a:active {
         transition: none;
     }
 
+    #mundos:hover + .submenu{
+        background-image: none;
+    }
+    
+    .submenu:hover{
+        background-image: none;
+    }
+
     .peliculas{
         justify-content: center;
+        margin-right: 3%;
     }
 
     /* Superheroes */
@@ -458,9 +475,20 @@ a:link, a:visited, a:active {
         margin-left: 65%;
     }
 
-        /* DC Marvel */
-    .md{margin: 0 5% 0 5%;
+    /* DC Marvel */
+    .md{margin: 0 3% 3% 3%;
     }
+
+    /*Detalle*/
+    .obra{
+        margin-top: 25%;
+    }
+
+    .imagen-obra{
+        width: 300px;
+        height: 370px;
+    }
+
 }
 
 @media(max-width:425px){
@@ -502,6 +530,14 @@ a:link, a:visited, a:active {
         transition: none;
     }
 
+    #mundos:hover + .submenu{
+        background-image: none;
+    }
+    
+    .submenu:hover{
+        background-image: none;
+    }
+
     .uno{
         padding-top: 60%;
     }
@@ -523,11 +559,12 @@ a:link, a:visited, a:active {
        margin: 5%
     }
 
+    /* Superhéroes */
     .grid-heroe{
         grid-template-columns: repeat(2,1fr);
         column-gap: 10%;
         row-gap: 2%;
-        margin: 275px 5% 125px 5%;
+        margin: 70% 5% 40% 5%;
     }
 
     .art-heroe{
@@ -554,6 +591,7 @@ a:link, a:visited, a:active {
         width: 100%;
         height: 100%;
         max-height: 80px;
+        font-size: 100%;
     }
 
     /* Series */
@@ -563,10 +601,41 @@ a:link, a:visited, a:active {
 
     .series-slider{
         margin-top: 70%;
+        margin-bottom: 40%;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 2%;
+        column-gap: 10%;
     }
 
     /* DC Marvel */
     .md h3 {
         font-size: 110%;
+    }
+
+    /*Detalle*/
+    .obra{
+        margin-top: 70%;
+    }
+
+    .imagen-obra{
+        width: 200px;
+        height: 250px;
+    }
+
+    .titulo.obra{
+        text-align: center;
+        justify-content: center;
+    }
+
+    .info-fila{
+        justify-content: space-between;
+    }
+
+    .descripcion{
+        display: none
+    }
+
+    .info-columna{
+        display: none;
     }
 }
