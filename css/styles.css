@@ -456,6 +456,19 @@ footer h5{
         background-image: none;
     }
 
+    .art-heroe{
+        height: 340px;
+    }
+
+    .art-heroe img{
+        height: 250px;
+    }
+
+    .art-heroe h3{
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+
     /* Home */
     .uno{
         padding-top: 120px;
