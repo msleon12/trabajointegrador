@@ -450,6 +450,51 @@ footer h5{
 
 /* Responsive */
 
+@media(max-width:1024px){
+
+    /* marvel y Dc */
+    .info-fila{
+        font-size: 15px;
+    }
+
+    .md{
+        height: 400px;
+    }
+
+    .md img{
+        height: 300px;
+    }
+
+    .md h3{
+        height: 80px;
+    }
+
+    /* Superheroes */
+    .art-heroe{
+        height: 400px;
+    }
+
+    .art-heroe img{
+        height: 300px;
+    }
+
+    .art-heroe h3{
+        height: 80px;
+    }
+
+    /* Series */
+    .series-slider{
+        padding-top: 0px;
+    }
+
+    /* Home */
+    .art-peli{
+        width: 165px;
+    }
+
+}
+
+
 @media(max-width:768px){
    /* General */
     body{
