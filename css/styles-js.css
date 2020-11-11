@@ -1,0 +1,15 @@
+#search{
+    color: black;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+#inputValue{
+    width: 170px;
+    line-height: 1.5;
+    outline: none;
+    border-radius: .25rem;
+
+}
