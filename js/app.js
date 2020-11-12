@@ -21,6 +21,17 @@ function generateUrl (path) {
     return url
 } 
 
+// Funcion para crear el iframe y que aparezca el trailer de youtube en la página
+function createIframe(video){
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${video.key}`
+    iframe.width = 360;
+    iframe.height = 315;
+    iframe.allowFullscreen = true;
+
+    return iframe;
+}
+
 // Función parte 1
 function movieSection(movies){
     return movies.map((movie) => {
@@ -85,6 +96,25 @@ document.onclick = function(event){
         const section = event.target.parentElement; //para seleccionar el elemento padre de la imagen. O sea el section
         const content = section.nextElementSibling; //para seleccionar el elemento "hermano" del section. O sea el div de clase "content"
         content.classList.add("content-display"); //le agrego una clase para cuando aparezca una imagen
+
+        const path = `/movie/${movieId}/videos`;
+        const url = generateUrl(path);
+        // Buscar videos al hacer click en la imagen de la película
+        fetch (url)
+            .then((res) => res.json())
+            .then ((data) => {
+                console.log("videos: ", data);
+                
+                const videos = data.results;
+                const length = videos.length > 4 ? 4 : videos.length; //condicional para establecer el máximo de trailers que pueden aparecer
+                for(let i = 0; i<videos.length; i++){
+                    const videos = data.results;
+                    const length
+                }
+            })
+            .catch((error) => {
+                console.log("error: ", error);
+            });
     }
 
     else if(target.id === "content-close"){
