@@ -9,16 +9,23 @@ const url = "https://api.themoviedb.org/3/search/movie?api_key=12058c71aa3652a9d
 const image_url = "https://image.tmdb.org/t/p/w500"
 
 
+// BUSCADOR
 // Declaro otras variables
 const buttonElement = document.querySelector ("#search");
 const inputElement = document.querySelector ("#inputValue");
 const movieSearchable = document.querySelector ("#movies-searchable");
 
+// Genero URL para los videos de las peliculas del buscador
+function generateUrl (path) {
+    const url = `https://api.themoviedb.org/3${path}?api_key=12058c71aa3652a9d53642bacf937088` 
+    return url
+} 
+
 // Función parte 1
 function movieSection(movies){
     return movies.map((movie) => {
         if(movie.poster_path){
-            return `<img 
+            return `<img
                 src=${image_url + movie.poster_path}
                 data-movie-id=${movie.id}
                 />`;
@@ -55,8 +62,8 @@ function renderSearchMovies(data){
 buttonElement.onclick = function(event){
     event.preventDefault();
     const value = inputElement.value
-    
-    const newUrl = url + '&query=' + value;
+    const path = '/search/movie'; //para que aparezcan los videos de las peliculas del buscador
+    const newUrl = generateUrl(path) + '&query=' + value;
     
     fetch(newUrl)
         .then((res) => res.json())
@@ -69,11 +76,20 @@ buttonElement.onclick = function(event){
     console.log("value: " + value);
 }
 
-// Event delegation. No se que es, pero esta bueno jajaja
+// Event delegation.
 document.onclick = function(event){
     const target = event.target;
     if (target.tagName.toLowerCase() === "img"){
-        console.log('Hello');
+        const movieId = target.dataset.movieId
+        console.log("movie Id: ", movieId);
+        const section = event.target.parentElement; //para seleccionar el elemento padre de la imagen. O sea el section
+        const content = section.nextElementSibling; //para seleccionar el elemento "hermano" del section. O sea el div de clase "content"
+        content.classList.add("content-display"); //le agrego una clase para cuando aparezca una imagen
+    }
+
+    else if(target.id === "content-close"){
+        const content = target.parentElement;
+        content.classList.remove("content-display");
     }
 }
 
