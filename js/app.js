@@ -1,3 +1,8 @@
+$(window).load(function() {
+    // Desaparecer loader
+    $(".load").fadeOut(1000);
+})
+
 // Valores iniciales
 const api_key  = "12058c71aa3652a9d53642bacf937088"
 const url = "https://api.themoviedb.org/3/search/movie?api_key=12058c71aa3652a9d53642bacf937088" 
@@ -71,3 +76,23 @@ document.onclick = function(event){
         console.log('Hello');
     }
 }
+
+let submenu = document.querySelector(".submenu")
+let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key=12058c71aa3652a9d53642bacf937088&language=es-ES"
+
+fetch(urlGeneros)
+.then(function(response) {
+    return response.json();
+})
+.then(function(data) {
+    console.log(data);
+
+    let generos = data.genres
+
+    for(let i=0; i<generos.length; i++){
+    submenu.innerHTML += "<li>" + generos[i].name + "</li>";
+    }
+})
+.catch(function(error) {
+    console.log("Error: " + error);
+})

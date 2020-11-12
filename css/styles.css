@@ -64,7 +64,12 @@ body{
 }
 
 .lista-sup li:hover .submenu{
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    align-items: center;
+    justify-items: start;
 }
 
 
@@ -125,6 +130,12 @@ a:link, a:visited, a:active {
 .art-peli{
     width: 190px;
     height: 300px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.art-peli:hover{
+    width: 200px;
+    height: 310px;
     box-shadow: 5px 5px 5px black;
 }
 

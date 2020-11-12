@@ -1,17 +1,29 @@
-#search{
-    color: black;
-    font-size: 1rem;
-    outline: none;
-    cursor: pointer;
-    border-radius: .25rem;
+.no-js #loader {display: none;}
+.js #loader {display: block; position: absolute; left: 100px; top: 0;}
+.load {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://media.giphy.com/media/1gdoeJmc3piKTeORzG/giphy.gif) center no-repeat #fff;
 }
 
 #inputValue{
-    width: 170px;
-    line-height: 1.5;
+    width: 200px;
+    line-height: 2;
     outline: none;
     border-radius: .25rem;
+}
 
+#search{
+    color: black;
+    font-size: 1rem;
+    line-height: 1.5;
+    outline: none;
+    cursor: pointer;
+    border-radius: .25rem;
 }
 
 .section{

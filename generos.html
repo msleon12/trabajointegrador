@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
+    <script defer src="js/app.js"></script>
 </head>
 <body>
-     <!-- Encabezado -->
-     <header class="encabezado">
+    <!-- Encabezado -->
+    <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
                 <li><a href="./home.html">SuperFilms</a></li>
@@ -22,7 +23,14 @@
                         <li><a href="./dc.html">DC</a></li>
                     </ul>
                 </li>
-                
+                <li>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" id="inputValue" name="nombre" value="">
+                            <button type="submit" id="search">Buscar</button>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>
