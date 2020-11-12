@@ -13,3 +13,29 @@
     border-radius: .25rem;
 
 }
+
+.section{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.section img {
+    width: 25%;
+    height: 430px;
+}
+
+.section img:hover{
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.content{
+    border: 1px solid red;
+    display: none;
+}
+
+.content-display{
+    display: block;
+}
