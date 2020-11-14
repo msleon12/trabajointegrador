@@ -10,6 +10,8 @@
 	background: url(https://media.giphy.com/media/1gdoeJmc3piKTeORzG/giphy.gif) center no-repeat #fff;
 }
 
+
+/* Buscador */
 #inputValue{
     width: 200px;
     line-height: 2;
@@ -17,6 +19,9 @@
     border-radius: .25rem;
 }
 
+.movie{
+    margin-top: 10%;
+}
 #search{
     color: black;
     font-size: 1rem;
@@ -29,25 +34,18 @@
 .section{
     display: flex;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto;  /* Overflow es para que se muestre lo que sobrepasa el eje x */
 }
 
-.section img {
-    width: 25%;
-    height: 430px;
+.section a, section img {
+    width: 300px;
+    height: 620px;
+    transition: 250ms all; /* para que el hover que se expande la img no sea tan violento */
 }
 
 .section img:hover{
-    margin-left: 0 40px;
-    transform: scale(1.2);
+    margin-left: 0 20px;
+    transform: scale(1.1);
     cursor: pointer;
 }
 
-.content{
-    border: 1px solid red;
-    display: none;
-}
-
-.content-display{
-    display: block;
-}
