@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-js.css">
+    <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="superior">
+            <ul class="lista-sup">
+                <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                <li><a href="./generos.html">Géneros</a>
+                    <ul class="submenu">
+                        
+                    </ul>
+                </li>
+                <li><a href="./series.html">Series</a></li>
+                <li><span id="mundos">Superhéroes</span></li>
+                <li>
+                    <form action="buscador.html" method="GET">
+                        <div class="form-group">
+                            <input type="text" id="inputValue" name="nombre" value="">
+                            <button type="submit" id="search" value="">Buscar</button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="js/buscador.js"></script>
+</body>
+</html>
