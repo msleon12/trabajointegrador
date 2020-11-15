@@ -100,10 +100,6 @@ a:link, a:visited, a:active {
 
 /*Home*/
 
-/*.uno{
-    padding-top: 20px;
-}*/
-
 .titulo{
     justify-content: left;
     background-image: linear-gradient(#5850A1, #4e4697,#5850A1);
@@ -116,6 +112,21 @@ a:link, a:visited, a:active {
 .titulo h2{
     margin: 0;
     margin-left: 3%;
+}
+
+.visto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+#trend{
+    color: black;
+    font-size: 1.3rem;
+    outline: none;
+    cursor: pointer;
+    border-radius: .25rem;
 }
 
 .peliculas{

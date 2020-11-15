@@ -50,25 +50,126 @@ fetch(urlGeneros)
     console.log("Error: " + error);
 })
 
-// Trending de la semana
-const urlTrending = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
-fetch(urlTrending)
-.then(function(response){
-    return response.json()
-})
-.then(function(data){
-    console.log(data);
-    let container = document.querySelector('.uno')
-    data.results.forEach(pelicula => {
-        let trending = `<article>
-                            <h2> ${data.title}</h2>
-                            <img src= ${image_url + data.poster_path} 
-                        </article>`
+// Tendencias (trending) diario y semanal
+let selectTrend = document.querySelector("#trend name")
+console.log(selectTrend)
 
-    });
+//if (selectTrend == "diario"){
+    const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
+    fetch(urlTrendDiario)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas.tre')
+        let results = data.results
 
-    container.innerHTML = trending;
-})
-.catch(function(error){
-    console.log('El error fue: ', error);
-})
+        for(let i=0; i<5; i++){
+            let trending = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`;
+            container.innerHTML += trending;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
+/* } else if (selectTrend == "semanal"){
+    const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+    fetch(urlTrendSemanal)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas')
+        let results = data.results
+
+        for(let i=0; i<5; i++){
+            let trending = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`;
+            container.innerHTML += trending;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
+} */
+
+// Now playing (en cines) 
+const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=es-ES&page=1&region=AR` 
+    fetch(urlEstrenos)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas.estrenos')
+        let results = data.results
+
+        for(let i=0; i<5; i++){
+            let estrenos = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`;
+            container.innerHTML += estrenos;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
+
+// Top rated (ranking)
+const urlRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=es-ES&page=1&region=AR` 
+    fetch(urlRated)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas.ranking')
+        let results = data.results
+
+        for(let i=0; i<5; i++){
+            let ranking = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`;
+            container.innerHTML += ranking;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
+
+// Series populares
+const urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=es-ES&page=1` 
+    fetch(urlSeries)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas.series')
+        let results = data.results
+
+        for(let i=0; i<5; i++){
+            let series = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].name}>
+                                <h3>${results[i].name}</h3>
+                                </a>
+                            </article>`;
+            container.innerHTML += series;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
