@@ -49,3 +49,26 @@ fetch(urlGeneros)
 .catch(function(error) {
     console.log("Error: " + error);
 })
+
+// Trending de la semana
+const urlTrending = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+fetch(urlTrending)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+    let container = document.querySelector('.uno')
+    data.results.forEach(pelicula => {
+        let trending = `<article>
+                            <h2> ${data.title}</h2>
+                            <img src= ${image_url + data.poster_path} 
+                        </article>`
+
+    });
+
+    container.innerHTML = trending;
+})
+.catch(function(error){
+    console.log('El error fue: ', error);
+})
