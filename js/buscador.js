@@ -12,7 +12,7 @@ const movieSearchable = document.querySelector ("#movies-searchable"); // es el 
 function movieSection(movies){
     return movies.map((movie) => {
         if(movie.poster_path){ //Uso un condicional para que solo aparezcan los resultados que tienen imagenes
-            return `<a href="detallepeli.html"><img
+            return `<a href=detallepeli.html?id=${movie.id}><img
                 src=${image_url + movie.poster_path} 
                 data-movie-id=${movie.id}
                 /></a>`; //paso 6: hice dinámica las fotos al unir la image_url con el poster_path de cada busqueda

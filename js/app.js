@@ -54,7 +54,7 @@ fetch(urlGeneros)
 let selectTrend = document.querySelector("#trend name")
 console.log(selectTrend)
 
-//if (selectTrend == "diario"){
+    //if (selectTrend == "diario"){
     const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
     fetch(urlTrendDiario)
     .then(function(response){
@@ -66,8 +66,9 @@ console.log(selectTrend)
         let results = data.results
 
         for(let i=0; i<5; i++){
+            let id_p = results[i].id
             let trending = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -114,8 +115,9 @@ console.log(selectTrend)
         let results = data.results
 
         for(let i=0; i<5; i++){
+            let id_p = results[i].id
             let estrenos = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -138,8 +140,9 @@ console.log(selectTrend)
         let results = data.results
 
         for(let i=0; i<5; i++){
+            let id_p = results[i].id
             let ranking = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -162,8 +165,9 @@ console.log(selectTrend)
         let results = data.results
 
         for(let i=0; i<5; i++){
+            let id_p = results[i].id
             let series = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
