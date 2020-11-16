@@ -67,7 +67,7 @@ console.log(selectTrend)
 
         for(let i=0; i<5; i++){
             let trending = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -103,7 +103,7 @@ console.log(selectTrend)
 } */
 
 // Now playing (en cines) 
-const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=es-ES&page=1&region=AR` 
+    const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=es-ES&page=1&region=AR` 
     fetch(urlEstrenos)
     .then(function(response){
         return response.json()
@@ -115,7 +115,7 @@ const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ap
 
         for(let i=0; i<5; i++){
             let estrenos = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -127,7 +127,7 @@ const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ap
     })
 
 // Top rated (ranking)
-const urlRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=es-ES&page=1&region=AR` 
+    const urlRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=es-ES&page=1&region=AR` 
     fetch(urlRated)
     .then(function(response){
         return response.json()
@@ -139,7 +139,7 @@ const urlRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key
 
         for(let i=0; i<5; i++){
             let ranking = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -151,7 +151,7 @@ const urlRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key
     })
 
 // Series populares
-const urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=es-ES&page=1` 
+    const urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=es-ES&page=1` 
     fetch(urlSeries)
     .then(function(response){
         return response.json()
@@ -163,7 +163,7 @@ const urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&la
 
         for(let i=0; i<5; i++){
             let series = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].name}>
+                                <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
@@ -173,3 +173,29 @@ const urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&la
     .catch(function(error){
         console.log('El error fue: ', error);
     })
+
+    // BUSCADOR
+    // traigo elementos del html
+    const buttonElement = document.querySelector ("#search"); //es el boton
+    const inputElement = document.querySelector ("#inputValue"); // es el input
+    const movieSearchable = document.querySelector ("#movies-searchable"); // es el div que va a contener otras cosas, pero es hijo del div "movies"
+
+    // paso 1: Creo un evento para que funcione el buscador
+    buttonElement.addEventListener('click',function(event){
+    const value = inputElement.value; 
+
+    const newUrl = urlBuscador + '&query=' + value //construyo una URL dinámica, que permita que aparezca cualquier valor que busco
+    fetch(newUrl)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data)
+    }) //esta es la función del paso 6
+    .catch(function(error){
+        console.log('el error fue: ', error);
+    })
+    inputElement.value = ''//elimino la palabra del buscador una vez que le dan click, para mejorar la UX
+    })
+
+
