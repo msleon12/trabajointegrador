@@ -10,12 +10,15 @@ const movieSearchable = document.querySelector ("#movies-searchable"); // es el 
 
 // Paso 4: creo una función para que escribir el paso 3 sea más simple y cómodo
 function movieSection(movies){
+    
     return movies.map((movie) => {
         if(movie.poster_path){ //Uso un condicional para que solo aparezcan los resultados que tienen imagenes
-            return `<a href=detallepeli.html?id=${movie.id}><img
+            return `
+                <a href=detallepeli.html?id=${movie.id}><img
                 src=${image_url + movie.poster_path} 
                 data-movie-id=${movie.id}
-                /></a>`; //paso 6: hice dinámica las fotos al unir la image_url con el poster_path de cada busqueda
+                />
+                <h2>${movie.title}</h2></a>`; //paso 6: hice dinámica las fotos al unir la image_url con el poster_path de cada busqueda
         }
     })
 }
@@ -27,6 +30,7 @@ function createMovieContainer(movies){
 
     // Paso 3: construyo todo el html y hago dinámicas las imagenes usando la ruta "poster_path"
     const movieTemplate = `
+        <h1> Tus resultados de busqueda </h1>
         <section class= "section">
             ${movieSection(movies)}
         </section>

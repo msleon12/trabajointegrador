@@ -41,7 +41,7 @@
 
 .section a, section img {
     width: 300px;
-    height: 620px;
+    height: 500px;
     transition: 250ms all; /* para que el hover que se expande la img no sea tan violento */
 }
 
@@ -51,3 +51,7 @@
     cursor: pointer;
 }
 
+.section h2{
+    margin-top: 10%;
+    text-align: center;
+}
