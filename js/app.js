@@ -32,57 +32,61 @@ fetch(urlGeneros)
 })
 
 // Tendencias (trending) diario y semanal
-let selectTrend = document.querySelector("#trend name")
-console.log(selectTrend)
+let diario = document.querySelector("#diario")
+let semanal = document.querySelector("#semanal")
+let trend = document.querySelector("#trend")
+console.log(trend.value)
 
-    //if (selectTrend == "diario"){
-    const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
-    fetch(urlTrendDiario)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data);
-        let container = document.querySelector('.peliculas.tre')
-        let results = data.results
+/* trend.addEventListener('click', function(){
+    if (trend.value == "diario"){
+        const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
+        fetch(urlTrendDiario)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data);
+            let container = document.querySelector('.peliculas.tre')
+            let results = data.results
 
-        for(let i=0; i<5; i++){
-            let id_p = results[i].id
-            let trending = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                <h3>${results[i].title}</h3>
-                                </a>
-                            </article>`;
-            container.innerHTML += trending;
-        };
-    })
-    .catch(function(error){
-        console.log('El error fue: ', error);
-    })
-/* } else if (selectTrend == "semanal"){
-    const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
-    fetch(urlTrendSemanal)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data);
-        let container = document.querySelector('.peliculas')
-        let results = data.results
-
-        for(let i=0; i<5; i++){
-            let trending = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html"><img src=${image_url + results.poster_path} alt=${results[i].title}>
-                                <h3>${results[i].title}</h3>
-                                </a>
-                            </article>`;
-            container.innerHTML += trending;
-        };
-    })
-    .catch(function(error){
-        console.log('El error fue: ', error);
-    })
-} */
+            for(let i=0; i<5; i++){
+                let id_p = results[i].id
+                let trending = `<article class="art-peli">
+                                    <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                    </a>
+                                </article>`;
+                container.innerHTML += trending;
+            };
+        })
+        .catch(function(error){
+            console.log('El error fue: ', error);
+        })}
+    else if (trend.value == "semanal"){
+        const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+        fetch(urlTrendSemanal)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data);
+            let container = document.querySelector('.peliculas')
+            let results = data.results
+        
+            for(let i=0; i<5; i++){
+                let trending = `<article class="art-peli">
+                                    <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                    </a>
+                                </article>`;
+                container.innerHTML += trending;
+                };
+            })
+            .catch(function(error){
+            console.log('El error fue: ', error);
+        })
+    }
+}) */
 
 // Now playing (en cines) 
     const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=es-ES&page=1&region=AR` 
