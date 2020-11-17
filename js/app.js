@@ -160,27 +160,40 @@ console.log(selectTrend)
     })
 
     // BUSCADOR
+let formulario = document.querySelector('form');
+formulario.addEventListener('submit',function(event){
+    event.preventDefault()
+    let campoBuscar = document.querySelector('.searchfield')
+    if (campoBuscar.value == ""){
+        let mensaje = document.querySelector('.alert')
+        mensaje.innerText += "el campo no debe estar vacío"
+    }
+    else{
+    }
+})
+
+
     // traigo elementos del html
-    const buttonElement = document.querySelector ("#search"); //es el boton
-    const inputElement = document.querySelector ("#inputValue"); // es el input
-    const movieSearchable = document.querySelector ("#movies-searchable"); // es el div que va a contener otras cosas, pero es hijo del div "movies"
+    // const buttonElement = document.querySelector ("#search"); //es el boton
+    // const inputElement = document.querySelector ("#inputValue"); // es el input
+    // const movieSearchable = document.querySelector ("#movies-searchable"); // es el div que va a contener otras cosas, pero es hijo del div "movies"
 
-    // paso 1: Creo un evento para que funcione el buscador
-    buttonElement.addEventListener('click',function(event){
-    const value = inputElement.value; 
+    // // paso 1: Creo un evento para que funcione el buscador
+    // buttonElement.addEventListener('click',function(event){
+    // const value = inputElement.value; 
 
-    const newUrl = urlBuscador + '&query=' + value //construyo una URL dinámica, que permita que aparezca cualquier valor que busco
-    fetch(newUrl)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data)
-    }) //esta es la función del paso 6
-    .catch(function(error){
-        console.log('el error fue: ', error);
-    })
-    inputElement.value = ''//elimino la palabra del buscador una vez que le dan click, para mejorar la UX
-    })
+    // const newUrl = urlBuscador + '&query=' + value //construyo una URL dinámica, que permita que aparezca cualquier valor que busco
+    // fetch(newUrl)
+    // .then(function(response){
+    //     return response.json()
+    // })
+    // .then(function(data){
+    //     console.log(data)
+    // }) //esta es la función del paso 6
+    // .catch(function(error){
+    //     console.log('el error fue: ', error);
+    // })
+    // inputElement.value = ''//elimino la palabra del buscador una vez que le dan click, para mejorar la UX
+    // })
 
 
