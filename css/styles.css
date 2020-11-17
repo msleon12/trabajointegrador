@@ -184,6 +184,38 @@ a:link, a:visited, a:active {
     margin: 0;
 }
 
+/* Generos.html */
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 50px;
+    font-style: italic;
+    background-image: linear-gradient(#5850A1, black,#5850A1);
+}
+
+.pel {
+    margin-top: 130px;
+}
+
+.genres{
+    margin: 0px 30px 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.genres li{
+    font-size: 35px;
+    border-style: double;
+    padding: 10px;
+    list-style: none;
+    background-image: linear-gradient(#5850A1, black,#5850A1);
+}
 
 /*Detalle peli-serie*/
 

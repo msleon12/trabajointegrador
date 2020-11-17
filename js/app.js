@@ -31,25 +31,6 @@ fetch(urlGeneros)
     console.log("Error: " + error);
 })
 
-//generos.html
-
-fetch(urlGeneros)
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    console.log(data);
-
-    let generos = data.genres
-
-    for(let i=0; i<generos.length; i++){
-    nombre.innerText = generos[i].name;
-    }
-})
-.catch(function(error) {
-    console.log("Error: " + error);
-})
-
 // Tendencias (trending) diario y semanal
 let selectTrend = document.querySelector("#trend name")
 console.log(selectTrend)
