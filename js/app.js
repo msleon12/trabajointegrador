@@ -163,7 +163,7 @@ console.log(trend.value)
         console.log('El error fue: ', error);
     })
 
-    // BUSCADOR
+/*    // BUSCADOR
 let formulario = document.querySelector('form');
 formulario.addEventListener('submit',function(event){
     event.preventDefault()
@@ -174,7 +174,7 @@ formulario.addEventListener('submit',function(event){
     }
     else{
     }
-})
+})*/ 
 
 
     // traigo elementos del html
