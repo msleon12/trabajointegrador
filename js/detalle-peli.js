@@ -23,7 +23,7 @@ fetch(urlDetalle)
     console.log(data);
 
     let movie = `<article class="imagen-obra avengers"> 
-                    <img src=${image_url + data.poster_path} alt=""></a>
+                    <img src=${image_url + data.poster_path} alt="${data.title}">
                 </article>
                 <article class="info-obra">
                     <h2 class="titulo obra">${data.title}</h2>
@@ -44,6 +44,7 @@ fetch(urlDetalle)
     console.log('El error fue: ', error);
 })
 
+// Reviews
 const urlReviews = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${api_key}&language=en-US&page=1`
 let reviews = document.querySelector(".reviews")
 

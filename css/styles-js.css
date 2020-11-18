@@ -29,33 +29,25 @@
     outline: none;
     cursor: pointer;
     border-radius: .25rem;
-    
-    
+}
+#resultados-busqueda{
+    margin: 150px 0px 30px 40px;
 }
 
-.section{
+#contenedor {
     display: flex;
     width: 100%;
-    overflow-x: auto;  /* Overflow es para que se muestre lo que sobrepasa el eje x */
+    overflow: hidden;
 }
 
-.section a, section img {
+.article{
+    display: flex;
+    width: 30%;
+}
+
+.article img, .article a{
     width: 300px;
-    height: 500px;
-    transition: 250ms all; /* para que el hover que se expande la img no sea tan violento */
 }
-
-.section img:hover{
-    margin-left: 0 20px;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.section h2{
-    margin-top: 10%;
-    text-align: center;
-}
-
 /* Home */
 .alert{
     color: red;
