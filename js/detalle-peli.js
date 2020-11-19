@@ -28,7 +28,7 @@ fetch(urlDetalle)
                 <article class="info-obra">
                     <h2 class="titulo obra">${data.title}</h2>
                     <ul class="info-fila">
-                        <li><strong>Calificación del público: ${data.vote_average} </li>
+                        <li><strong>Calificación: ${data.vote_average} </li>
                         <li><strong>Duración: ${data.runtime} minutos </strong> </li>
                         <li><strong>Fecha de estreno: ${data.release_date}</strong></li>
                         <li><strong>Género: ${data.genres[0].name}</strong> </li>
@@ -63,6 +63,33 @@ fetch(urlReviews)
                         </article>`;
         reviews.innerHTML += comentarios;
     }
+})
+.catch(function(error){
+    console.log('El error fue: ', error);
+})
+
+// Películas similares
+let similares = document.querySelector(".peliculas")
+let urlSimilares = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=es-ES&page=1`
+
+fetch(urlSimilares)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+         
+    let results = data.results
+            
+    for(let i=0; i<5; i++){
+        let id_p = results[i].id
+        let info = `<article class="art-peli">
+                        <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
+                        <h3>${results[i].title}</h3>
+                        </a>
+                    </article>`
+        similares.innerHTML += info;
+    };
 })
 .catch(function(error){
     console.log('El error fue: ', error);

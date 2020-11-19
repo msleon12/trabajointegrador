@@ -31,6 +31,28 @@ const image_url = "https://image.tmdb.org/t/p/w500"
 //     console.log("Error: " + error);
 // })
 
+/* // Slider
+let slider = document.querySelector(".slider-home")
+let urlSlider = `https://api.themoviedb.org/3/movie/550/recommendations?api_key=${api_key}&language=es-ES&page=1`
+
+fetch(urlSlider)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let results = data.results
+        let id_p = results[i].id
+
+        for(let i=0; i<5; i++){
+            let info = `<a class="active" href="detallepeli.html?id=${id_p}"><img class="imagenes" src=${results[i].poster_path} alt=${results[i].title}></a>`
+            slider.innerHTML += info;
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    }) */
+
 // Tendencias (trending) diario y semanal
 let diario = document.querySelector("#diario")
 let semanal = document.querySelector("#semanal")

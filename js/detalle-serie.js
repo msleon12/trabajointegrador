@@ -13,7 +13,7 @@ console.log(id);
 // Valores iniciales
 const api_key  = "12058c71aa3652a9d53642bacf937088"
 const image_url = "https://image.tmdb.org/t/p/w500"
-const urlSeriesDetalle = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}`
+const urlSeriesDetalle = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}&language=es-ES`
 
 fetch(urlSeriesDetalle)
 .then(function(response){
@@ -21,6 +21,7 @@ fetch(urlSeriesDetalle)
 })
 .then(function(data){
     console.log(data);
+    let id_g = data.genres.id
     let serie = `<article class="imagen-obra">
                     <img src="${image_url + data.poster_path}" alt="${data.name}">
                 </article>
@@ -31,18 +32,12 @@ fetch(urlSeriesDetalle)
                         <li><strong>Popularidad: ${data.popularity}</strong></li>
                         <li><strong>Temporadas:</strong> ${data.seasons.length} </li>
                         <li><strong>Fecha de estreno: ${data.first_air_date} </strong></li>
+                        <li><strong>Género: <a href="detallegenero.html?id=${id_g}">${data.genres[0].name} </a></strong></li>
                     </ul>
                     <article class="descripcion">
                         <p>${data.overview}</p>  
                     </article>
-                    <ul class="info-columna">
-                        <li><strong>Director:</strong></li>
-                        <li><strong>Género: ${data.genres[0].name} </strong></li>
-                        <li><strong>Actores:</strong></li>
-                        
-                    </ul>
-                </article>
-                    `
+                </article>`
 
     container.innerHTML += serie
 })
@@ -50,3 +45,29 @@ fetch(urlSeriesDetalle)
     console.log('El error fue: ', error);
 })
 
+// Series similares
+let similares = document.querySelector(".peliculas")
+let urlSimilares = `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${api_key}&language=es-ES&page=1`
+
+fetch(urlSimilares)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+         
+    let results = data.results
+            
+    for(let i=0; i<5; i++){
+        let id_p = results[i].id
+        let info = `<article class="art-peli">
+                        <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
+                        <h3>${results[i].name}</h3>
+                        </a>
+                    </article>`
+        similares.innerHTML += info;
+    };
+})
+.catch(function(error){
+    console.log('El error fue: ', error);
+})

@@ -26,7 +26,7 @@
           for (const movie of movies) {
             if(movie.poster_path){
               contenedor.innerHTML+=`
-              <article class= "article">
+              <article class="buscadas">
                 <a href=detallepeli.html?id=${movie.id}><img
                 src=${image_url + movie.poster_path} 
                 data-movie-id=${movie.id}
