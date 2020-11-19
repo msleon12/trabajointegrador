@@ -12,41 +12,8 @@
 
 
 /* Buscador */
-#inputValue{
-    width: 200px;
-    line-height: 2;
-    outline: none;
-    border-radius: .25rem;
-}
-
-.movie{
-    margin-top: 10%;
-}
-#search{
-    color: black;
-    font-size: 1rem;
-    line-height: 1.5;
-    outline: none;
-    cursor: pointer;
-    border-radius: .25rem;
-}
-#resultados-busqueda{
-    margin: 150px 0px 30px 40px;
-}
-
-#contenedor {
+#contenedor{
     display: flex;
-    width: 100%;
-    overflow: hidden;
-}
-
-.article{
-    display: flex;
-    width: 30%;
-}
-
-.article img, .article a{
-    width: 300px;
 }
 /* Home */
 .alert{
