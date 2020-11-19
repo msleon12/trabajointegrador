@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles-js.css">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script defer src="js/generos.js"></script>
+    <script defer src="js/buscador-validacion.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
@@ -21,9 +22,10 @@
                 <li>
                     <form action="buscador.html" method="GET">
                         <div class="form-group">
-                            <input type="text" id="inputValue" placeholder="Buscar..." name="nombre" value="">
+                            <input type="text" id="inputValue" class="searchfield" placeholder="Buscar..." name="nombre" value="">
                             <button type="submit" id="search" value=""><i class="fas fa-search "></i></button>
                         </div>
+                        <p class="alert"></p>
                     </form>
                 </li>
             </ul>

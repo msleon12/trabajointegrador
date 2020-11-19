@@ -10,43 +10,41 @@ const image_url = "https://image.tmdb.org/t/p/w500"
 
 //Géneros desplegables
 
-let submenu = document.querySelector(".submenu")
-let nombre = document.querySelector(".nombre")
-let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key=12058c71aa3652a9d53642bacf937088&language=es-ES"
+// let submenu = document.querySelector(".submenu")
+// let nombre = document.querySelector(".nombre")
+// let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key=12058c71aa3652a9d53642bacf937088&language=es-ES"
 
-fetch(urlGeneros)
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    console.log(data);
+// fetch(urlGeneros)
+// .then(function(response) {
+//     return response.json();
+// })
+// .then(function(data) {
+//     console.log(data);
 
-    let generos = data.genres
+//     let generos = data.genres
 
-    for(let i=0; i<generos.length; i++){
-    submenu.innerHTML += `<li><a href="./detallegenero.html">${generos[i].name}</a></li>`;
-    }
-})
-.catch(function(error) {
-    console.log("Error: " + error);
-})
+//     for(let i=0; i<generos.length; i++){
+//     submenu.innerHTML += `<li><a href="./detallegenero.html">${generos[i].name}</a></li>`;
+//     }
+// })
+// .catch(function(error) {
+//     console.log("Error: " + error);
+// })
 
 // Tendencias (trending) diario y semanal
 let diario = document.querySelector("#diario")
 let semanal = document.querySelector("#semanal")
 let trend = document.querySelector("#trend")
+let container = document.querySelector('.peliculas.tre')
 console.log(trend.value)
 
-/* trend.addEventListener('click', function(){
-    if (trend.value == "diario"){
-        const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
-        fetch(urlTrendDiario)
+const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
+    fetch(urlTrendDiario)
         .then(function(response){
             return response.json()
         })
         .then(function(data){
             console.log(data);
-            let container = document.querySelector('.peliculas.tre')
             let results = data.results
 
             for(let i=0; i<5; i++){
@@ -61,9 +59,38 @@ console.log(trend.value)
         })
         .catch(function(error){
             console.log('El error fue: ', error);
-        })}
-    else if (trend.value == "semanal"){
-        const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+        })
+
+diario.addEventListener('click', function(){   
+    
+        container.innerHTML=''
+        fetch(urlTrendDiario)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data);
+            
+            let results = data.results
+            
+            for(let i=0; i<5; i++){
+                let id_p = results[i].id
+                let trending = `<article class="art-peli">
+                                    <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                    </a>
+                                </article>`;
+                container.innerHTML += trending;
+            };
+        })
+        .catch(function(error){
+            console.log('El error fue: ', error);
+        })
+})  
+
+semanal.addEventListener('click', function(){
+    const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+        container.innerHTML=''
         fetch(urlTrendSemanal)
         .then(function(response){
             return response.json()
@@ -85,9 +112,9 @@ console.log(trend.value)
             .catch(function(error){
             console.log('El error fue: ', error);
         })
-    }
-}) */
 
+})
+    
 // Now playing (en cines) 
     const urlEstrenos = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=es-ES&page=1&region=AR` 
     fetch(urlEstrenos)
@@ -98,15 +125,21 @@ console.log(trend.value)
         console.log(data);
         let container = document.querySelector('.peliculas.estrenos')
         let results = data.results
-
-        for(let i=0; i<5; i++){
+        
+        for(let i=0; i<9; i++){
             let id_p = results[i].id
             let estrenos = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
-            container.innerHTML += estrenos;
+
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+                container.innerHTML += estrenos;
+            }
+            
+            
+            
         };
     })
     .catch(function(error){
@@ -131,7 +164,9 @@ console.log(trend.value)
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
-            container.innerHTML += ranking;
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+                container.innerHTML += ranking;
+            }
         };
     })
     .catch(function(error){
@@ -156,7 +191,9 @@ console.log(trend.value)
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
+            if(results[i].poster_path && results[i].name != "Esta obra no ha de tener título"){
             container.innerHTML += series;
+            }
         };
     })
     .catch(function(error){

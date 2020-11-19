@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script defer src= 'js/detalle-serie.js'></script>
+    <script defer src="js/buscador-validacion.js"></script>
 </head>
 <body>
      <!-- Encabezado -->
@@ -15,15 +16,22 @@
         <nav class="superior">
             <ul class="lista-sup">
                 <li><a href="./home.html">SuperFilms</a></li>
-                <li><a href="./generos.html">Géneros</a></li>
-                <li><a href="./series.html">Series</a></li>
-                <li><span id="mundos">Superhéroes</span>
+                <li><a href="./generos.html">Géneros</a>
                     <ul class="submenu">
-                        <li><a href="./marvel.html">Marvel</a></li>
-                        <li><a href="./dc.html">DC</a></li>
+                        
                     </ul>
                 </li>
-                
+                <li><a href="./series.html">Series</a></li>
+                <li>
+                    
+                    <form action="buscador.html" method="GET">
+                        <div class="form-group">
+                            <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
+                            <button type="submit" id="search"><i class="fas fa-search "></i></button>
+                        </div>
+                        <p class="alert"></p>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>

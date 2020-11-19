@@ -53,3 +53,10 @@
     color: red;
     font-size: 12px;
 }
+
+/* Detalle Genero */
+.titulo-genero{
+    margin-top: 170px;
+    margin-left: 40px;
+    font-size: 40px;
+}

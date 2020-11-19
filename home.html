@@ -31,7 +31,7 @@
                     <form action="buscador.html" method="GET">
                         <div class="form-group">
                             <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
-                            <button type="submit" id="search">Buscar</button>
+                            <button type="submit" id="search"><i class="fas fa-search"></i></button>
                         </div>
                         <p class="alert"></p>
                     </form>
@@ -63,10 +63,11 @@
             <h2>Tendencias</h2>
             <form action="home.html" method="GET">
                 <div class="trending">
-                    <select id="trend" name="trending" value="">
-                        <option id="diario" value="diario">Diario</option>
-                        <option id="semanal" value="semanal">Semanal</option>
-                    </select>
+                    <div id="trend" name="trending" value="">
+                        <button type="button" id="diario" value="diario"> Diario </button>
+                        <button type="button"  id ="semanal" value="semanal">Semanal</button>
+                    </div>
+                    
                 </div>
             </form>
         </article>
