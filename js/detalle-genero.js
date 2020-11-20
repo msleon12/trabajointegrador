@@ -71,7 +71,7 @@ if(media=="movie"){
             if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2] ){
                 let id_p = results[i].id
                 let tira = `<article class="art-peli bus">
-                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -86,7 +86,7 @@ if(media=="movie"){
     .catch(function(error){
         console.log('El error fue: ', error);
     })
-} else if(media=="tv"){
+} else if(media == "tv"){
     fetch(urlPeliculas)
     .then(function(response){
         return response.json()
@@ -98,7 +98,7 @@ if(media=="movie"){
             if(id == data.results[i].genre_ids[0] || id == data.results[i].genre_ids[1] || id == data.results[i].genre_ids[2]){
                 let id_serie = data.results[i].id
                 let articulo = `<article class='tira-series'>
-                                    <a href='detalleserie.html?id=${id_serie}'>
+                                    <a href='detalleserie.html?id=${id_serie}&media=${media}'>
                                         <img src= "${image_url + data.results[i].poster_path}" alt='${data.results[i].name}'>
                                         <h3> ${data.results[i].name}</h3> 
                                     </a>

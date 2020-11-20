@@ -15,6 +15,7 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const urlDetalle = `https://api.themoviedb.org/3/${media}/${id}?api_key=${api_key}&language=es-ES` 
 const image_url = "https://image.tmdb.org/t/p/w500"
 
+
 if(media == "movie"){
         // Pelicula principal
     fetch(urlDetalle)
@@ -46,12 +47,24 @@ if(media == "movie"){
         // Favoritos
         const boton = document.querySelector('.star')
         console.log(boton);
-        window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
-
+        window.localStorage.setItem('favoritos', '[]') //Guardo un array que se llama favoritos
+    
         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
             let storageJs = JSON.parse(storage); // Pasar de json a javascript
-            storageJs.push(id); // Agregarlo al array
+            
+            if(!storageJs.includes(id)){
+                
+                storageJs.push(id); // Agregarlo al array
+                boton.style.backgroundColor = "blue";
+            }
+            else {
+                storageJs = storageJs.filter(function(movie){
+                    return movie != id
+                })
+                boton.style.backgroundColor = "white"
+            }
+           
             
             console.log(storageJs);
             let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
@@ -103,8 +116,9 @@ if(media == "movie"){
         for(let i=0; i<10; i++){
             let id_p = results[i].id
             let info = `<article class="art-peli detalle">
-                            <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
-                            <h3>${results[i].title}</h3>
+                            <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}">
+                                <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <h3>${results[i].title}</h3>
                             </a>
                         </article>`
             similares.innerHTML += info;
@@ -115,7 +129,7 @@ if(media == "movie"){
     })
 
 }
-else {
+else if(media == "tv"){
     // Serie principal
     fetch(urlDetalle)
     .then(function(response){
@@ -150,11 +164,23 @@ else {
         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
             let storageJs = JSON.parse(storage); // Pasar de json a javascript
-            storageJs.push(id); // Agregarlo al array
             
+            if(!storageJs.includes(id)){
+                
+                storageJs.push(id); // Agregarlo al array
+                boton.style.backgroundColor = "blue";
+                let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
+                localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
+            }
+            else {
+                storageJs = storageJs.filter(function(movie){
+                    return movie != id
+                })
+                boton.style.backgroundColor = "white"
+            }
+           
             console.log(storageJs);
-            let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
-            localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
+            
         })
     })
     .catch(function(error){
@@ -177,7 +203,7 @@ else {
         for(let i=0; i<10; i++){
             let id_p = results[i].id
             let info = `<article class="art-peli detalle">
-                            <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
+                            <a class="peli" href="detalleserie.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path}>
                             <h3>${results[i].name}</h3>
                             </a>
                         </article>`

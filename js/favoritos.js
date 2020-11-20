@@ -1,13 +1,17 @@
 
 // Valores iniciales
 const idFavorito = window.localStorage.getItem('favoritos')
+console.log(idFavorito)
 let storage = localStorage.getItem('favoritos')
 console.log(storage);
 let storageJs = JSON.parse(storage); // Lo paso a JS
-const contenedor = document.querySelector('.favoritos-tira')
+
+const contenedor1 = document.querySelector('.favoritos-tira-peli')
+const contenedor2 = document.querySelector('.favoritos-tira-series')
 const api_key  = "12058c71aa3652a9d53642bacf937088"
 const image_url = "https://image.tmdb.org/t/p/w500"
 let movie = ''
+
 
 storageJs.forEach(id => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=es-ES`)
@@ -16,15 +20,16 @@ storageJs.forEach(id => {
     })
     .then(function(data){
         movie += `<article class = "favoritos">
-                        <a href="detallepeli.html?id=${idFavorito}">
+                        <a href="detallepeli.html?id=${idFavorito}&media=movie">
                             <h2> ${data.title}</h2>
                             <img src="${image_url + data.poster_path}" alt="${data.title}">
                         </a>
                     </article>`
-        contenedor.innerHTML += movie;
+        contenedor1.innerHTML += movie;
         console.log(movie);
     })
     .catch(function(error){
         console.log('El error fue: ', error);
     })
 });
+
