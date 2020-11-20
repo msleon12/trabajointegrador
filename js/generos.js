@@ -43,23 +43,3 @@ fetch(urlGeneros)
     console.log("Error: " + error);
 })
 
-//Géneros (series)
-let urlGenerosSeries = `https://api.themoviedb.org/3/genre/tv/list?api_key=${api_key}&language=es-ES`
-let genresSeries = document.querySelector(".tv")
-
-fetch(urlGenerosSeries)
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    console.log(data);
-
-    let generosTV = data.genres
-
-    for(let i=0; i<generosTV.length; i++){
-    genresSeries.innerHTML += `<li><a href="./detallegenero.html?id=${generosTV[i].id}">${generosTV[i].name}</a></li>`;
-    }
-})
-.catch(function(error) {
-    console.log("Error: " + error);
-})

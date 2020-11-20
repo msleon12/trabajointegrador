@@ -42,12 +42,12 @@ fetch(urlPeliculas)
         return response.json()
     })
     .then(function(data){
-        console.log(data)
+       
         let results = data.results
         console.log(results)
 
-        for(let i=0; i<10; i++){
-            if (id = results[i].genre_ids[i]){
+        for(let i = 0; i<20; i++){
+            if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2] ){
                 let id_p = results[i].id
                 let tira = `<article class="art-peli bus">
                                 <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
@@ -56,8 +56,14 @@ fetch(urlPeliculas)
                             </article>`;
                 peliculas.innerHTML += tira;
             }
+            else if (peliculas == ''){
+                peliculas.innerHTML += '<h2> Perdón, no tenemos películas para mostrarte de este género </h2>'
+            }
         }
+
+        
     })
     .catch(function(error){
         console.log('El error fue: ', error);
     })
+
