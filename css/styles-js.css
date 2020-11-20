@@ -70,13 +70,13 @@
 }
 
 /* Detalle peli */
-.art-peli-detalle{
+.art-peli-detalle, .art-peli-series{
 	width: 16%;
 	gap: 5%;
 	margin-left: 10px;
-	margin-top: 3%;
+	margin-top: 2%;
 }
 
-.art-peli-detalle h3{
+.art-peli-detalle h3,.art-peli-series h3 {
 	height: 50px;
 }
