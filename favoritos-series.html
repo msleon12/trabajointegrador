@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-js.css">
+    <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script defer src="js/buscador-validacion.js"></script>
+    <script defer src="js/favoritosSeries.js"></script>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <nav class="superior">
+            <ul class="lista-sup">
+                <div class="parte-uno">
+                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
+                    <li class="genero-encabezado">Géneros
+                        <ul class="submenu">
+                            <li><a href="generos.html">Peliculas</a></li>
+                            <li><a href="generos-serie.html">Series</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./series.html">Series</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                </div>
+                <div class="parte-dos">
+                    <li>
+                        <form action="buscador.html" method="GET">
+                            <div class="form-group">
+                                <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
+                                <button type="submit" id="search"><i class="fas fa-search "></i></button>
+                            </div>
+                            <p class="alert"></p>
+                        </form>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="margin: 170px 0 30px 30px;">Tus Favoritos</h1>
+    <section class="favoritos-tira">
+
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+        <a href="./home.html"><h3>SuperFilms</h3></a>
+        <ul class="logos">
+            <li><a href="https://www.themoviedb.org/?language=es"><img class= "logoTMDB" src="./imagenes/tmdb-logo.svg" alt="logotmbd-img"></a></li>
+            <li><i class="fab fa-facebook-f"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+        </ul>
+        <h5><i class="far fa-copyright"></i> 2020 Superfilms, todos los derechos reservados. Hecho por Mateo Moragues, Martín Leon y Constancio Vigil.</h5>
+    </footer>
+</body>
+</html>
