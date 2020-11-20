@@ -31,9 +31,10 @@ const image_url = "https://image.tmdb.org/t/p/w500"
 //     console.log("Error: " + error);
 // })
 
-/* // Slider
+// Slider
 let slider = document.querySelector(".slider-home")
 let urlSlider = `https://api.themoviedb.org/3/movie/550/recommendations?api_key=${api_key}&language=es-ES&page=1`
+
 
 fetch(urlSlider)
     .then(function(response){
@@ -42,16 +43,24 @@ fetch(urlSlider)
     .then(function(data){
         console.log(data);
         let results = data.results
-        let id_p = results[i].id
+        console.log(results[0].title);
 
         for(let i=0; i<5; i++){
-            let info = `<a class="active" href="detallepeli.html?id=${id_p}"><img class="imagenes" src=${results[i].poster_path} alt=${results[i].title}></a>`
+            let id_p = results[i].id
+            let info = `<article>
+                            <a class="active" href="detallepeli.html?id=${id_p}">
+                                <h2> ${results[i].title} </h2>
+                                <img class="imagenes" src="${ image_url + results[i].poster_path}" alt="${results[i].title}">
+                                
+                            </a>
+                        </article>
+                            `
             slider.innerHTML += info;
         };
     })
     .catch(function(error){
         console.log('El error fue: ', error);
-    }) */
+    }) 
 
 // Tendencias (trending) diario y semanal
 let diario = document.querySelector("#diario")

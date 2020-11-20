@@ -7,24 +7,6 @@ let submenu = document.querySelector(".submenu")
 let genres = document.querySelector(".genres")
 let urlGeneros = `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=es-ES`
 
-//Géneros desplegables
-// fetch(urlGeneros)
-// .then(function(response) {
-//     return response.json();
-// })
-// .then(function(data) {
-//     console.log(data);
-
-//     let generos = data.genres
-
-//     for(let i=0; i<generos.length; i++){
-//     submenu.innerHTML += `<li><a href="detallegenero.html?id="${generos[i].id}>${generos[i].name}</a></li>`;
-//     }
-// })
-// .catch(function(error) {
-//     console.log("Error: " + error);
-// })
-
 //Géneros (películas)
 fetch(urlGeneros)
 .then(function(response) {

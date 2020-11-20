@@ -15,6 +15,7 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const urlDetalle = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=es-ES` 
 const image_url = "https://image.tmdb.org/t/p/w500"
 
+// Pelicula principal
 fetch(urlDetalle)
 .then(function(response){
     return response.json()
@@ -26,7 +27,8 @@ fetch(urlDetalle)
                     <img src=${image_url + data.poster_path} alt="${data.title}">
                 </article>
                 <article class="info-obra">
-                    <h2 class="titulo obra">${data.title}</h2>
+                    <h2 class="titulo obra">${data.title}</h2> 
+                    <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
                     <ul class="info-fila">
                         <li><strong>Calificación: ${data.vote_average} </li>
                         <li><strong>Duración: ${data.runtime} minutos </strong> </li>
@@ -39,6 +41,21 @@ fetch(urlDetalle)
                 </article>`
     
     container.innerHTML += movie;
+
+    // Favoritos
+    const boton = document.querySelector('.star')
+    console.log(boton);
+    window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+
+    boton.addEventListener('click', function(){
+        let storage = localStorage.getItem('favoritos')
+        let storageJs = JSON.parse(storage); // Pasar de json a javascript
+        storageJs.push(id); // Agregarlo al array
+        
+        console.log(storageJs);
+        let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
+        localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
+    })
 })
 .catch(function(error){
     console.log('El error fue: ', error);
@@ -60,6 +77,7 @@ fetch(urlReviews)
         let comentarios = `<article class="comentarios">
                             <h3>${results[i].author}</h3>
                             <p>${results[i].content}</p>
+                            
                         </article>`;
         reviews.innerHTML += comentarios;
     }
@@ -94,3 +112,4 @@ fetch(urlSimilares)
 .catch(function(error){
     console.log('El error fue: ', error);
 })
+

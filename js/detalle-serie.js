@@ -27,6 +27,7 @@ fetch(urlSeriesDetalle)
                 </article>
                 <article class="info-obra">
                     <h2 class="titulo obra">${data.name}</h2>
+                    <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
                     <ul class="info-fila">
                         <li><strong>Calificación: ${data.vote_average} </strong></li>
                         <li><strong>Popularidad: ${data.popularity}</strong></li>
@@ -40,6 +41,21 @@ fetch(urlSeriesDetalle)
                 </article>`
 
     container.innerHTML += serie
+
+    // Favoritos
+    const boton = document.querySelector('.star')
+    console.log(boton);
+    window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+
+    boton.addEventListener('click', function(){
+        let storage = localStorage.getItem('favoritos')
+        let storageJs = JSON.parse(storage); // Pasar de json a javascript
+        storageJs.push(id); // Agregarlo al array
+        
+        console.log(storageJs);
+        let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
+        localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
+    })
 })
 .catch(function(error){
     console.log('El error fue: ', error);
