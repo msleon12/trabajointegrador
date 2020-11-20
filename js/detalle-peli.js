@@ -76,7 +76,7 @@ if(media == "movie"){
 
         for(let i=0; i<5; i++){
             let comentarios = `<article class="comentarios">
-                                <h3>${results[i].author}</h3>
+                                <h3><i class="fas fa-user"></i>${results[i].author}</h3>
                                 <p>${results[i].content}</p>
                                 
                             </article>`;

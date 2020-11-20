@@ -8,29 +8,6 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const urlBuscador = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}` 
 const image_url = "https://image.tmdb.org/t/p/w500"
 
-//Géneros desplegables
-
-// let submenu = document.querySelector(".submenu")
-// let nombre = document.querySelector(".nombre")
-// let urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key=12058c71aa3652a9d53642bacf937088&language=es-ES"
-
-// fetch(urlGeneros)
-// .then(function(response) {
-//     return response.json();
-// })
-// .then(function(data) {
-//     console.log(data);
-
-//     let generos = data.genres
-
-//     for(let i=0; i<generos.length; i++){
-//     submenu.innerHTML += `<li><a href="./detallegenero.html">${generos[i].name}</a></li>`;
-//     }
-// })
-// .catch(function(error) {
-//     console.log("Error: " + error);
-// })
-
 // Slider
 let slider = document.querySelector(".slider-home")
 let urlSlider = `https://api.themoviedb.org/3/movie/550/recommendations?api_key=${api_key}&language=es-ES&page=1`
@@ -128,6 +105,7 @@ semanal.addEventListener('click', function(){
             let results = data.results
         
             for(let i=0; i<5; i++){
+                let id_p = results[i].id
                 let trending = `<article class="art-peli">
                                     <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
                                         <img src=${image_url + results[i].poster_path} alt=${results[i].title}>

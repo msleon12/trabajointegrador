@@ -16,7 +16,7 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
         for(let i=0; i<10; i++){
             let id_p = results[i].id
             let series = `<article class="art-peli-series">
-                                <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
+                                <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
@@ -43,7 +43,7 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
         for(let i=0; i<10; i++){
             let id_p = results[i].id
             let series = `<article class="art-peli-series">
-                                <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
+                                <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
