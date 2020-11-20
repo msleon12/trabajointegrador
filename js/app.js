@@ -81,7 +81,7 @@ const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=
             for(let i=0; i<5; i++){
                 let id_p = results[i].id
                 let trending = `<article class="art-peli">
-                                    <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                     <h3>${results[i].title}</h3>
                                     </a>
                                 </article>`;
@@ -107,7 +107,7 @@ diario.addEventListener('click', function(){
             for(let i=0; i<5; i++){
                 let id_p = results[i].id
                 let trending = `<article class="art-peli">
-                                    <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                     <h3>${results[i].title}</h3>
                                     </a>
                                 </article>`;
@@ -133,8 +133,9 @@ semanal.addEventListener('click', function(){
         
             for(let i=0; i<5; i++){
                 let trending = `<article class="art-peli">
-                                    <a class="peli" href="detallepeli.html"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                    <h3>${results[i].title}</h3>
+                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
+                                        <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                        <h3>${results[i].title}</h3>
                                     </a>
                                 </article>`;
                 container.innerHTML += trending;
@@ -160,8 +161,9 @@ semanal.addEventListener('click', function(){
         for(let i=0; i<9; i++){
             let id_p = results[i].id
             let estrenos = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                <h3>${results[i].title}</h3>
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
+                                    <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
 
@@ -191,7 +193,7 @@ semanal.addEventListener('click', function(){
         for(let i=0; i<5; i++){
             let id_p = results[i].id
             let ranking = `<article class="art-peli">
-                                <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
@@ -218,7 +220,7 @@ semanal.addEventListener('click', function(){
         for(let i=0; i<5; i++){
             let id_p = results[i].id
             let series = `<article class="art-peli">
-                                <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
+                                <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
