@@ -35,7 +35,6 @@ const image_url = "https://image.tmdb.org/t/p/w500"
 let slider = document.querySelector(".slider-home")
 let urlSlider = `https://api.themoviedb.org/3/movie/550/recommendations?api_key=${api_key}&language=es-ES&page=1`
 
-
 fetch(urlSlider)
     .then(function(response){
         return response.json()
@@ -48,19 +47,16 @@ fetch(urlSlider)
         for(let i=0; i<5; i++){
             let id_p = results[i].id
             let info = `<article>
-                            <a class="active" href="detallepeli.html?id=${id_p}">
-                                <h2> ${results[i].title} </h2>
-                                <img class="imagenes" src="${ image_url + results[i].poster_path}" alt="${results[i].title}">
-                                
+                            <a class="active" href="detallepeli.html?id=${id_p}&media=movie">
+                                <img class="imagenes" src="${image_url + results[i].poster_path}" alt="${results[i].title}">
                             </a>
-                        </article>
-                            `
+                        </article>`
             slider.innerHTML += info;
         };
     })
     .catch(function(error){
         console.log('El error fue: ', error);
-    }) 
+    })
 
 // Tendencias (trending) diario y semanal
 let diario = document.querySelector("#diario")

@@ -134,8 +134,7 @@ a:link, a:visited, a:active {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin: 2%;
 }
 
 .art-peli{
@@ -355,6 +354,14 @@ a:link, a:visited, a:active {
 
 .relacionadas{
     margin-top: 20px;
+}
+
+.detalle{
+    margin: 2%;
+}
+
+.simil{
+    margin: 0;
 }
 
 /*Superhéroes*/

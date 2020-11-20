@@ -1,5 +1,3 @@
-let container = document.querySelector('.obra')
-
 // Paso 1 : obtener la querystring
 let queryString = location.search;
 console.log(queryString);
@@ -12,6 +10,7 @@ let id = queryObject.get('id');
 let media = queryObject.get('media')
 
 // Valores iniciales
+let container = document.querySelector('.obra')
 const api_key  = "12058c71aa3652a9d53642bacf937088"
 const urlDetalle = `https://api.themoviedb.org/3/${media}/${id}?api_key=${api_key}&language=es-ES` 
 const image_url = "https://image.tmdb.org/t/p/w500"
@@ -32,7 +31,7 @@ if(media == "movie"){
                         <h2 class="titulo obra">${data.title}</h2> 
                         <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
                         <ul class="info-fila">
-                            <li><strong>Calificación: ${data.vote_average} </li>
+                            <li><strong>Calificación: ${data.vote_average}</strong></li>
                             <li><strong>Duración: ${data.runtime} minutos </strong> </li>
                             <li><strong>Fecha de estreno: ${data.release_date}</strong></li>
                             <li><strong>Género: ${data.genres[0].name}</strong> </li>
@@ -103,7 +102,7 @@ if(media == "movie"){
                 
         for(let i=0; i<10; i++){
             let id_p = results[i].id
-            let info = `<article class= "art-peli-detalle">
+            let info = `<article class="art-peli detalle">
                             <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
                             <h3>${results[i].title}</h3>
                             </a>
@@ -117,7 +116,7 @@ if(media == "movie"){
 
 }
 else {
-    // Pelicula principal
+    // Serie principal
     fetch(urlDetalle)
     .then(function(response){
         return response.json()
@@ -132,9 +131,9 @@ else {
                          <h2 class="titulo obra">${data.name}</h2> 
                          <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
                          <ul class="info-fila">
-                             <li><strong>Calificación: ${data.vote_average} </li>
-                             <li><strong>Duración: ${data.runtime} minutos </strong> </li>
-                             <li><strong>Fecha de estreno: ${data.release_date}</strong></li>
+                             <li><strong>Calificación: ${data.vote_average}</strong></li>
+                             <li><strong>Temporadas: ${data.number_of_seasons}</strong> </li>
+                             <li><strong>Fecha de estreno: ${data.first_air_date}</strong></li>
                              <li><strong>Género: ${data.genres[0].name}</strong> </li>
                          </ul>
                          <article class="descripcion">
@@ -175,9 +174,9 @@ else {
             
         let results = data.results
                 
-        for(let i=0; i<5; i++){
+        for(let i=0; i<10; i++){
             let id_p = results[i].id
-            let info = `<article class="art-peli">
+            let info = `<article class="art-peli detalle">
                             <a class="peli" href="detalleserie.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
                             <h3>${results[i].name}</h3>
                             </a>
