@@ -73,7 +73,7 @@ const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=
         .then(function(data){
             console.log(data);
             let results = data.results
-
+            
             for(let i=0; i<5; i++){
                 let id_p = results[i].id
                 let trending = `<article class="art-peli">
