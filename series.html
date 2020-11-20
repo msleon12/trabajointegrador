@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <title>Series</title>
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles-js.css">
     <script defer src="js/buscador-validacion.js"></script>
 </head>
 <body>
@@ -14,23 +15,26 @@
      <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
-                <li><a href="./home.html">SuperFilms</a></li>
-                <li><a href="./generos.html">Géneros</a>
-                    <ul class="submenu">
-                        
-                    </ul>
-                </li>
-                <li><a id="principal" href="./series.html">Series</a></li>
-                <li>
-                    
-                    <form action="buscador.html" method="GET">
-                        <div class="form-group">
-                            <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
-                            <button type="submit" id="search"><i class="fas fa-search "></i></button>
-                        </div>
-                        <p class="alert"></p>
-                    </form>
-                </li>
+                <div class="parte-uno">
+                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
+                    <li class="genero-encabezado"><a href="./generos.html">Géneros</a>
+                        <ul class="submenu">
+                            
+                        </ul>
+                    </li>
+                    <li><a id="principal" href="./series.html">Series</a></li>
+                </div>
+                <div class="parte-dos">
+                    <li>
+                        <form action="buscador.html" method="GET">
+                            <div class="form-group">
+                                <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
+                                <button type="submit" id="search"><i class="fas fa-search "></i></button>
+                            </div>
+                            <p class="alert"></p>
+                        </form>
+                    </li>
+                </div>
             </ul>
         </nav>
     </header>

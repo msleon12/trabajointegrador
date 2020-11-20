@@ -81,9 +81,9 @@ fetch(urlSimilares)
          
     let results = data.results
             
-    for(let i=0; i<5; i++){
+    for(let i=0; i<10; i++){
         let id_p = results[i].id
-        let info = `<article class="art-peli">
+        let info = `<article class="art-peli-detalle">
                         <a class="peli" href="detallepeli.html?id=${id_p}"><img src=${image_url + results[i].poster_path}>
                         <h3>${results[i].title}</h3>
                         </a>

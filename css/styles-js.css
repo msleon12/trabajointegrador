@@ -1,3 +1,6 @@
+*{
+	box-sizing: border-box;
+}
 .no-js #loader {display: none;}
 .js #loader {display: block; position: absolute; left: 100px; top: 0;}
 .load {
@@ -10,12 +13,50 @@
 	background: url(https://media.giphy.com/media/1gdoeJmc3piKTeORzG/giphy.gif) center no-repeat #fff;
 }
 
-
 /* Buscador */
 #contenedor{
     display: flex;
 }
-/* Home */
+
+.parte-uno{
+	width: 70%;
+	display: flex;
+}
+.parte-uno li{
+	width: 21%;
+	margin: 7px;
+}
+
+.parte-uno li :hover{
+	width: 40%;
+}
+
+
+#serie-encabezado{
+	text-align: left;
+}
+
+.genero-encabezado{
+	text-align: right;
+}
+
+.parte-dos{
+	width: 30%;
+	
+}
+
+.form-group{
+	margin-left: 10%;
+	width: 60%;
+	height: 60%;
+	
+}
+
+#search, #inputValue{
+	height: 30px;	
+}
+
+/* Validación "El campo no debe estar vacío" */
 .alert{
     color: red;
     font-size: 12px;
@@ -26,4 +67,16 @@
     margin-top: 170px;
     margin-left: 40px;
     font-size: 40px;
+}
+
+/* Detalle peli */
+.art-peli-detalle{
+	width: 16%;
+	gap: 5%;
+	margin-left: 10px;
+	margin-top: 3%;
+}
+
+.art-peli-detalle h3{
+	height: 50px;
 }
