@@ -160,6 +160,11 @@ else if(media == "tv"){
         const boton = document.querySelector('.star')
         console.log(boton);
         window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        let objeto = {
+            tipo: media,
+            numero: id,
+
+        }
 
         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
