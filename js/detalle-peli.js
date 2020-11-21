@@ -44,32 +44,37 @@ if(media == "movie"){
         
         container.innerHTML += movie;
 
-        // Favoritos
+         // Favoritos
         const boton = document.querySelector('.star')
         console.log(boton);
-        window.localStorage.setItem('favoritos', '[]') //Guardo un array que se llama favoritos
-    
-        boton.addEventListener('click', function(){
+        window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
+        tipo: media,
+        id: id,
+        }
+ 
+         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
             let storageJs = JSON.parse(storage); // Pasar de json a javascript
-            
-            if(!storageJs.includes(id)){
-                
-                storageJs.push(id); // Agregarlo al array
+             
+            if(!storageJs.includes(objeto)){
+                 
+                storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue";
+                let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
+                localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
             }
             else {
                 storageJs = storageJs.filter(function(movie){
-                    return movie != id
+                    return movie != objeto
                 })
                 boton.style.backgroundColor = "white"
-            }
-           
+             }
             
-            console.log(storageJs);
-            let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
-            localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
-        })
+             console.log(storageJs);
+             
+         })
+
     })
     .catch(function(error){
         console.log('El error fue: ', error);
@@ -160,33 +165,32 @@ else if(media == "tv"){
         const boton = document.querySelector('.star')
         console.log(boton);
         window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
-        let objeto = {
-            tipo: media,
-            numero: id,
-
+        let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
+        tipo: media,
+        id: id,
         }
-
+ 
         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
             let storageJs = JSON.parse(storage); // Pasar de json a javascript
-            
-            if(!storageJs.includes(id)){
-                
-                storageJs.push(id); // Agregarlo al array
+             
+            if(!storageJs.includes(objeto)){
+                 
+                storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue";
                 let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
                 localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
             }
             else {
                 storageJs = storageJs.filter(function(movie){
-                    return movie != id
+                    return movie != objeto
                 })
                 boton.style.backgroundColor = "white"
-            }
-           
-            console.log(storageJs);
+             }
             
-        })
+             console.log(storageJs);
+             
+         })
     })
     .catch(function(error){
         console.log('El error fue: ', error);
