@@ -132,7 +132,7 @@ semanal.addEventListener('click', function(){
         let container = document.querySelector('.peliculas.estrenos')
         let results = data.results
         
-        for(let i=0; i<9; i++){
+        for(let i=0; i<6; i++){
             let id_p = results[i].id
             let estrenos = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">

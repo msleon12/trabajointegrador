@@ -59,14 +59,15 @@ if(media == "movie"){
                 tipo: media,
                 id: id,
                 }
-            if(!storageJs.includes(objeto)){
+            let objetostring = JSON.stringify(objeto)
+            if(!storage.includes(objetostring)){
                 storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue"; 
                 
             }
             else {
                 storageJs = storageJs.filter(function(movie){
-                    return movie != objeto
+                    return movie != objetostring
                 })
                 boton.style.backgroundColor = "white"
             }
@@ -241,6 +242,40 @@ else if(media == "tv"){
         console.log('El error fue: ', error);
     })
     
+}
+else if (media == "person"){
+    fetch(urlDetalle)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data)
+        let movie = `<article class="imagen-obra avengers"> 
+                        <img src=${image_url + data.profile_path} alt="${data.name}">
+                     </article>
+                     <article class="info-obra">
+                         <h2 class="titulo obra">${data.name}</h2> 
+                         <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
+                         <ul class="info-fila">
+                             <li><strong>Lugar de nacimiento: ${data.place_of_birth}</strong></li>
+                             <li><strong> Fecha de nacimiento: ${data.birthday}</strong> </li>
+                             <li><strong> Popularidad: ${data.popularity}</strong> </li>
+                         </ul>
+                         <article class="descripcion">
+                             <p> ${data.biography} </p>  
+                         </article>
+                     </article>`
+         
+        container.innerHTML = movie; 
+        let relacionadas = document.querySelector('#texto-relacionadas')
+        relacionadas.innerText = ""
+        let opiniones = document.querySelector("#texto-opiniones")
+        opiniones.innerText = ""
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })  
+
 }
 
 
