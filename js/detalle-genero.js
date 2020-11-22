@@ -77,11 +77,10 @@ if(media=="movie"){
                             </article>`;
                 peliculas.innerHTML += tira;
             }
+            
         }
-        /* if (peliculas == null){
-            peliculas.innerHTML += '<h2> Perdón, no tenemos películas para mostrarte de este género </h2>'
-            console.log("hola")
-        } */
+        // Escribir caso en que no hayan peliculas
+        
     })
     .catch(function(error){
         console.log('El error fue: ', error);

@@ -35,7 +35,7 @@ if(media == "movie"){
                             <li><strong>Calificación: ${data.vote_average}</strong></li>
                             <li><strong>Duración: ${data.runtime} minutos </strong> </li>
                             <li><strong>Fecha de estreno: ${data.release_date}</strong></li>
-                            <li><strong>Género: ${data.genres[0].name}</strong> </li>
+                            <li><strong>Género: ${data.genres[0].name}</strong> </li> 
                         </ul>
                         <article class="descripcion">
                             <p> ${data.overview} </p>  
@@ -53,12 +53,12 @@ if(media == "movie"){
         id: id,
         }
  
-         boton.addEventListener('click', function(){
+        boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos')
             let storageJs = JSON.parse(storage); // Pasar de json a javascript
              
             if(!storageJs.includes(objeto)){
-                 
+                
                 storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue";
                 let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
@@ -73,7 +73,7 @@ if(media == "movie"){
             
              console.log(storageJs);
              
-         })
+        })
 
     })
     .catch(function(error){
@@ -92,14 +92,20 @@ if(media == "movie"){
         console.log(data);
         let results = data.results
 
-        for(let i=0; i<5; i++){
-            let comentarios = `<article class="comentarios">
-                                <h3><i class="fas fa-user"></i>${results[i].author}</h3>
-                                <p>${results[i].content}</p>
-                                
-                            </article>`;
-            reviews.innerHTML += comentarios;
+        if (results[0]){
+            for(let i=0; i<5; i++){
+                let comentarios = `<article class="comentarios">
+                                    <h3><i class="fas fa-user"></i>${results[i].author}</h3>
+                                    <p>${results[i].content}</p>
+                                    
+                                </article>`;
+                reviews.innerHTML += comentarios;
+            }
         }
+        else{
+            reviews.innerHTML += "<h3> Lo sentimos, no tenemos opiniones para mostrarte </h3>"
+        }
+        
     })
     .catch(function(error){
         console.log('El error fue: ', error);
@@ -117,17 +123,23 @@ if(media == "movie"){
         console.log(data);
             
         let results = data.results
-                
-        for(let i=0; i<10; i++){
-            let id_p = results[i].id
-            let info = `<article class="art-peli detalle">
-                            <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}">
-                                <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                <h3>${results[i].title}</h3>
-                            </a>
-                        </article>`
-            similares.innerHTML += info;
-        };
+        
+        if(results[0]){
+            for(let i=0; i<10; i++){
+                let id_p = results[i].id
+                let info = `<article class="art-peli detalle">
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}">
+                                    <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`
+                similares.innerHTML += info;
+            };
+        }
+        else{
+            similares.innerHTML += "<h3> Lo sentimos, no tenemos peliculas relacionadas para compartirte </h3>"
+        }
+        
     })
     .catch(function(error){
         console.log('El error fue: ', error);
@@ -181,7 +193,7 @@ else if(media == "tv"){
                 let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
                 localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
             }
-            else {
+            else { //Sacar de favoritos 
                 storageJs = storageJs.filter(function(movie){
                     return movie != objeto
                 })
@@ -208,16 +220,22 @@ else if(media == "tv"){
         console.log(data);
             
         let results = data.results
-                
-        for(let i=0; i<10; i++){
-            let id_p = results[i].id
-            let info = `<article class="art-peli detalle">
-                            <a class="peli" href="detalleserie.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path}>
-                            <h3>${results[i].name}</h3>
-                            </a>
-                        </article>`
-            similares.innerHTML += info;
-        };
+        
+        if(results[0]){
+            for(let i=0; i<10; i++){
+                let id_p = results[i].id
+                let info = `<article class="art-peli detalle">
+                                <a class="peli" href="detalleserie.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path}>
+                                <h3>${results[i].name}</h3>
+                                </a>
+                            </article>`
+                similares.innerHTML += info;
+            };
+        }
+        else{
+            similares.innerHTML += "<h3> Lo siento, no tenemos series relacionadas para compartirte </h3>"
+        }
+        
     })
     .catch(function(error){
         console.log('El error fue: ', error);
