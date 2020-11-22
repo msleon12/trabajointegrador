@@ -67,8 +67,10 @@ if(media=="movie"){
         let results = data.results
         console.log(results)
 
-        for(let i = 0; i<200; i++){
-            if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2] ){
+
+        for(let i = 0; i<30; i++){
+    
+            if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1]||id == results[i].genre_ids[2] || id == results[i].genre_ids[3] || id == results[i].genre_ids[4]){
                 let id_p = results[i].id
                 let tira = `<article class="art-peli bus">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
@@ -76,9 +78,12 @@ if(media=="movie"){
                                 </a>
                             </article>`;
                 peliculas.innerHTML += tira;
-            }
-            
+            }  
+            // else {
+            //     peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte </h3>"
+            // }
         }
+        
         // Escribir caso en que no hayan peliculas
         
     })
