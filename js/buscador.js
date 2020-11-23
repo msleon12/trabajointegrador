@@ -25,7 +25,6 @@ fetch(newUrl)
 
   // for(let i=0; i<movies.length; i++){  Lo que escribi abajo es igual a esto 
 
-  
   for (const movie of movies) {
     if(movie.media_type == "movie" && movie.poster_path){
       contenedor.innerHTML+=`<article class="art-peli detalle">
@@ -42,7 +41,7 @@ fetch(newUrl)
                                         <h3>${movie.name}</h3></a>
                                     </article>`
     }
-    else if (movie.profile_path){ //Para personas
+    else if (movie.media_type == "person" && movie.profile_path){ //Para personas
             contenedor.innerHTML+= `<article class="art-peli detalle">
                                         <a class="peli" href=detallepeli.html?id=${movie.id}&media=person>
                                         <img src=${image_url + movie.profile_path} data-movie-id=${movie.id}/>
@@ -50,4 +49,7 @@ fetch(newUrl)
                                       </article>`
             }
     }
-});
+})
+.catch(function(error){
+  console.log('El error fue: ', error)
+})
