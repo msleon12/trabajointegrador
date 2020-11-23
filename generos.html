@@ -6,7 +6,7 @@
     <title>Géneros</title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles-js.css">
+    <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script defer src="js/generos.js"></script>
     <script defer src="js/buscador-validacion.js"></script>
@@ -16,15 +16,17 @@
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
+                <div class="parte-cero">
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                </div>
                 <div class="parte-uno">
-                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
-                    <li id="principal" class="genero-encabezado"> <a href="generos.html"> Géneros </a> </li>
-                    <li><a href="./series.html">Series</a></li>
+                    <li><a id="principal" href="generos.html">Géneros</a></li>
+                    <li><a href="series.html">Series</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
-                        <form action="buscador.html" method="GET">
+                        <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
@@ -38,8 +40,8 @@
     </header>
 
     <!--Lista de géneros-->
-    <section style="margin-top: 170px;">
-        <article class="title">
+    <section class="tira">
+        <article class="title gen">
             <h2>Películas</h2>
         </article>
         <ul class="genres mov">
@@ -47,7 +49,7 @@
         </ul>
     </section>
     <section>
-        <article class="title">
+        <article class="title gen ser">
             <h2>Series</h2>
         </article>
         <ul class="genres tv">

@@ -10,8 +10,6 @@ console.log(storageJs);
 // Para favoritos
 window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
 
-
-
 const contenedor1 = document.querySelector('.favoritos-tira-peli')
 const contenedor2 = document.querySelector('.favoritos-tira-series')
 const api_key  = "12058c71aa3652a9d53642bacf937088"
@@ -30,7 +28,7 @@ for(let i=0; i<30; i++){
             return response.json()
         })
         .then(function(data){
-            movie += `<article class = "favoritos">
+            movie += `<article class="favoritos">
                             <a href="detallepeli.html?id=${data.id}&media=movie">
                                 <h2> ${data.title}</h2>
                                 <img src="${image_url + data.poster_path}" alt="${data.title}">

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <title>Series</title>
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles-js.css">
     <script defer src="js/buscador-validacion.js"></script>
     <script defer src="js/series.js"></script>
 </head>
@@ -16,15 +16,17 @@
      <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
+                <div class="parte-cero">
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                </div>
                 <div class="parte-uno">
-                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
-                    <li class="genero-encabezado"> <a href="generos.html"> Géneros </a> </li>
-                    <li id="principal"><a href="./series.html">Series</a></li>
+                    <li><a href="generos.html">Géneros</a></li>
+                    <li><a id="principal" href="series.html">Series</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
-                        <form action="buscador.html" method="GET">
+                        <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
@@ -39,30 +41,27 @@
 
     <!-- Portada -->
     <section class="slider">
-        <figure>
-            <a href="./detalleserie.html"><img class="imagenes" src="./imagenes/series-portada/arrow-buena.jpeg" alt="Arrow"></a>
-            <a href="./detalleserie.html"><img class="imagenes" src="./imagenes/series-portada/daredevil.png" alt="Daredevil"></a>
-            <a href="./detalleserie.html"><img class="imagenes" src="./imagenes/series-portada/the-flash.jpeg" alt="Flash"></a>
-            <a href="./detalleserie.html"><img class="imagenes" src="./imagenes/series-portada/the-punisher.png" alt="The Punisher"></a>
-            <a href="./detalleserie.html"><img class="imagenes" src="./imagenes/series-portada/arrow-buena.jpeg" alt="Arrow"></a>
+        <figure class="slider-home">
+            
         </figure>
-
     </section>
 
     <!-- Series -->
-    <h1 style="margin-left: 20px;">Populares</h1>
-    <section style="display:flex" class="series-slider populares">
-        
-
-        <!-- <article class="art-heroe">
-            <a class="heroe" href="detalleserie.html"><img src="imagenes/series/the-punisher-cuadrado.jpg" alt="The Punisher">
-            <h3>The Punisher</h3></a>
-        </article> -->
-        
+    <section class="tira uno">
+        <article class="titulo pop">
+            <h2>Populares</h2>
+        </article>
+        <section class="peliculas populares">
+           
+        </section>
     </section>
-    <h1 style="margin-left: 20px;">Top Ranked</h1>
-    <section style="display:flex" class="series-slider top">
-
+    <section class="tira dos">
+        <article class="titulo pop">
+            <h2>Mejor calificadas</h2>
+        </article>
+        <section class="peliculas rated">
+            
+        </section>
     </section>
 
      <!--Footer-->

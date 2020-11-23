@@ -38,7 +38,7 @@ if(media == "movie"){
                             <li><strong>Calificación: ${data.vote_average}</strong></li>
                             <li><strong>Duración: ${data.runtime} minutos </strong> </li>
                             <li><strong>Fecha de estreno: ${data.release_date}</strong></li>
-                            <li><strong>Género: ${data.genres[0].name}</strong> </li> 
+                            <li><strong>Género: <a href="detallegenero.html?id=${data.genres[0].id}&media=movie">${data.genres[0].name}</a></strong> </li> 
                         </ul>
                         <article class="descripcion">
                             <p> ${data.overview} </p>  
@@ -91,13 +91,12 @@ if(media == "movie"){
                 let comentarios = `<article class="comentarios">
                                     <h3><i class="fas fa-user"></i>${results[i].author}</h3>
                                     <p>${results[i].content}</p>
-                                    
                                 </article>`;
                 reviews.innerHTML += comentarios;
             }
         }
         else{
-            reviews.innerHTML += "<h3> Lo sentimos, no tenemos opiniones para mostrarte </h3>"
+            reviews.innerHTML += '<h3 class="sorry">Lo sentimos, no tenemos opiniones para mostrarte.</h3>'
         }
         
     })
@@ -131,7 +130,7 @@ if(media == "movie"){
             };
         }
         else{
-            similares.innerHTML += "<h3> Lo sentimos, no tenemos peliculas relacionadas para compartirte </h3>"
+            similares.innerHTML += '<h3 class"sorry">Lo sentimos, no tenemos películas relacionadas para mostrarte.</h3>'
         }
         
     })
@@ -159,7 +158,7 @@ else if(media == "tv"){
                              <li><strong>Calificación: ${data.vote_average}</strong></li>
                              <li><strong>Temporadas: ${data.number_of_seasons}</strong> </li>
                              <li><strong>Fecha de estreno: ${data.first_air_date}</strong></li>
-                             <li><strong>Género: ${data.genres[0].name}</strong> </li>
+                             <li><strong>Género: <a href="detallegenero.html?id=${data.genres[0].id}&media=tv">${data.genres[0].name}</a></strong> </li>
                          </ul>
                          <article class="descripcion">
                              <p> ${data.overview} </p>  
@@ -227,7 +226,7 @@ else if(media == "tv"){
             };
         }
         else{
-            similares.innerHTML += "<h3> Lo siento, no tenemos series relacionadas para compartirte </h3>"
+            similares.innerHTML += "<h3>Lo sentimos, no tenemos series relacionadas para mostrarte.</h3>"
         }
         
     })

@@ -4,6 +4,18 @@
     font-weight: normal;
 }
 
+.no-js #loader {display: none;}
+.js #loader {display: block; position: absolute; left: 100px; top: 0;}
+.load {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://media.giphy.com/media/1gdoeJmc3piKTeORzG/giphy.gif) center no-repeat #fff;
+}
+
 body{
     margin: 0;
     background-image: url(../imagenes/background/purple1.jpg);
@@ -16,6 +28,15 @@ body{
 }
 
 /*Encabezado*/
+
+/* Establecer un menú fijo */
+.encabezado{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    top: 0;
+}
 
 .superior{
     display: flex;
@@ -30,65 +51,15 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: start;
-    align-items: baseline;
-    font-size: 30px;
-    position: relative;
-}
-
-.submenu {
-    font-size: 30px;
-    list-style: none;
-    display: none;
-}
-
-.lista-sup li{
-    margin-right: 4%;
-    text-shadow: 2px 2px black;
-}
-
-/* Hover */
-
-.lista-sup li a:hover{
-    font-size: 45px;
-    font-style: italic;
-    transition: all .2s;
-    color: #ce7d35;
-}
-
-.lista-sup li:hover{
-    font-size: 45px;
-    font-style: italic;
-    transition: all .2s;
-    
-}
-
-.lista-sup li:hover .submenu{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 20px;
+    justify-content: space-around;
     align-items: center;
-    justify-items: start;
+    font-size: 30px;
 }
 
-
-
-/* Establecer un menú fijo */
-.encabezado{
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    display: block;
-    top: 0;
-}
-
-/* Sacarle el underline a los links y cambio de color*/
+/* Sacar underline a los links y cambiar color*/
 a:link, a:visited, a:active {
-    text-decoration:none;
+    text-decoration: none;
     color: white;
-    justify-items: center;
-    align-items: center;
 }
 
 #principal{
@@ -97,11 +68,57 @@ a:link, a:visited, a:active {
     color: #ce7d35;
 }
 
+.parte-cero{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    width: 20%;
+}
+
 .parte-uno{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    width: 35%;
+}
+
+.parte-dos{
+    width: 30%;
+    align-items: inherit;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+}
+
+#inputValue{
+    width: 70%;
+}
+
+#search, #inputValue{
+	height: 30px;	
+}
+
+#search{
+    cursor: pointer;
+}
+
+/* Validación buscador "El campo no debe estar vacío" */
+.alert{
+    color: red;
+    font-size: 12px;
+}
+
+/* Hover */
+.parte-uno a:hover{
+    font-size: 45px;
+    font-style: italic;
+    transition: all .2s;
+    color: #ce7d35;
 }
 
 
@@ -119,6 +136,10 @@ a:link, a:visited, a:active {
 .titulo h2{
     margin: 0;
     margin-left: 3%;
+}
+
+#diario, #semanal{
+    cursor: pointer;
 }
 
 .visto{
@@ -229,10 +250,14 @@ a:link, a:visited, a:active {
     margin-top: 130px;
 }
 
-.gen h1{
+.gen h1, .gen h2{
     margin: 0;
+    font-size: 60px;
 }
 
+.ser{
+    margin: 0;
+}
 
 
 /*Detalle peli-serie*/
@@ -252,11 +277,6 @@ a:link, a:visited, a:active {
     width: 480px;
     height: 500px;
     box-shadow: 5px 5px 5px black;
-}
-
-.avengers{
-    height: 600px;
-    width: 550px;
 }
 
 .imagen-obra img{
@@ -375,57 +395,10 @@ a:link, a:visited, a:active {
     margin: 0;
 }
 
-/*Superhéroes*/
-
-.grid-heroe{
+.sorry{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 120px;
-    padding-bottom: 30px;
-}
-
-.art-heroe{
-    width: 30%;
-    height: 520px;
-    margin: 30px 0px 10px 0px;
-}
-
-.heroe{
-    border-color: black;
-    border-style: double;
-    background-color:  #5850A1;
-    box-shadow: 5px 5px 5px black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-
-.heroe img{
-    width: 100%;
-    height: 100%;
-    max-height: 400px;
-    object-fit: fill;
-}
-
-.heroe h3{
-    font-size: 150%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    max-height: 100px;
-    margin: 0;
 }
-
 
 /*Footer*/
 
@@ -486,7 +459,7 @@ footer h5{
 .slider {
     overflow: hidden;
     padding-top: 10px;
-    height: 550px;
+    height: 450px;
 }
 
 .slider figure {
@@ -536,74 +509,15 @@ footer h5{
 }
 
 
-/* Series html */
-
-.series-slider{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
-.art-heroe{
-    width: 28%;
-    padding: 20px 15px 0px 15px;
-}
-
-.art-heroe h3{
-    font-size: 20px;
-}
-/*Mundos html*/
-
-.portada{
-    width: 100%;
-    height: 500px;
-    margin: 0 0 3% 0;
-}
-
-.portada img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
 /* Responsive */
 
 @media(max-width:1024px){
     #movies-searchable{
         margin-top: 170px;
     }
-    /* marvel y Dc */
+
     .info-fila{
         font-size: 15px;
-    }
-    
-    .md{
-        height: 400px;
-    }
-
-    .md img{
-        height: 300px;
-    }
-
-    .md h3{
-        height: 80px;
-    }
-
-    /* Superheroes */
-    .art-heroe{
-        height: 400px;
-    }
-
-    .art-heroe img{
-        height: 300px;
-    }
-
-    .art-heroe h3{
-        height: 80px;
     }
 
     /* Series */
@@ -621,25 +535,8 @@ footer h5{
 
 @media(max-width:768px){
    /* General */
-    body{
-        background-image: none;
-    }
-
     #movies-searchable{
         margin-top: 170px;
-    }
-    
-    .art-heroe{
-        height: 340px;
-    }
-
-    .art-heroe img{
-        height: 250px;
-    }
-
-    .art-heroe h3{
-        padding-bottom: 20px;
-        font-size: 18px;
     }
 
     /* Home */
@@ -652,15 +549,9 @@ footer h5{
         margin: 0 0 3% 3%;
     }
 
-    /* Encabezado */
-    #mundos{
-        display: none;
-    }
-
-    .submenu{
-        display: block;
-        position: relative;
-        padding: 0;
+    .art-peli:hover{
+        width: 200px;
+        height: 310px;
     }
 
     /* Series */
@@ -686,38 +577,15 @@ footer h5{
         transition: none;
     }
 
-    #mundos:hover + .submenu{
-        background-image: none;
-    }
-    
-    .submenu:hover{
-        background-image: none;
-    }
-
     .peliculas{
         justify-content: center;
         margin-right: 3%;
-    }
-
-    /* Superheroes */
-    .grid-heroe{
-        padding-top: 140px;
-    }
-
-    /* DC Marvel */
-    .md{margin: 0 3% 3% 3%;
     }
 
     /*Detalle*/
     .obra{
         margin-top: 25%;
     }
-
-    .avengers{
-        width: 380px;
-        height: 550px;
-    }
-
     .descripcion{
         font-size: 15px;
     }
@@ -730,11 +598,6 @@ footer h5{
 }
 
 @media(max-width:425px){
-    body{
-        background-image: none;
-         
-    }
-    
     #movies-searchable{
         margin-top: 170px;
     }
@@ -749,16 +612,6 @@ footer h5{
         position: relative;
     }
 
-    #mundos{
-        display: none;
-    }
-
-    .submenu{
-        display: block;
-        position: relative;
-        padding: 0;
-    }
-
     /* Hover */
     .lista-sup li a:hover{
         font-size: 30px;
@@ -771,14 +624,6 @@ footer h5{
         font-size: 30px;
         font-style: normal;
         transition: none;
-    }
-
-    #mundos:hover + .submenu{
-        background-image: none;
-    }
-    
-    .submenu:hover{
-        background-image: none;
     }
 
     .uno{
@@ -802,38 +647,6 @@ footer h5{
        margin: 5%
     }
 
-    /* Superhéroes */
-    .grid-heroe{
-        padding-top: 250px;
-    }
-
-    .art-heroe{
-        width: 160px;
-        height: 300px;
-    }
-    
-    .heroe{
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .heroe img{
-        width: 100%;
-        height: 100%;
-        max-height: 220px;
-        object-fit: fill;
-    }
-    
-    .heroe h3{
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        max-height: 80px;
-        font-size: 100%;
-    }
-
     /* Series */
     .slider{
         display: none;
@@ -841,11 +654,6 @@ footer h5{
 
     .series-slider{
         padding-top: 250px;
-    }
-
-    /* DC Marvel */
-    .md h3 {
-        font-size: 110%;
     }
 
     /*Detalle*/
@@ -885,8 +693,4 @@ footer h5{
     .footer h3{
         font-size: 28px;
     }
-}
-
-#resultados-busqueda{
-    margin-top: 140px;
 }

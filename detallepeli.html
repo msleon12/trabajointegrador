@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle Peli</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles-js.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script defer src="js/detalle-peli.js"></script>
     <script defer src="js/buscador-validacion.js"></script>
@@ -17,15 +17,17 @@
      <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
+                <div class="parte-cero">
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                </div>
                 <div class="parte-uno">
-                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
-                    <li class="genero-encabezado"> <a href="generos.html"> Géneros </a> </li>
-                    <li><a href="./series.html">Series</a></li>
+                    <li><a href="generos.html">Géneros</a></li>
+                    <li><a href="series.html">Series</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
-                        <form action="buscador.html" method="GET">
+                        <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
@@ -54,7 +56,7 @@
     <!--Relacionadas-->
     <section class="relacionadas">
         <article class="titulo ops">
-            <h2 id= "texto-relacionadas">Relacionadas</h2>
+            <h2 id="texto-relacionadas">Relacionadas</h2>
         </article>
         <section class="peliculas simil">
             

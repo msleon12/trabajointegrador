@@ -22,35 +22,31 @@ fetch(newUrl)
   console.log(data)
   let contenedor =document.querySelector("#contenedor")
   let movies= data.results 
-  let resultadosBusqueda = document.querySelector('#resultados-busqueda')
-  resultadosBusqueda.innerText += "Tus resultados de búsqueda"
 
   // for(let i=0; i<movies.length; i++){  Lo que escribi abajo es igual a esto 
 
   
   for (const movie of movies) {
     if(movie.media_type == "movie" && movie.poster_path){
-      contenedor.innerHTML+=`<article class="buscadas">
-                              <a href=detallepeli.html?id=${movie.id}&media=movie>
+      contenedor.innerHTML+=`<article class="art-peli detalle">
+                              <a class="peli" href=detallepeli.html?id=${movie.id}&media=movie>
                                 <img src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
-                                <h2>${movie.title}</h2>
+                                <h3>${movie.title}</h3>
                               </a>
                             </article>`
     }
     else if(movie.media_type == "tv" && movie.poster_path){
-      contenedor.innerHTML+=`<article class="buscadas">
-                                        <a href=detallepeli.html?id=${movie.id}&media=tv><img
-                                        src=${image_url + movie.poster_path}
-                                        data-movie-id=${movie.id}
-                                        />
-                                        <h2>${movie.name}</h2></a>
+      contenedor.innerHTML+=`<article class="art-peli detalle">
+                                        <a class="peli" href=detallepeli.html?id=${movie.id}&media=tv><img
+                                        src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
+                                        <h3>${movie.name}</h3></a>
                                     </article>`
     }
     else if (movie.profile_path){ //Para personas
-            contenedor.innerHTML+= `<article class="buscadas">
-                                        <a href=detallepeli.html?id=${movie.id}&media=person>
+            contenedor.innerHTML+= `<article class="art-peli detalle">
+                                        <a class="peli" href=detallepeli.html?id=${movie.id}&media=person>
                                         <img src=${image_url + movie.profile_path} data-movie-id=${movie.id}/>
-                                        <h2>${movie.name}</h2></a>
+                                        <h3>${movie.name}</h3></a>
                                       </article>`
             }
     }

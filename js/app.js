@@ -144,9 +144,6 @@ semanal.addEventListener('click', function(){
             if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
                 container.innerHTML += estrenos;
             }
-            
-            
-            
         };
     })
     .catch(function(error){

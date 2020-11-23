@@ -6,7 +6,7 @@
     <title>SuperFilms</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-js.css">
+    <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -19,15 +19,17 @@
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
+                <div class="parte-cero">
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                </div>
                 <div class="parte-uno">
-                    <li id="principal" class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
-                    <li class="genero-encabezado"> <a href="generos.html"> Géneros </a> </li>
-                    <li><a href="./series.html">Series</a></li>
+                    <li><a href="generos.html">Géneros</a></li>
+                    <li><a href="series.html">Series</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
-                        <form action="buscador.html" method="GET">
+                        <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
@@ -57,7 +59,6 @@
                         <button type="button" id="diario" value="diario"> Diario </button>
                         <button type="button"  id ="semanal" value="semanal">Semanal</button>
                     </div>
-                    
                 </div>
             </form>
         </article>
@@ -68,7 +69,7 @@
 
     <!-- En cines -->
     <section class="tira dos">
-        <article class="titulo marvel">
+        <article class="titulo">
             <h2>En cines</h2>
         </article>
         <section class="peliculas estrenos">
@@ -78,8 +79,8 @@
 
     <!-- Ranking -->
     <section class="tira tres">
-        <article class="titulo dc">
-            <h2>Mejor rankeadas</h2>
+        <article class="titulo">
+            <h2>Mejor calificadas</h2>
         </article>
         <section class="peliculas ranking">
             
@@ -88,7 +89,7 @@
 
     <!--Series populares-->
     <section class="tira cuatro">
-        <article class="titulo series">
+        <article class="titulo">
             <h2>Series populares</h2>
         </article>
         <section class="peliculas series">

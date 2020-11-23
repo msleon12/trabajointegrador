@@ -6,7 +6,7 @@
     <title>Favoritos</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-js.css">
+    <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -18,15 +18,17 @@
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
+                <div class="parte-cero">
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
+                </div>
                 <div class="parte-uno">
-                    <li  class="superfilms-encabezado"><a href="./home.html">SuperFilms</a></li>
-                    <li class="genero-encabezado"> <a href="generos.html"> Géneros </a> </li>
-                    <li><a href="./series.html">Series</a></li>
-                    <li id="principal"><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="generos.html">Géneros</a></li>
+                    <li><a href="series.html">Series</a></li>
+                    <li><a id="principal" href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
-                        <form action="buscador.html" method="GET">
+                        <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
@@ -39,13 +41,16 @@
         </nav>
     </header>
 
-    <h1 style="margin: 170px 0 30px 30px;">Tus Favoritos</h1>
-    <section class="favoritos-tira-peli">
+    <section>
+        <article class="title gen">
+            <h1>Tus Favoritos</h1>
+        </article>
+        <section class="favoritos-tira-peli peliculas">
 
-    </section>
-    <h1></h1>
-    <section class="favoritos-tira-serie">
+        </section>
+        <section class="favoritos-tira-serie peliculas">
 
+        </section>
     </section>
 
     <!--Footer-->

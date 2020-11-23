@@ -28,19 +28,19 @@ if(media=="movie"){
     .then(function(data){
         console.log(data)
 
-        let caja = `<h1 class="genero">${data.name}</h1>`
+        let caja = `<h1>${data.name}</h1>`
         titulo.innerHTML += caja
     })
     .catch(function(error){
         console.log('El error fue: ', error);
     })
-} else{
+} else if(media=="tv"){
     fetch(urlGenerosSeries)
     .then(function(response){
         return response.json()
     })
     .then(function(data){
-        console.log(data.genres)
+        console.log(data)
 
         for(let i = 0; i<20; i++){
             if(id == data.genres[i].id){
@@ -55,8 +55,8 @@ if(media=="movie"){
 
 // Para que aparezcan las peliculas
 let peliculas = document.querySelector(".peliculas")
-let urlPeliculas = `https://api.themoviedb.org/3/${media}/popular?api_key=${api_key}&language=es-ES&region=AR`
-let titGen = document.querySelector(".genero")
+let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=es-ES&with_genres=${id}`
+let urlSeries =  `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=es-ES&with_genres=${id}&include_null_first_air_dates=false`
 
 if(media=="movie"){
     fetch(urlPeliculas)
@@ -67,23 +67,24 @@ if(media=="movie"){
         let results = data.results
         console.log(results)
 
-
-        for(let i = 0; i<30; i++){
-    
-            if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1]||id == results[i].genre_ids[2] || id == results[i].genre_ids[3] || id == results[i].genre_ids[4]){
-                let id_p = results[i].id
-                let tira = `<article class="art-peli bus">
-                                <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                <h3>${results[i].title}</h3>
-                                </a>
-                            </article>`;
-                peliculas.innerHTML += tira;
-            }  
-            // else {
-            //     peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte </h3>"
-            // }
-        }
+        if(results[0]){
+            for(let i=0; i<30; i++){
+                if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1]||id == results[i].genre_ids[2] || id == results[i].genre_ids[3] || id == results[i].genre_ids[4]){
+                    let id_p = results[i].id
+                    let tira = `<article class="art-peli detalle">
+                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                    </a>
+                                </article>`;
         
+                    if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+                        peliculas.innerHTML += tira;
+                    }
+                }
+            }
+        } else {
+            peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte </h3>"
+        }
         // Escribir caso en que no hayan peliculas
         
     })
@@ -91,29 +92,25 @@ if(media=="movie"){
         console.log('El error fue: ', error);
     })
 } else if(media == "tv"){
-    fetch(urlPeliculas)
+    fetch(urlSeries)
     .then(function(response){
         return response.json()
     })
     .then(function(data){
         let results = data.results
-        console.log(data.results);
+        console.log(results);
         for(let i=0 ; i<200 ; i++){
-            if(id == data.results[i].genre_ids[0] || id == data.results[i].genre_ids[1] || id == data.results[i].genre_ids[2]){
+            if(id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2] && results[i].poster_path != null){
                 let id_serie = data.results[i].id
-                let articulo = `<article class='tira-series'>
-                                    <a href='detalleserie.html?id=${id_serie}&media=${media}'>
+                let articulo = `<article class="art-peli detalle">
+                                    <a class="peli" href='detalleserie.html?id=${id_serie}&media=${media}'>
                                         <img src= "${image_url + data.results[i].poster_path}" alt='${data.results[i].name}'>
                                         <h3> ${data.results[i].name}</h3> 
                                     </a>
                                 </article>`
-                peliculas.innerHTML += articulo
+                    peliculas.innerHTML += articulo;
             }
         }
-        /* if(seriesTira == ''){
-            console.log('hola');
-            seriesTira.innerHTML += "<h2> Lo siento, no tenemos series para mostrarte </h2>"
-        } */
     })
     .catch(function(error){
         console.log('El error fue:', error);
