@@ -12,7 +12,6 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const urlBuscador = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}` 
 const image_url = "https://image.tmdb.org/t/p/w500" 
 
-
 const newUrl = urlBuscador + '&query=' + resultado //construyo una URL dinámica, que permita que aparezca cualquier valor que busco
 fetch(newUrl)
 .then(function(response){

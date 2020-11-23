@@ -209,3 +209,4 @@ semanal.addEventListener('click', function(){
         console.log('El error fue: ', error);
     })
 
+// 
