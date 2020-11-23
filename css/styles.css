@@ -573,12 +573,14 @@ footer h5{
 /* Responsive */
 
 @media(max-width:1024px){
-
+    #movies-searchable{
+        margin-top: 170px;
+    }
     /* marvel y Dc */
     .info-fila{
         font-size: 15px;
     }
-
+    
     .md{
         height: 400px;
     }
@@ -623,6 +625,10 @@ footer h5{
         background-image: none;
     }
 
+    #movies-searchable{
+        margin-top: 170px;
+    }
+    
     .art-heroe{
         height: 340px;
     }
@@ -726,6 +732,11 @@ footer h5{
 @media(max-width:425px){
     body{
         background-image: none;
+         
+    }
+    
+    #movies-searchable{
+        margin-top: 170px;
     }
 
     .lista-sup{
@@ -874,4 +885,8 @@ footer h5{
     .footer h3{
         font-size: 28px;
     }
+}
+
+#resultados-busqueda{
+    margin-top: 140px;
 }
