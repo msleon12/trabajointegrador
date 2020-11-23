@@ -49,33 +49,26 @@ if(media == "movie"){
 
          // Favoritos
         const boton = document.querySelector('.star')
-        console.log(boton);
         window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
-        
+        let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
+            tipo: media,
+            id: id,
+            }
         boton.addEventListener('click', function(){
             let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
             let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
-            let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
-                tipo: media,
-                id: id,
-                }
-            let objetostring = JSON.stringify(objeto)
-            if(!storage.includes(objetostring)){
+  
+            if(!storageJs.includes(objeto)){ //Aca esta el problema: Siempre me toma true este condicional
                 storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue"; 
-                
+                localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string
             }
-            else {
+            else{
                 storageJs = storageJs.filter(function(movie){
-                    return movie != objetostring
+                return movie != objeto
                 })
-                boton.style.backgroundColor = "white"
             }
-            let storageJson = JSON.stringify(storageJs) // Pasarlo de nuevo a JSON
-            localStorage.setItem('favoritos', storageJson) //Lo agregamos al storage en formato JSON
-            
         })
-
     })
     .catch(function(error){
         console.log('El error fue: ', error);
