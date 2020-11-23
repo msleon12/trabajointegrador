@@ -108,7 +108,10 @@ if(media=="movie"){
                                         <h3> ${data.results[i].name}</h3> 
                                     </a>
                                 </article>`
-                    peliculas.innerHTML += articulo;
+                if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+                        peliculas.innerHTML += articulo;
+                    }
+                   
             }
         }
     })

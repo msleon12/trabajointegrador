@@ -84,7 +84,10 @@ diario.addEventListener('click', function(){
                                     <h3>${results[i].title}</h3>
                                     </a>
                                 </article>`;
-                container.innerHTML += trending;
+                if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
+                    container.innerHTML += trending;
+                }
+                
             };
         })
         .catch(function(error){
@@ -112,7 +115,9 @@ semanal.addEventListener('click', function(){
                                         <h3>${results[i].title}</h3>
                                     </a>
                                 </article>`;
-                container.innerHTML += trending;
+                if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
+                                    container.innerHTML += trending;
+                }
                 };
             })
             .catch(function(error){
@@ -141,7 +146,7 @@ semanal.addEventListener('click', function(){
                                 </a>
                             </article>`;
 
-            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
                 container.innerHTML += estrenos;
             }
         };
@@ -168,7 +173,7 @@ semanal.addEventListener('click', function(){
                                 <h3>${results[i].title}</h3>
                                 </a>
                             </article>`;
-            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
                 container.innerHTML += ranking;
             }
         };
@@ -195,7 +200,7 @@ semanal.addEventListener('click', function(){
                                 <h3>${results[i].name}</h3>
                                 </a>
                             </article>`;
-            if(results[i].poster_path && results[i].name != "Esta obra no ha de tener título"){
+            if(results[i].poster_path && results[i].name != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
             container.innerHTML += series;
             }
         };
