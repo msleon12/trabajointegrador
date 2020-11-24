@@ -13,8 +13,9 @@ let movie = ''
 for (let i = 0; i<storageJs.length; i++){
     let posta = JSON.parse(storageJs[i])
     console.log(posta)
+    console.log(posta.id)
     
-    if(storageJs[i].tipo == "movie"){
+    if(posta.tipo == "movie"){
         fetch(`https://api.themoviedb.org/3/movie/${posta.id}?api_key=${api_key}&language=es-ES`)
         .then(function(response){
             return response.json()
@@ -52,9 +53,18 @@ for (let i = 0; i<storageJs.length; i++){
         }) //then
         .catch(function(error){
             console.log('El error fue: ',);
-        })
+        }) //CATCH
 
     } // if
+    else if (posta.tipo == "tv"){
+        fetch(`https://api.themoviedb.org/3/tv/${posta.id}?api_key=${api_key}&language=es-ES`)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+        })
+    }//ELSE IF
     
 } // For     
 
