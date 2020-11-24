@@ -113,12 +113,15 @@ a:link, a:visited, a:active {
     color: #ce7d35;
 }
 
+
 .submenu{
     display: none;
 }
 
-.super:hover{
-    
+.super:hover .submenu{
+   display: block; 
+   list-style-type: none;
+  
 }
 
 .parte-dos{

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador</title>
+    <title>Marvel</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="./imagenes/background/pest.ico">
     <script src="https://kit.fontawesome.com/9c4697a2d0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-    <script defer src="js/buscador.js"></script>
+
     <script defer src="js/buscador-validacion.js"></script>
+    <script defer src="js/superheroes.js"></script>
 </head>
 <body>
-    <!-- Encabezado -->
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
@@ -24,21 +24,20 @@
                 <div class="parte-uno">
                     <li><a href="generos.html">Géneros</a></li>
                     <li><a href="series.html">Series</a></li>
+                    <li class="super">Superhéroes
+                        <ul class="submenu">
+                            <li><a href="marvel.html?list=1"> Marvel </a></li>
+                            <li><a href="dc.html?list=3"> DC</a></li>
+                        </ul>
+                    </li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
                         <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
-                                <ul class="filtros"><button><i class="fas fa-filter"></i></button>
-                                    <li><input type="checkbox" name="filtro" value="movie">Peliculas</li>
-                                    <li><input type="checkbox" name="filtro" value="tv">Series</li>
-                                    <li><input type="checkbox" name="filtro" value="person">Personas</li>
-                                </ul>
-                                <div>
-                                    <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
-                                    <button type="submit" id="search"><i class="fas fa-search "></i></button>
-                                </div> 
+                                <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
+                                <button type="submit" id="search"><i class="fas fa-search "></i></button>
                             </div>
                             <p class="alert"></p>
                         </form>
@@ -48,19 +47,18 @@
         </nav>
     </header>
 
-    <!-- Resultados de búsqueda -->
-    <section id="movies-searchable" class="tira">
+    <section class="tira">
         <section class="title gen contenedor-titulo-controles">
-            <h1>Resultados de búsqueda</h1>
+            <h2>Marvel</h2>
             <article class="indicadores">
 
             </article>
         </section>
         <section class="contenedor-principal">
             <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-            <div id="contenedor" class="peliculas estrenos">
+            <div class="peliculas container">
                 
-            </div>
+            </div> 
             <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
         </section>
     </section>
@@ -76,6 +74,5 @@
         </ul>
         <h5><i class="far fa-copyright"></i> 2020 Superfilms, todos los derechos reservados. Hecho por Mateo Moragues, Martín Leon y Constancio Vigil.</h5>
     </footer>
-       
 </body>
 </html>
