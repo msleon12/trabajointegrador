@@ -56,8 +56,8 @@ if(media == "movie"){
         }
 
         boton.addEventListener('click', function(){
-                let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
-                let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
+            let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
+            let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
 
             if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ //Aca esta el problema, lo que tengo que subir al localstorage en el objeto, no el objeto en JSON. Pero la función includes solo funciona con JSON
                 storageJs.push(objeto); // Agregarlo al array
@@ -71,9 +71,9 @@ if(media == "movie"){
                 boton.style.backgroundColor = "white"; 
             } 
         localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
-        })
+        }) // evento
 
-})
+    }) //Fetch
     .catch(function(error){
         console.log('El error fue: ', error);
     })
@@ -172,32 +172,30 @@ else if(media == "tv"){
         container.innerHTML += movie;  
         // Favoritos
         const boton = document.querySelector('.star')
-        window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
             tipo: media,
             id: id,
         }
 
-        let objetoJSON = JSON.stringify(objeto)
-
         boton.addEventListener('click', function(){
-                console.log('hola');
-                let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
-                let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
+            let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
+            let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
 
-            if(!storageJs.includes(objetoJSON)){
-                storageJs.push(objetoJSON); // Agregarlo al array
+            if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ //Aca esta el problema, lo que tengo que subir al localstorage en el objeto, no el objeto en JSON. Pero la función includes solo funciona con JSON
+                storageJs.push(objeto); // Agregarlo al array
+            
                 boton.style.backgroundColor = "blue"; 
             }
             else{
                 storageJs = storageJs.filter(function(movie){
-                    return movie != objetoJSON
-            })
+                    return objeto.id != movie.id && objeto.media != movie.media
+                })
                 boton.style.backgroundColor = "white"; 
-        } 
+            } 
         localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
-        })
-    })
+        }) // evento
+    }) //Then
     .catch(function(error){
         console.log('El error fue: ', error);
     })  
@@ -267,32 +265,31 @@ else if (media == "person"){
 
         // Favoritos
         const boton = document.querySelector('.star')
-        // window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
             tipo: media,
             id: id,
         }
 
-        let objetoJSON = JSON.stringify(objeto)
-
         boton.addEventListener('click', function(){
-                console.log('hola');
-                let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
-                let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
+            console.log('hola')
+            let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
+            let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
 
-            if(!storageJs.includes(objetoJSON)){
-                storageJs.push(objetoJSON); // Agregarlo al array
+            if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ //Aca esta el problema, lo que tengo que subir al localstorage en el objeto, no el objeto en JSON. Pero la función includes solo funciona con JSON
+                storageJs.push(objeto); // Agregarlo al array
+            
                 boton.style.backgroundColor = "blue"; 
             }
             else{
                 storageJs = storageJs.filter(function(movie){
-                    return movie != objetoJSON
-            })
+                    return objeto.id != movie.id && objeto.media != movie.media
+                })
                 boton.style.backgroundColor = "white"; 
-        } 
+            } 
         localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
-        })
-    })
+        }) // evento
+    }) // Fetch
     .catch(function(error){
         console.log('El error fue: ', error);
     })  

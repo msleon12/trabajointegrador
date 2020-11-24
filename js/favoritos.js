@@ -15,8 +15,8 @@ function removeFav(e){
     let elemento = this
     let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
     let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
-    // e.target.parentElement.style.display = "none"
-    console.log(e.target.parentElement)
+    e.currentTarget.parentElement.style.display = "none"
+    console.log(e.currentTarget.parentElement)
     
     storageJs = storageJs.filter(function(movie){
         return elemento.id != movie.id 
@@ -56,6 +56,64 @@ for (let i = 0; i<storageJs.length; i++){
         }) //CATCH
 
     } // if
+    else if (storageJs[i].tipo == "tv"){
+        fetch(`https://api.themoviedb.org/3/tv/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            let movie = `<article class="favoritos">
+                            <a href="detallepeli.html?id=${data.id}&media=tv">
+                                <h2>${data.name}</h2>
+                                <img src="${image_url + data.poster_path}" alt="${data.name}">
+                            </a>
+                            <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
+                        </article>`
+            contenedor1.innerHTML += movie;
+
+            let boton = document.querySelectorAll('.star')
+                console.log(boton)
+                for(let i = 0; i<boton.length; i++){
+                    boton[i].style.backgroundColor = "blue"; 
+                    boton[i].addEventListener('click',removeFav)
+                }
+            
+
+        }) //then
+        .catch(function(error){
+            console.log('El error fue: ', error);
+        }) //CATCH
+
+
+    } //Else if
+    else if(storageJs[i].tipo == "person"){
+        fetch(`https://api.themoviedb.org/3/person/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            let movie = `<article class="favoritos">
+                            <a href="detallepeli.html?id=${data.id}&media=tv">
+                                <h2>${data.name}</h2>
+                                <img src="${image_url + data.profile_path}" alt="${data.name}">
+                            </a>
+                            <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
+                        </article>`
+            contenedor1.innerHTML += movie;
+
+            let boton = document.querySelectorAll('.star')
+                console.log(boton)
+                for(let i = 0; i<boton.length; i++){
+                    boton[i].style.backgroundColor = "blue"; 
+                    boton[i].addEventListener('click',removeFav)
+                } 
+        }) //Then
+        .catch(function(error){
+            console.log('El error fue: ', error);
+        }) //CATCH
+    } // Else if
 
 } // For     
 
