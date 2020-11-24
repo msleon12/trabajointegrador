@@ -48,7 +48,7 @@ if(media == "movie"){
         container.innerHTML += movie;
         // Favoritos
         const boton = document.querySelector('.star')
-        window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
             tipo: media,
             id: id,
@@ -269,7 +269,7 @@ else if (media == "person"){
 
         // Favoritos
         const boton = document.querySelector('.star')
-        window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
+        // window.localStorage.setItem('favoritos', '[]') //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
             tipo: media,
             id: id,
