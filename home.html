@@ -37,8 +37,15 @@
                     <li>
                         <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
-                                <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
-                                <button type="submit" id="search"><i class="fas fa-search "></i></button>
+                                <ul class="filtros"><button><i class="fas fa-filter"></i></button>
+                                    <li><input type="radio" name="filtro" value="movie">Peliculas</li>
+                                    <li><input type="radio" name="filtro" value="tv">Series</li>
+                                    <li><input type="radio" name="filtro" value="person">Personas</li>
+                                </ul>
+                                <div>
+                                    <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
+                                    <button type="submit" id="search"><i class="fas fa-search "></i></button>
+                                </div> 
                             </div>
                             <p class="alert"></p>
                         </form>
