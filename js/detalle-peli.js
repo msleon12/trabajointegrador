@@ -55,21 +55,18 @@ if(media == "movie"){
             id: id,
         }
 
-        let objetoJSON = JSON.stringify(objeto)
-
         boton.addEventListener('click', function(){
-                console.log('hola');
                 let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
                 let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
 
-            if(!storageJs.includes(objetoJSON)){ //Aca esta el problema, lo que tengo que subir al localstorage en el objeto, no el objeto en JSON. Pero la función includes solo funciona con JSON
-                storageJs.push(objetoJSON); // Agregarlo al array
+            if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ //Aca esta el problema, lo que tengo que subir al localstorage en el objeto, no el objeto en JSON. Pero la función includes solo funciona con JSON
+                storageJs.push(objeto); // Agregarlo al array
             
                 boton.style.backgroundColor = "blue"; 
             }
             else{
                 storageJs = storageJs.filter(function(movie){
-                    return movie != objetoJSON
+                    return objeto.id != movie.id && objeto.media != movie.media
                 })
                 boton.style.backgroundColor = "white"; 
             } 
