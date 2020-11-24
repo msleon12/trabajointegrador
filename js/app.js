@@ -217,26 +217,13 @@ let principal = document.querySelectorAll(".peliculas")
 //let indicadores = document.querySelector(".indicadores")
 
 for(let i=0; i<flechaDerecha.length; i++){
-    
     flechaDerecha[i].addEventListener('click', function(){
         principal[i].scrollLeft += (principal[i].offsetWidth -300)
     })
     flechaIzquierda[i].addEventListener('click', function(){
-        principal[i].scrollLeft += (principal[i].offsetWidth -300)
+        principal[i].scrollLeft -= (principal[i].offsetWidth -300)
     })
 }
-
-    // flechaDerecha.addEventListener('click',function(){
-    //     for(let i = 0; i<5; i++){
-    //         principal.scrollLeft += (principal.offsetWidth -300)
-    //     }
-        
-    // })
-
-    // flechaIzquierda.addEventListener('click',function(){
-    //     principal.scrollLeft -= (principal.offsetWidth -300)
-    // })
-
 
 
 // Paginación

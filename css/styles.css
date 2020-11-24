@@ -93,8 +93,8 @@ a:link, a:visited, a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 20px;
-    width: 20%;
+    justify-content: start;
+    width: 15%;
 }
 
 .parte-uno{
@@ -103,11 +103,26 @@ a:link, a:visited, a:active {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 35%;
+    width: 45%;
+}
+
+.parte-uno a:hover{
+    font-size: 45px;
+    font-style: italic;
+    transition: all .2s;
+    color: #ce7d35;
+}
+
+.submenu{
+    display: none;
+}
+
+.super:hover{
+    
 }
 
 .parte-dos{
-    width: 30%;
+    width: 25%;
     align-items: inherit;
 }
 
@@ -133,15 +148,6 @@ a:link, a:visited, a:active {
     color: red;
     font-size: 12px;
 }
-
-/* Hover */
-.parte-uno a:hover{
-    font-size: 45px;
-    font-style: italic;
-    transition: all .2s;
-    color: #ce7d35;
-}
-
 
 /*Home*/
 
@@ -176,8 +182,21 @@ a:link, a:visited, a:active {
     display: flex;
     justify-content: start;
     align-items: end;
-    gap: 30px;
+    gap: 40px;
     width: 70%;
+}
+
+#trend{
+    color: black;
+    outline: none;
+    cursor: pointer;
+}
+
+#diario, #semanal{
+    cursor: pointer;
+    line-height: 23px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .indicadores{
@@ -231,18 +250,6 @@ a:link, a:visited, a:active {
 
 .flecha-derecha{
     right: 0;
-}
-
-#diario, #semanal{
-    cursor: pointer;
-}
-
-#trend{
-    color: black;
-    font-size: 1.3rem;
-    outline: none;
-    cursor: pointer;
-    border-radius: .25rem;
 }
 
 .peliculas{
