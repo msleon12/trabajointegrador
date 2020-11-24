@@ -1,7 +1,6 @@
 
 // Valores iniciales
-const obra = window.localStorage.getItem('favoritos')
-console.log(obra)
+
 let storage = localStorage.getItem('favoritos')
 console.log(storage);
 let storageJs = JSON.parse(storage); // Lo paso a JS
@@ -16,7 +15,7 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const image_url = "https://image.tmdb.org/t/p/w500"
 let movie = ''
 
-for(let i=0; i<30; i++){
+for(let i=0; i<40; i++){
     let objeto = { 
         tipo: storageJs[i].tipo,
         id: storageJs[i].id,

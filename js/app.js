@@ -67,62 +67,63 @@ const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=
 
 diario.addEventListener('click', function(){   
     
-        container.innerHTML=''
-        fetch(urlTrendDiario)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data);
+    container.innerHTML=''
+    fetch(urlTrendDiario)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
             
-            let results = data.results
+        let results = data.results
             
-            for(let i=0; i<5; i++){
-                let id_p = results[i].id
-                let trending = `<article class="art-peli">
-                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+        for(let i=0; i<5; i++){
+            let id_p = results[i].id
+            let trending = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
+                                    <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                     <h3>${results[i].title}</h3>
-                                    </a>
-                                </article>`;
-                if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
+                                </a>
+                            </article>`;
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
                     container.innerHTML += trending;
-                }
+            }
                 
-            };
-        })
-        .catch(function(error){
-            console.log('El error fue: ', error);
-        })
+        };
+    })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
 })  
 
 semanal.addEventListener('click', function(){
     const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
-        container.innerHTML=''
-        fetch(urlTrendSemanal)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data);
-            let container = document.querySelector('.peliculas')
-            let results = data.results
+    container.innerHTML=''
+    fetch(urlTrendSemanal)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let container = document.querySelector('.peliculas')
+        let results = data.results
         
-            for(let i=0; i<5; i++){
-                let id_p = results[i].id
-                let trending = `<article class="art-peli">
-                                    <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
-                                        <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
-                                        <h3>${results[i].title}</h3>
-                                    </a>
-                                </article>`;
-                if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
-                                    container.innerHTML += trending;
+        for(let i=0; i<5; i++){
+            let id_p = results[i].id
+            let trending = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
+                                    <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
+                                    <h3>${results[i].title}</h3>
+                                </a>
+                            </article>`;
+            if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
+                container.innerHTML += trending;
                 }
-                };
-            })
-            .catch(function(error){
-            console.log('El error fue: ', error);
+            };
         })
+    .catch(function(error){
+        console.log('El error fue: ', error);
+    })
 
 })
     
