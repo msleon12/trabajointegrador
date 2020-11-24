@@ -125,9 +125,9 @@ if(media == "movie"){
         let results = data.results
         
         if(results[0]){
-            for(let i=0; i<10; i++){
+            for(let i=0; i<20; i++){
                 let id_p = results[i].id
-                let info = `<article class="art-peli detalle">
+                let info = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}">
                                     <img src=${image_url + results[i].poster_path} alt=${results[i].title}>
                                     <h3>${results[i].title}</h3>
@@ -219,9 +219,9 @@ else if(media == "tv"){
         let results = data.results
         
         if(results[0]){
-            for(let i=0; i<10; i++){
+            for(let i=0; i<20; i++){
                 let id_p = results[i].id
-                let info = `<article class="art-peli detalle">
+                let info = `<article class="art-peli">
                                 <a class="peli" href="detalleserie.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path}>
                                 <h3>${results[i].name}</h3>
                                 </a>
@@ -302,5 +302,17 @@ else if (media == "person"){
 
 }
 
+// Flechas de scroll
+let flechaIzquierda = document.querySelector(".flecha-izquierda")
+let flechaDerecha = document.querySelector(".flecha-derecha")
+let principal = document.querySelector(".peliculas")
+//let indicadores = document.querySelector(".indicadores")
 
 
+    flechaDerecha.addEventListener('click',function(){
+        principal.scrollLeft += (principal.offsetWidth -300)
+    })
+
+    flechaIzquierda.addEventListener('click',function(){
+        principal.scrollLeft -= (principal.offsetWidth -300)
+    })

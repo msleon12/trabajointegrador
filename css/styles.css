@@ -449,10 +449,6 @@ a:link, a:visited, a:active {
     justify-content: space-around;
 }
 
-.ops{
-    margin: 40px 0 0 0;
-}
-
 .fa-user{
     margin-right: 20px;
 }
@@ -474,15 +470,7 @@ a:link, a:visited, a:active {
 }
 
 .relacionadas{
-    margin-top: 20px;
-}
-
-.detalle{
-    margin: 2%;
-}
-
-.simil{
-    margin: 0;
+    margin-top: 40px;
 }
 
 .sorry{
