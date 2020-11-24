@@ -210,19 +210,32 @@ semanal.addEventListener('click', function(){
     })
 
 // Flechas de scroll
-let flechaIzquierda = document.querySelector(".flecha-izquierda")
-let flechaDerecha = document.querySelector(".flecha-derecha")
-let principal = document.querySelector(".peliculas")
+let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
+let flechaDerecha = document.querySelectorAll(".flecha-derecha")
+console.log(flechaDerecha);
+let principal = document.querySelectorAll(".peliculas")
 //let indicadores = document.querySelector(".indicadores")
 
-
-    flechaDerecha.addEventListener('click',function(){
-        principal.scrollLeft += (principal.offsetWidth -300)
+for(let i=0; i<flechaDerecha.length; i++){
+    
+    flechaDerecha[i].addEventListener('click', function(){
+        principal[i].scrollLeft += (principal[i].offsetWidth -300)
     })
-
-    flechaIzquierda.addEventListener('click',function(){
-        principal.scrollLeft -= (principal.offsetWidth -300)
+    flechaIzquierda[i].addEventListener('click', function(){
+        principal[i].scrollLeft += (principal[i].offsetWidth -300)
     })
+}
+
+    // flechaDerecha.addEventListener('click',function(){
+    //     for(let i = 0; i<5; i++){
+    //         principal.scrollLeft += (principal.offsetWidth -300)
+    //     }
+        
+    // })
+
+    // flechaIzquierda.addEventListener('click',function(){
+    //     principal.scrollLeft -= (principal.offsetWidth -300)
+    // })
 
 
 
