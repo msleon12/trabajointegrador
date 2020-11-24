@@ -14,11 +14,12 @@
     <script defer src="js/buscador-validacion.js"></script>
 </head>
 <body>
+    <!-- Encabezado -->
     <header class="encabezado">
         <nav class="superior">
             <ul class="lista-sup">
                 <div class="parte-cero">
-                    <li><a href="./home.html">SuperFilms</a></li>
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
                 </div>
                 <div class="parte-uno">
                     <li><a href="generos.html">Géneros</a></li>
@@ -40,12 +41,20 @@
         </nav>
     </header>
 
-    <section id="movies-searchable">
-    <article class="title gen">
-        <h1>Tus resultados de búsqueda</h1>
-    </article>
-        <section id="contenedor" class="peliculas">
+    <!-- Resultados de búsqueda -->
+    <section id="movies-searchable" class="tira">
+        <section class="title gen contenedor-titulo-controles">
+            <h1>Resultados de búsqueda</h1>
+            <article class="indicadores">
 
+            </article>
+        </section>
+        <section class="contenedor-principal">
+            <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+            <div id="contenedor" class="peliculas estrenos">
+                
+            </div>
+            <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
         </section>
     </section>
 

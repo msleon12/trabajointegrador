@@ -39,10 +39,10 @@ fetch(urlSlider)
 let diario = document.querySelector("#diario")
 let semanal = document.querySelector("#semanal")
 let trend = document.querySelector("#trend")
-let container = document.querySelector('.peliculas.tre')
+let container = document.querySelector('.tre')
 console.log(trend.value)
 
-const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}` 
+const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}&language=es-ES` 
     fetch(urlTrendDiario)
         .then(function(response){
             return response.json()
@@ -51,7 +51,7 @@ const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=
             console.log(data);
             let results = data.results
             
-            for(let i=0; i<5; i++){
+            for(let i=0; i<20; i++){
                 let id_p = results[i].id
                 let trending = `<article class="art-peli">
                                     <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
@@ -77,7 +77,7 @@ diario.addEventListener('click', function(){
             
         let results = data.results
             
-        for(let i=0; i<5; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
             let trending = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
@@ -97,7 +97,7 @@ diario.addEventListener('click', function(){
 })  
 
 semanal.addEventListener('click', function(){
-    const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}` 
+    const urlTrendSemanal = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}&language=es-ES` 
     container.innerHTML=''
     fetch(urlTrendSemanal)
     .then(function(response){
@@ -105,10 +105,9 @@ semanal.addEventListener('click', function(){
     })
     .then(function(data){
         console.log(data);
-        let container = document.querySelector('.peliculas')
         let results = data.results
         
-        for(let i=0; i<5; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
             let trending = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
@@ -138,7 +137,7 @@ semanal.addEventListener('click', function(){
         let container = document.querySelector('.peliculas.estrenos')
         let results = data.results
         
-        for(let i=0; i<6; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
             let estrenos = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=movie">
@@ -167,7 +166,7 @@ semanal.addEventListener('click', function(){
         let container = document.querySelector('.peliculas.ranking')
         let results = data.results
 
-        for(let i=0; i<5; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
             let ranking = `<article class="art-peli">
                                 <a class="peli" href="detallepeli.html?id=${id_p}&media=movie"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
@@ -194,7 +193,7 @@ semanal.addEventListener('click', function(){
         let container = document.querySelector('.peliculas.series')
         let results = data.results
 
-        for(let i=0; i<5; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
             let series = `<article class="art-peli">
                                 <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
@@ -210,4 +209,36 @@ semanal.addEventListener('click', function(){
         console.log('El error fue: ', error);
     })
 
-// 
+// Flechas de scroll
+let flechaIzquierda = document.querySelector(".flecha-izquierda")
+let flechaDerecha = document.querySelector(".flecha-derecha")
+let principal = document.querySelector(".peliculas")
+//let indicadores = document.querySelector(".indicadores")
+
+
+    flechaDerecha.addEventListener('click',function(){
+        principal.scrollLeft += (principal.offsetWidth -300)
+    })
+
+    flechaIzquierda.addEventListener('click',function(){
+        principal.scrollLeft -= (principal.offsetWidth -300)
+    })
+
+
+
+// Paginación
+/* for(i=0; i<3; i++){
+    const indicador = document.createElement('button')
+
+    if(i===0){
+        indicador.classList.add('activo')
+    }
+
+    indicadores.appendChild(indicador)
+    indicador.addEventListener('click', function(e){
+        principal.scrollLeft = i * principal.offsetWidth
+
+        document.querySelector(".indicadores.activo").classList.remove("activo")
+        e.target.classList.add('activo')
+    })
+} */

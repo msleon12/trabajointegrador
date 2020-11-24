@@ -19,7 +19,7 @@ fetch(urlGeneros)
     let generos = data.genres
 
     for(let i=0; i<generos.length; i++){
-    genres.innerHTML += `<li><a href="./detallegenero.html?id=${generos[i].id}&media=movie">${generos[i].name}</a></li>`;
+    genres.innerHTML += `<li class="genero-unico"><a href="./detallegenero.html?id=${generos[i].id}&media=movie">${generos[i].name}</a></li>`;
     }
 })
 .catch(function(error) {
@@ -37,7 +37,7 @@ fetch(urlGenerosSeries)
     let generosTV = data.genres
 
     for(let i=0; i<generosTV.length; i++){
-    genresSeries.innerHTML += `<li><a href="./detallegenero.html?id=${generosTV[i].id}&media=tv">${generosTV[i].name}</a></li>`;
+    genresSeries.innerHTML += `<li class="genero-unico"><a href="./detallegenero.html?id=${generosTV[i].id}&media=tv">${generosTV[i].name}</a></li>`;
     }
 })
 .catch(function(error) {

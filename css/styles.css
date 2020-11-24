@@ -16,6 +16,27 @@
 	background: url(https://media.giphy.com/media/1gdoeJmc3piKTeORzG/giphy.gif) center no-repeat #fff;
 }
 
+
+/* Lateral scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+    background:  black;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #ce7d35; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b8651c; 
+  }
+
 body{
     margin: 0;
     background-image: url(../imagenes/background/purple1.jpg);
@@ -32,7 +53,7 @@ body{
 /* Establecer un menú fijo */
 .encabezado{
     position: fixed;
-    z-index: 2;
+    z-index: 9000;
     width: 100%;
     display: block;
     top: 0;
@@ -138,15 +159,82 @@ a:link, a:visited, a:active {
     margin-left: 3%;
 }
 
-#diario, #semanal{
-    cursor: pointer;
+/* Slider de películas */
+
+.tira.uno{
+    position: relative;
+}
+
+.contenedor-titulo-controles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .visto{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
+    justify-content: start;
+    align-items: end;
+    gap: 30px;
+    width: 70%;
+}
+
+.indicadores{
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+.indicadores button{
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    height: 3px;
+    width: 10px;
+    margin-right: 3px;
+}
+
+.indicadores button:hover, .activo{
+    background: #ce7d35
+}
+
+.contenedor-principal{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.flecha-izquierda, .flecha-derecha{
+    position: absolute;
+    border: none;
+    background: rgba(0,0,0,0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.flecha-izquierda:hover, .flecha-derecha:hover{
+    background: rgba(0,0,0,0.9);
+}
+
+.flecha-izquierda{
+    left: 0;
+}
+
+.flecha-derecha{
+    right: 0;
+}
+
+#diario, #semanal{
+    cursor: pointer;
 }
 
 #trend{
@@ -158,23 +246,25 @@ a:link, a:visited, a:active {
 }
 
 .peliculas{
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 2%;
+    padding: 20px 0 20px 0;
 }
 
 .art-peli{
-    width: 190px;
+    min-width: 15%;
     height: 300px;
     box-shadow: 5px 5px 5px black;
+    margin: 20px;
 }
 
-.art-peli:hover{
-    width: 200px;
-    height: 310px;
+.art-peli:hover, .genero-unico:hover{
+    transform: scale(1.1);
+    transform-origin: center;
     box-shadow: 5px 5px 5px black;
+    transition: all .2s;
 }
 
 .peli{
@@ -247,7 +337,7 @@ a:link, a:visited, a:active {
 
 /*Detalle género*/
 .gen {
-    margin-top: 130px;
+    margin-top: 110px;
 }
 
 .gen h1, .gen h2{

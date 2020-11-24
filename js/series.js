@@ -41,9 +41,9 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
         let container = document.querySelector('.populares')
         let results = data.results
 
-        for(let i=0; i<10; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
-            let series = `<article class="art-peli detalle">
+            let series = `<article class="art-peli">
                                 <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
@@ -68,9 +68,9 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
         let container = document.querySelector('.rated')
         let results = data.results
 
-        for(let i=0; i<10; i++){
+        for(let i=0; i<20; i++){
             let id_p = results[i].id
-            let series = `<article class="art-peli detalle">
+            let series = `<article class="art-peli">
                                 <a class="peli" href="detalleserie.html?id=${id_p}&media=tv"><img src=${image_url + results[i].poster_path} alt=${results[i].name}>
                                 <h3>${results[i].name}</h3>
                                 </a>
@@ -83,3 +83,17 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
     .catch(function(error){
         console.log('El error fue: ', error);
     })
+
+    // Flechas de scroll
+let flechaIzquierda = document.querySelector(".flecha-izquierda")
+let flechaDerecha = document.querySelector(".flecha-derecha")
+let principal = document.querySelector(".peliculas")
+let indicadores = document.querySelector(".indicadores")
+
+flechaDerecha.addEventListener('click',function(){
+    principal.scrollLeft += (principal.offsetWidth -300)
+})
+
+flechaIzquierda.addEventListener('click',function(){
+    principal.scrollLeft -= (principal.offsetWidth -300)
+})

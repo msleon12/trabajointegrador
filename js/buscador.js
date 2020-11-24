@@ -19,14 +19,14 @@ fetch(newUrl)
 })
 .then(function(data){
   console.log(data)
-  let contenedor =document.querySelector("#contenedor")
-  let movies= data.results 
+  let contenedor = document.querySelector("#contenedor")
+  let movies = data.results 
 
   // for(let i=0; i<movies.length; i++){  Lo que escribi abajo es igual a esto 
 
   for (const movie of movies) {
     if(movie.media_type == "movie" && movie.poster_path){
-      contenedor.innerHTML+=`<article class="art-peli detalle">
+      contenedor.innerHTML+=`<article class="art-peli">
                               <a class="peli" href=detallepeli.html?id=${movie.id}&media=movie>
                                 <img src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
                                 <h3>${movie.title}</h3>
@@ -34,14 +34,14 @@ fetch(newUrl)
                             </article>`
     }
     else if(movie.media_type == "tv" && movie.poster_path){
-      contenedor.innerHTML+=`<article class="art-peli detalle">
+      contenedor.innerHTML+=`<article class="art-peli">
                                         <a class="peli" href=detallepeli.html?id=${movie.id}&media=tv><img
                                         src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
                                         <h3>${movie.name}</h3></a>
                                     </article>`
     }
     else if (movie.media_type == "person" && movie.profile_path){ //Para personas
-            contenedor.innerHTML+= `<article class="art-peli detalle">
+            contenedor.innerHTML+= `<article class="art-peli">
                                         <a class="peli" href=detallepeli.html?id=${movie.id}&media=person>
                                         <img src=${image_url + movie.profile_path} data-movie-id=${movie.id}/>
                                         <h3>${movie.name}</h3></a>
@@ -51,4 +51,18 @@ fetch(newUrl)
 })
 .catch(function(error){
   console.log('El error fue: ', error)
+})
+
+// Flechas de scroll
+let flechaIzquierda = document.querySelector(".flecha-izquierda")
+let flechaDerecha = document.querySelector(".flecha-derecha")
+let principal = document.querySelector(".peliculas")
+let indicadores = document.querySelector(".indicadores")
+
+flechaDerecha.addEventListener('click',function(){
+    principal.scrollLeft += (principal.offsetWidth -300)
+})
+
+flechaIzquierda.addEventListener('click',function(){
+    principal.scrollLeft -= (principal.offsetWidth -300)
 })
