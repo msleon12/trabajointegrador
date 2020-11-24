@@ -47,6 +47,7 @@ if(media == "movie"){
         
         container.innerHTML += movie;
         // Favoritos
+
         const boton = document.querySelector('.star')
         //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
@@ -75,8 +76,7 @@ if(media == "movie"){
         localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
         })
 
-        
-    })
+})
     .catch(function(error){
         console.log('El error fue: ', error);
     })

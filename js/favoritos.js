@@ -10,9 +10,8 @@ const contenedor2 = document.querySelector('.favoritos-tira-series')
 const api_key  = "12058c71aa3652a9d53642bacf937088"
 const image_url = "https://image.tmdb.org/t/p/w500"
 let movie = ''
-
 for (let i = 0; i<storageJs.length; i++){
-   
+  
     if(storageJs[i].tipo == "movie"){
         fetch(`https://api.themoviedb.org/3/movie/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
         .then(function(response){
@@ -54,14 +53,7 @@ for (let i = 0; i<storageJs.length; i++){
 
     } // if
     
-} // For
-
-
-  
-
-
-
-            
+} // For     
 
     //         boton.addEventListener('click', function(){
     //             let storage = localStorage.getItem('favoritos')
