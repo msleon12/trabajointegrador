@@ -15,14 +15,15 @@ let movie = ''
 
 for (let i = 0; i<storageJs.length; i++){
     console.log(storageJs[i])
+    console.log(storageJS[i].id); //Por alguna razón me da undefined
 }
 
 
   
-    // fetch(`https://api.themoviedb.org/3/movie/${element.id}?api_key=${api_key}&language=es-ES`)
-    //     .then(function(response){
-    //         return response.json()
-    //     })
+// fetch(`https://api.themoviedb.org/3/movie/${element.id}?api_key=${api_key}&language=es-ES`)
+// .then(function(response){
+// return response.json()
+// })
     //     .then(function(data){
     //         movie += `<article class="favoritos">
     //                         <a href="detallepeli.html?id=${data.id}&media=movie">
