@@ -1,6 +1,6 @@
 $(window).load(function() {
     // Desaparecer loader
-    $(".load").fadeOut("slow");
+    $(".load").fadeOut(1000);
 })
 
 // Valores iniciales
@@ -212,9 +212,7 @@ semanal.addEventListener('click', function(){
 // Flechas de scroll
 let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
 let flechaDerecha = document.querySelectorAll(".flecha-derecha")
-console.log(flechaDerecha);
 let principal = document.querySelectorAll(".peliculas")
-//let indicadores = document.querySelector(".indicadores")
 
 for(let i=0; i<flechaDerecha.length; i++){
     flechaDerecha[i].addEventListener('click', function(){
@@ -224,21 +222,3 @@ for(let i=0; i<flechaDerecha.length; i++){
         principal[i].scrollLeft -= (principal[i].offsetWidth -300)
     })
 }
-
-
-// Paginación
-/* for(i=0; i<3; i++){
-    const indicador = document.createElement('button')
-
-    if(i===0){
-        indicador.classList.add('activo')
-    }
-
-    indicadores.appendChild(indicador)
-    indicador.addEventListener('click', function(e){
-        principal.scrollLeft = i * principal.offsetWidth
-
-        document.querySelector(".indicadores.activo").classList.remove("activo")
-        e.target.classList.add('activo')
-    })
-} */

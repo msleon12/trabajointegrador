@@ -1,3 +1,8 @@
+$(window).load(function() {
+  // Desaparecer loader
+  $(".load").fadeOut(1000);
+})
+
 //obtengo el query string
 let queryString = window.location.search
 
@@ -10,10 +15,12 @@ let media = objetoQuery.get('media')
 let filtro = objetoQuery.get('filtro')
 
 const api_key  = "12058c71aa3652a9d53642bacf937088"
-const urlBuscador = `https://api.themoviedb.org/3/search/${filtro}?api_key=${api_key}` 
+const urlBuscador = `https://api.themoviedb.org/3/search/${filtro}?api_key=${api_key}&language=es-ES` 
 const image_url = "https://image.tmdb.org/t/p/w500" 
 
-const newUrl = urlBuscador + '&query=' + resultado //construyo una URL dinámica, que permita que aparezca cualquier valor que busco
+//construyo una URL dinámica, que permita que aparezca cualquier valor que busco
+const newUrl = urlBuscador + '&query=' + resultado
+
 if(filtro == "movie"){
   fetch(newUrl)
   .then(function(response){
@@ -80,7 +87,7 @@ else if(filtro == "person"){
   })
 }
 else{
-  fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${resultado}`)
+  fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=es-ES&query=${resultado}`)
   .then(function(response){
     return response.json()
   })
@@ -122,7 +129,6 @@ else{
 let flechaIzquierda = document.querySelector(".flecha-izquierda")
 let flechaDerecha = document.querySelector(".flecha-derecha")
 let principal = document.querySelector(".peliculas")
-let indicadores = document.querySelector(".indicadores")
 
 flechaDerecha.addEventListener('click',function(){
     principal.scrollLeft += (principal.offsetWidth -300)

@@ -75,7 +75,6 @@ let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
 let flechaDerecha = document.querySelectorAll(".flecha-derecha")
 console.log(flechaDerecha);
 let principal = document.querySelectorAll(".peliculas")
-//let indicadores = document.querySelector(".indicadores")
 
 for(let i=0; i<flechaDerecha.length; i++){
     flechaDerecha[i].addEventListener('click', function(){

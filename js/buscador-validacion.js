@@ -5,7 +5,7 @@ let mensaje = document.querySelector('.alert');
 formulario.addEventListener('submit',function(event){
     event.preventDefault()
     if (campoBuscar.value == ""){
-        mensaje.innerText = "el campo no debe estar vacío"
+        mensaje.innerText = "El campo no debe estar vacío"
     }
     else{ this.submit();
     }

@@ -124,7 +124,6 @@ if(media=="movie"){
 let flechaIzquierda = document.querySelector(".flecha-izquierda")
 let flechaDerecha = document.querySelector(".flecha-derecha")
 let principal = document.querySelector(".peliculas")
-let indicadores = document.querySelector(".indicadores")
 
 flechaDerecha.addEventListener('click',function(){
     principal.scrollLeft += (principal.offsetWidth -300)

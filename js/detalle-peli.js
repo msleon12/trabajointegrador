@@ -134,7 +134,7 @@ if(media == "movie"){
             };
         }
         else{
-            similares.innerHTML += '<h3 class"sorry">Lo sentimos, no tenemos películas relacionadas para mostrarte.</h3>'
+            similares.innerHTML += '<h3 class="sorry">Lo sentimos, no tenemos películas relacionadas para mostrarte.</h3>'
         }
         
     })
@@ -168,8 +168,8 @@ else if(media == "tv"){
                              <p> ${data.overview} </p>  
                          </article>
                      </article>`
-         
         container.innerHTML += movie;  
+
         // Favoritos
         const boton = document.querySelector('.star')
         //creo un array que se llama favoritos
@@ -198,7 +198,7 @@ else if(media == "tv"){
     }) //Then
     .catch(function(error){
         console.log('El error fue: ', error);
-    })  
+    })
 
     // Series similares
     let similares = document.querySelector(".peliculas")
@@ -225,7 +225,7 @@ else if(media == "tv"){
             };
         }
         else{
-            similares.innerHTML += "<h3>Lo sentimos, no tenemos series relacionadas para mostrarte.</h3>"
+            similares.innerHTML += '<h3 class="sorry">Lo sentimos, no tenemos series relacionadas para mostrarte.</h3>'
         }
         
     })
@@ -300,13 +300,11 @@ else if (media == "person"){
 let flechaIzquierda = document.querySelector(".flecha-izquierda")
 let flechaDerecha = document.querySelector(".flecha-derecha")
 let principal = document.querySelector(".peliculas")
-//let indicadores = document.querySelector(".indicadores")
 
+flechaDerecha.addEventListener('click',function(){
+    principal.scrollLeft += (principal.offsetWidth -300)
+})
 
-    flechaDerecha.addEventListener('click',function(){
-        principal.scrollLeft += (principal.offsetWidth -300)
-    })
-
-    flechaIzquierda.addEventListener('click',function(){
-        principal.scrollLeft -= (principal.offsetWidth -300)
-    })
+flechaIzquierda.addEventListener('click',function(){
+    principal.scrollLeft -= (principal.offsetWidth -300)
+})

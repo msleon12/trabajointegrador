@@ -89,6 +89,11 @@ a:link, a:visited, a:active {
     color: #ce7d35;
 }
 
+#actual{
+    font-style: italic;
+    color: #ce7d35;
+}
+
 .parte-cero{
     display: flex;
     flex-direction: row;
@@ -113,15 +118,18 @@ a:link, a:visited, a:active {
     color: #ce7d35;
 }
 
-
 .submenu{
     display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 10px 20px 20px 10px;
+    margin-left: 30px;
+    background-image: linear-gradient(#5850A1,#804ADE, #5850A1);
+    box-shadow: 5px 5px 5px black
 }
 
 .super:hover .submenu{
-   display: block; 
-   list-style-type: none;
-  
+   display: inherit;
 }
 
 .parte-dos{
@@ -132,6 +140,28 @@ a:link, a:visited, a:active {
 .form-group{
     display: flex;
     justify-content: center;
+}
+
+.filtros{
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    font-size: 20px;
+    margin-top: 8px;
+    padding: 10px 20px 20px 10px;
+    background: inherit;
+    box-shadow: 5px 5px 5px black
+}
+
+.filtros li{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.filter-button:hover .filtros{
+    display: inherit
 }
 
 #inputValue{
@@ -202,25 +232,6 @@ a:link, a:visited, a:active {
     margin-left: 10px;
 }
 
-.indicadores{
-    display: flex;
-    align-items: flex-end;
-    margin-right: 20px;
-}
-
-.indicadores button{
-    background: #fff;
-    cursor: pointer;
-    border: none;
-    height: 3px;
-    width: 10px;
-    margin-right: 3px;
-}
-
-.indicadores button:hover, .activo{
-    background: #ce7d35
-}
-
 .contenedor-principal{
     display: flex;
     align-items: center;
@@ -265,6 +276,7 @@ a:link, a:visited, a:active {
 
 .art-peli{
     min-width: 15%;
+    max-width: 15%;
     height: 300px;
     box-shadow: 5px 5px 5px black;
     margin: 20px;
@@ -484,9 +496,12 @@ a:link, a:visited, a:active {
 }
 
 .sorry{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
+
+
 
 /*Footer*/
 

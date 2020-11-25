@@ -88,7 +88,6 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
 let flechaIzquierda = document.querySelector(".flecha-izquierda")
 let flechaDerecha = document.querySelector(".flecha-derecha")
 let principal = document.querySelector(".peliculas")
-let indicadores = document.querySelector(".indicadores")
 
 flechaDerecha.addEventListener('click',function(){
     principal.scrollLeft += (principal.offsetWidth -300)

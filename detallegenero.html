@@ -17,17 +17,31 @@
         <nav class="superior">
             <ul class="lista-sup">
                 <div class="parte-cero">
-                    <li><a href="./home.html">SuperFilms</a></li>
+                    <li><a id="principal" href="./home.html">SuperFilms</a></li>
                 </div>
                 <div class="parte-uno">
-                    <li><a id="principal" href="generos.html">Géneros</a></li>
+                    <li><a href="generos.html">Géneros</a></li>
                     <li><a href="series.html">Series</a></li>
+                    <li class="super">Superhéroes
+                        <ul class="submenu">
+                            <li><i class="fas fa-angle-right"></i><a href="marvel.html?list=1"> Marvel </a></li>
+                            <li><i class="fas fa-angle-right"></i><a href="dc.html?list=3"> DC</a></li>
+                        </ul>
+                    </li>
                     <li><a href="favoritos.html">Favoritos</a></li>
                 </div>
                 <div class="parte-dos">
                     <li>
                         <form action="buscador.html" method="GET" class="form-search">
                             <div class="form-group">
+                                <button class="filter-button"><i class="fas fa-filter"></i>
+                                    <ul class="filtros">
+                                        <li><i class="fas fa-chevron-down"></i></li>
+                                        <li><input type="radio" name="filtro" value="movie">Peliculas</li>
+                                        <li><input type="radio" name="filtro" value="tv">Series</li>
+                                        <li><input type="radio" name="filtro" value="person">Personas</li>
+                                    </ul>
+                                </button>
                                 <input type="text" name="titulo" value="" id="inputValue" class="searchfield" placeholder="Buscar...">
                                 <button type="submit" id="search"><i class="fas fa-search "></i></button>
                             </div>
@@ -39,12 +53,10 @@
         </nav>
     </header>
     
+    <!-- Section -->
     <section class="tira">
         <section class="title gen contenedor-titulo-controles">
             
-            <article class="indicadores">
-
-            </article>
         </section>
         <section class="contenedor-principal">
             <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>

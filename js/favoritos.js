@@ -1,7 +1,7 @@
 // Valores iniciales
 let storage = localStorage.getItem('favoritos')
 console.log(storage);
-let storageJs = JSON.parse(storage); // Lo paso a JS. EL problema es que cuando lo vuelvo a pasar me lo pasa mal, no me devuelve un array de objetos
+let storageJs = JSON.parse(storage); // Lo paso a JS
 console.log(storageJs);
 
 // localStorage.clear()
@@ -33,10 +33,10 @@ for (let i = 0; i<storageJs.length; i++){
         })
         .then(function(data){
             console.log(data)
-            let movie = `<article class="favoritos">
-                            <a href="detallepeli.html?id=${data.id}&media=movie">
-                                <h2>${data.title}</h2>
+            let movie = `<article class="art-peli">
+                            <a class="peli" href="detallepeli.html?id=${data.id}&media=movie">
                                 <img src="${image_url + data.poster_path}" alt="${data.title}">
+                                <h3>${data.title}</h3>
                             </a>
                             <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
                         </article>`
@@ -63,10 +63,10 @@ for (let i = 0; i<storageJs.length; i++){
         })
         .then(function(data){
             console.log(data)
-            let movie = `<article class="favoritos">
-                            <a href="detallepeli.html?id=${data.id}&media=tv">
-                                <h2>${data.name}</h2>
-                                <img src="${image_url + data.poster_path}" alt="${data.name}">
+            let movie = `<article class="art-peli">
+                            <a class="peli" href="detallepeli.html?id=${data.id}&media=tv">
+                                <img src="${image_url + data.poster_path}" alt="${data.name}">    
+                                <h3>${data.name}</h3>
                             </a>
                             <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
                         </article>`
@@ -94,10 +94,10 @@ for (let i = 0; i<storageJs.length; i++){
         })
         .then(function(data){
             console.log(data)
-            let movie = `<article class="favoritos">
-                            <a href="detallepeli.html?id=${data.id}&media=tv">
-                                <h2>${data.name}</h2>
+            let movie = `<article class="art-peli">
+                            <a class="peli" href="detallepeli.html?id=${data.id}&media=tv">
                                 <img src="${image_url + data.profile_path}" alt="${data.name}">
+                                <h3>${data.name}</h3>
                             </a>
                             <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
                         </article>`
@@ -115,11 +115,23 @@ for (let i = 0; i<storageJs.length; i++){
         }) //CATCH
     } // Else if
 
-} // For     
+    /* else if (storage==[]){
+        document.querySelector(".contenedor-principal").innerHTML += `<h2>No tenés ningún favorito guardado.</h2>`
+    } */
+
+} // For
 
 
+// Flechas de scroll
+let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
+let flechaDerecha = document.querySelectorAll(".flecha-derecha")
+let principal = document.querySelectorAll(".peliculas")
 
-
-
-
-
+for(let i=0; i<flechaDerecha.length; i++){
+    flechaDerecha[i].addEventListener('click', function(){
+        principal[i].scrollLeft += (principal[i].offsetWidth -300)
+    })
+    flechaIzquierda[i].addEventListener('click', function(){
+        principal[i].scrollLeft -= (principal[i].offsetWidth -300)
+    })
+}
