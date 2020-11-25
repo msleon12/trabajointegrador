@@ -246,7 +246,7 @@ else if (media == "person"){
                      </article>
                      <article class="info-obra">
                          <h2 class="titulo obra">${data.name}</h2> 
-                         <button class= "star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
+                         <button class="star" type="submit" id="star-boton"><i class="fas fa-star "></i></button>
                          <ul class="info-fila">
                              <li><strong>Lugar de nacimiento: ${data.place_of_birth}</strong></li>
                              <li><strong> Fecha de nacimiento: ${data.birthday}</strong> </li>
@@ -258,13 +258,15 @@ else if (media == "person"){
                      </article>`
          
         container.innerHTML = movie; 
-        let relacionadas = document.querySelector('#texto-relacionadas')
-        relacionadas.innerText = ""
-        let opiniones = document.querySelector("#texto-opiniones")
-        opiniones.innerText = ""
+        let reviews = document.querySelector('.constancio')
+        reviews.style.display = "none"
+        let related = document.querySelector('.related')
+        related.style.display="none"
+        
 
         // Favoritos
         const boton = document.querySelector('.star')
+        console.log(boton)
         //creo un array que se llama favoritos
         let objeto = { //Creo un objeto para obtener también si es una serie o una pelicula, para poder distinguir en favoritos
             tipo: media,

@@ -21,6 +21,7 @@ function removeFav(e){
     storageJs = storageJs.filter(function(movie){
         return elemento.id != movie.id 
     })
+    
     localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
 
 }
@@ -95,7 +96,7 @@ for (let i = 0; i<storageJs.length; i++){
         .then(function(data){
             console.log(data)
             let movie = `<article class="art-peli">
-                            <a class="peli" href="detallepeli.html?id=${data.id}&media=tv">
+                            <a class="peli" href="detallepeli.html?id=${data.id}&media=person">
                                 <img src="${image_url + data.profile_path}" alt="${data.name}">
                                 <h3>${data.name}</h3>
                             </a>
@@ -113,12 +114,7 @@ for (let i = 0; i<storageJs.length; i++){
         .catch(function(error){
             console.log('El error fue: ', error);
         }) //CATCH
-    } // Else if
-
-    /* else if (storage==[]){
-        document.querySelector(".contenedor-principal").innerHTML += `<h2>No tenés ningún favorito guardado.</h2>`
-    } */
-
+    } 
 } // For
 
 

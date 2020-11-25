@@ -34,13 +34,15 @@ if(filtro == "movie"){
     // for(let i=0; i<movies.length; i++){  Lo que escribi abajo es igual a esto 
 
     for (const movie of movies) {
-
-      contenedor.innerHTML+= `<article class="art-peli">
+      if(movie.poster_path){
+        contenedor.innerHTML+= `<article class="art-peli">
                                 <a class="peli" href=detallepeli.html?id=${movie.id}&media=movie>
                                   <img src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
                                   <h3>${movie.title}</h3>
                                 </a>
                               </article>`
+      }
+      
     }
 })
   .catch(function(error){
@@ -57,11 +59,14 @@ else if(filtro == "tv"){
     let contenedor = document.querySelector("#contenedor")
     let movies = data.results 
     for (const movie of movies) {
-      contenedor.innerHTML+=`<article class="art-peli">
+      if(movie.poster_path){
+        contenedor.innerHTML+=`<article class="art-peli">
                                             <a class="peli" href=detallepeli.html?id=${movie.id}&media=tv><img
                                             src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
                                             <h3>${movie.name}</h3></a>
                               </article>`
+      }
+      
     }
   }) //THEN  
   .catch(function(error){
@@ -78,11 +83,14 @@ else if(filtro == "person"){
     let contenedor = document.querySelector("#contenedor")
     let movies = data.results 
     for (const movie of movies){
-      contenedor.innerHTML+= `<article class="art-peli">
+      if(movie.profile_path){
+        contenedor.innerHTML+= `<article class="art-peli">
                                           <a class="peli" href=detallepeli.html?id=${movie.id}&media=person>
                                           <img src=${image_url + movie.profile_path} data-movie-id=${movie.id}/>
                                           <h3>${movie.name}</h3></a>
                                         </article>`
+      }
+      
     }
   })
 }

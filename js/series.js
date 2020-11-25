@@ -84,15 +84,16 @@ const urlSeriesPopulares = `https://api.themoviedb.org/3/tv/popular?api_key=${ap
         console.log('El error fue: ', error);
     })
 
-    // Flechas de scroll
-let flechaIzquierda = document.querySelector(".flecha-izquierda")
-let flechaDerecha = document.querySelector(".flecha-derecha")
-let principal = document.querySelector(".peliculas")
+// Flechas de scroll
+let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
+let flechaDerecha = document.querySelectorAll(".flecha-derecha")
+let principal = document.querySelectorAll(".peliculas")
 
-flechaDerecha.addEventListener('click',function(){
-    principal.scrollLeft += (principal.offsetWidth -300)
-})
-
-flechaIzquierda.addEventListener('click',function(){
-    principal.scrollLeft -= (principal.offsetWidth -300)
-})
+for(let i=0; i<flechaDerecha.length; i++){
+    flechaDerecha[i].addEventListener('click', function(){
+        principal[i].scrollLeft += (principal[i].offsetWidth -300)
+    })
+    flechaIzquierda[i].addEventListener('click', function(){
+        principal[i].scrollLeft -= (principal[i].offsetWidth -300)
+    })
+}
