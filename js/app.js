@@ -23,9 +23,9 @@ fetch(urlSlider)
 
         for(let i=0; i<5; i++){
             let id_p = results[i].id
-            let info = `<article>
+            let info = `<article class="art-slider">
                             <a class="active" href="detallepeli.html?id=${id_p}&media=movie">
-                                <img class="imagenes" src="${image_url + results[i].poster_path}" alt="${results[i].title}">
+                                <img class="imagenes" src="${image_url + results[i].backdrop_path}" alt="${results[i].title}">
                             </a>
                         </article>`
             slider.innerHTML += info;
@@ -40,7 +40,6 @@ let diario = document.querySelector("#diario")
 let semanal = document.querySelector("#semanal")
 let trend = document.querySelector("#trend")
 let container = document.querySelector('.tre')
-console.log(trend.value)
 
 const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}&language=es-ES` 
     fetch(urlTrendDiario)
@@ -209,9 +208,9 @@ semanal.addEventListener('click', function(){
         console.log('El error fue: ', error);
     })
 
-// Flechas de scroll
-let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");
-let flechaDerecha = document.querySelectorAll(".flecha-derecha")
+// Flechas de scroll en tira
+let flechaIzquierda = document.querySelectorAll("#flecha-izquierda");
+let flechaDerecha = document.querySelectorAll("#flecha-derecha")
 let principal = document.querySelectorAll(".peliculas")
 
 for(let i=0; i<flechaDerecha.length; i++){

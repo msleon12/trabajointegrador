@@ -19,7 +19,7 @@ fetch(urlSlider)
             let id_p = results[i].id
             let info = `<article>
                             <a class="active" href="detalleserie.html?id=${id_p}&media=tv">
-                                <img class="imagenes" src="${image_url + results[i].poster_path}" alt="${results[i].name}">
+                                <img class="imagenes" src="${image_url + results[i].backdrop_path}" alt="${results[i].name}">
                             </a>
                         </article>`
             slider.innerHTML += info;

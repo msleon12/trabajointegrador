@@ -271,7 +271,6 @@ a:link, a:visited, a:active {
     overflow: hidden;
     scroll-behavior: smooth;
     display: flex;
-    padding: 20px 0 20px 0;
 }
 
 .art-peli{
@@ -356,6 +355,11 @@ a:link, a:visited, a:active {
     list-style: none;
     background-image: linear-gradient(#5850A1, black,#5850A1);
 }
+
+.genero-unico{
+    text-align: center;
+}
+
 
 /*Detalle género*/
 .gen {
@@ -561,8 +565,8 @@ footer h5{
 
 .slider {
     overflow: hidden;
-    padding-top: 10px;
-    height: 450px;
+    padding-top: 50px;
+    max-height: 470px;
 }
 
 .slider figure {
@@ -615,56 +619,33 @@ footer h5{
 /* Responsive */
 
 @media(max-width:1024px){
-    #movies-searchable{
-        margin-top: 170px;
+    .parte-uno{
+        width: 40%;
+    }
+
+    .slider{
+        max-height: 380px;
     }
 
     .info-fila{
         font-size: 15px;
     }
 
-    /* Series */
-    .series-slider{
-        padding-top: 0px;
-    }
-
-    /* Home */
-    .art-peli{
-        width: 165px;
-    }
-
 }
 
 
 @media(max-width:768px){
-   /* General */
-    #movies-searchable{
-        margin-top: 170px;
-    }
 
-    /* Home */
-    .uno{
-        padding-top: 120px;
-    }
-
-    .art-peli{
-        width: 30%;
-        margin: 0 0 3% 3%;
-    }
-
-    .art-peli:hover{
-        width: 200px;
-        height: 310px;
-    }
-
-    /* Series */
+    /* Slider */
     .slider{
         margin-top: 40px;
-        max-height: 350px;
+        max-height: 320px;
     }
 
-    .series-slider{
-        padding-top: 0;
+    /* Encabezado */
+    .lista-sup{
+        display: grid;
+        grid-template-rows: 3;
     }
 
     /* Hover */
@@ -680,9 +661,15 @@ footer h5{
         transition: none;
     }
 
-    .peliculas{
-        justify-content: center;
-        margin-right: 3%;
+    /* Home */
+    .art-peli{
+        min-width: 25%;
+        max-width: 25%;
+    }
+
+    .art-peli:hover{
+        width: 200px;
+        height: 310px;
     }
 
     /*Detalle*/
