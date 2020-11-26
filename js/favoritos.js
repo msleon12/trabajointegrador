@@ -23,100 +23,103 @@ function removeFav(e){
     })
     
     localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
-
 }
-for (let i = 0; i<storageJs.length; i++){
-    
-    if(storageJs[i].tipo == "movie"){
-        fetch(`https://api.themoviedb.org/3/movie/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data)
-            let movie = `<article class="art-peli">
-                            <a class="peli" href="detallepeli.html?id=${data.id}&media=movie">
-                                <img src="${image_url + data.poster_path}" alt="${data.title}">
-                                <h3>${data.title}</h3>
-                            </a>
-                            <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
-                        </article>`
-            contenedor1.innerHTML += movie;
 
-            let boton = document.querySelectorAll('.star')
-                console.log(boton)
-                for(let i = 0; i<boton.length; i++){
-                    boton[i].style.backgroundColor = "blue"; 
-                    boton[i].addEventListener('click',removeFav)
-                }
-            
+if(storageJs.length != 0){
+    for (let i = 0; i<storageJs.length; i++){
+        
+        if(storageJs[i].tipo == "movie"){
+            fetch(`https://api.themoviedb.org/3/movie/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
+                let movie = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html?id=${data.id}&media=movie">
+                                    <img src="${image_url + data.poster_path}" alt="${data.title}">
+                                    <h3>${data.title}</h3>
+                                </a>
+                                <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
+                            </article>`
+                contenedor1.innerHTML += movie;
 
-        }) //then
-        .catch(function(error){
-            console.log('El error fue: ',);
-        }) //CATCH
+                let boton = document.querySelectorAll('.star')
+                    console.log(boton)
+                    for(let i = 0; i<boton.length; i++){
+                        boton[i].style.backgroundColor = "blue"; 
+                        boton[i].addEventListener('click',removeFav)
+                    }
+                
 
-    } // if
-    else if (storageJs[i].tipo == "tv"){
-        fetch(`https://api.themoviedb.org/3/tv/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data)
-            let movie = `<article class="art-peli">
-                            <a class="peli" href="detallepeli.html?id=${data.id}&media=tv">
-                                <img src="${image_url + data.poster_path}" alt="${data.name}">    
-                                <h3>${data.name}</h3>
-                            </a>
-                            <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
-                        </article>`
-            contenedor1.innerHTML += movie;
+            }) //then
+            .catch(function(error){
+                console.log('El error fue: ',);
+            }) //CATCH
 
-            let boton = document.querySelectorAll('.star')
-                console.log(boton)
-                for(let i = 0; i<boton.length; i++){
-                    boton[i].style.backgroundColor = "blue"; 
-                    boton[i].addEventListener('click',removeFav)
-                }
-            
+        } // if
+        else if (storageJs[i].tipo == "tv"){
+            fetch(`https://api.themoviedb.org/3/tv/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
+                let movie = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html?id=${data.id}&media=tv">
+                                    <img src="${image_url + data.poster_path}" alt="${data.name}">    
+                                    <h3>${data.name}</h3>
+                                </a>
+                                <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
+                            </article>`
+                contenedor1.innerHTML += movie;
 
-        }) //then
-        .catch(function(error){
-            console.log('El error fue: ', error);
-        }) //CATCH
+                let boton = document.querySelectorAll('.star')
+                    console.log(boton)
+                    for(let i = 0; i<boton.length; i++){
+                        boton[i].style.backgroundColor = "blue"; 
+                        boton[i].addEventListener('click',removeFav)
+                    }
+                
+
+            }) //then
+            .catch(function(error){
+                console.log('El error fue: ', error);
+            }) //CATCH
 
 
-    } //Else if
-    else if(storageJs[i].tipo == "person"){
-        fetch(`https://api.themoviedb.org/3/person/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data)
-            let movie = `<article class="art-peli">
-                            <a class="peli" href="detallepeli.html?id=${data.id}&media=person">
-                                <img src="${image_url + data.profile_path}" alt="${data.name}">
-                                <h3>${data.name}</h3>
-                            </a>
-                            <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
-                        </article>`
-            contenedor1.innerHTML += movie;
+        } //Else if
+        else if(storageJs[i].tipo == "person"){
+            fetch(`https://api.themoviedb.org/3/person/${storageJs[i].id}?api_key=${api_key}&language=es-ES`)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
+                let movie = `<article class="art-peli">
+                                <a class="peli" href="detallepeli.html?id=${data.id}&media=person">
+                                    <img src="${image_url + data.profile_path}" alt="${data.name}">
+                                    <h3>${data.name}</h3>
+                                </a>
+                                <button class="star" type="submit" id="${data.id}"><i class="fas fa-star "></i></button>
+                            </article>`
+                contenedor1.innerHTML += movie;
 
-            let boton = document.querySelectorAll('.star')
-                console.log(boton)
-                for(let i = 0; i<boton.length; i++){
-                    boton[i].style.backgroundColor = "blue"; 
-                    boton[i].addEventListener('click',removeFav)
-                } 
-        }) //Then
-        .catch(function(error){
-            console.log('El error fue: ', error);
-        }) //CATCH
-    } 
-} // For
-
+                let boton = document.querySelectorAll('.star')
+                    console.log(boton)
+                    for(let i = 0; i<boton.length; i++){
+                        boton[i].style.backgroundColor = "blue"; 
+                        boton[i].addEventListener('click',removeFav)
+                    } 
+            }) //Then
+            .catch(function(error){
+                console.log('El error fue: ', error);
+            }) //CATCH
+        } 
+    } // For
+} else {
+    contenedor1.innerHTML += '<h2 class="sorry">No tenés ningún favorito guardado.</h2>'
+}
 
 // Flechas de scroll
 let flechaIzquierda = document.querySelectorAll(".flecha-izquierda");

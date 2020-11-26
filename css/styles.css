@@ -493,6 +493,16 @@ a:link, a:visited, a:active {
     text-align: center;
 }
 
+/* Favoritos */
+.favoritos-tira-peli,
+.favoritos-tira-serie peliculas{
+    padding-bottom: 30px;
+}
+
+.favs{
+    position: relative;
+    min-height: 370px;
+}
 
 /*Footer*/
 
@@ -504,7 +514,6 @@ a:link, a:visited, a:active {
     background-color:black;
     font-size: 30px;
     font-style: italic;
-    margin-top: 7px;
 }
 
 .footer a{
