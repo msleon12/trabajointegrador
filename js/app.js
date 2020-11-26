@@ -58,6 +58,7 @@ const urlTrendDiario = `https://api.themoviedb.org/3/trending/movie/day?api_key=
                                     </a>
                                 </article>`;
                 container.innerHTML += trending;
+                diario.style.background="#ce7d35"
             };
         })
         .catch(function(error){
@@ -86,9 +87,10 @@ diario.addEventListener('click', function(){
                             </article>`;
             if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
                     container.innerHTML += trending;
-            }
-                
-        };
+                    diario.style.background="#ce7d35"
+                    semanal.style.background = "#EFEFEF"
+            }       
+        }
     })
     .catch(function(error){
         console.log('El error fue: ', error);
@@ -116,13 +118,14 @@ semanal.addEventListener('click', function(){
                             </article>`;
             if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título" && results[i].genre_ids[0]){
                 container.innerHTML += trending;
+                semanal.style.background="#ce7d35"
+                diario.style.background = "#EFEFEF"
                 }
             };
         })
     .catch(function(error){
         console.log('El error fue: ', error);
     })
-
 })
     
 // Now playing (en cines) 

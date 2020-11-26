@@ -83,10 +83,8 @@ if(media=="movie"){
                 }
             }
         } else {
-            peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte </h3>"
-        }
-        // Escribir caso en que no hayan peliculas
-        
+            peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte. </h3>"
+        }        
     })
     .catch(function(error){
         console.log('El error fue: ', error);
