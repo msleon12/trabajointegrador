@@ -69,7 +69,7 @@ if(media=="movie"){
 
         if(results[0]){
             for(let i=0; i<30; i++){
-                if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1]||id == results[i].genre_ids[2] || id == results[i].genre_ids[3] || id == results[i].genre_ids[4]){
+                // if (id == results[i].genre_ids[0] || id == results[i].genre_ids[1]||id == results[i].genre_ids[2] || id == results[i].genre_ids[3] || id == results[i].genre_ids[4]){
                     let id_p = results[i].id
                     let tira = `<article class="art-peli">
                                     <a class="peli" href="detallepeli.html?id=${id_p}&media=${media}"><img src=${image_url + results[i].poster_path} alt=${results[i].title}>
@@ -80,7 +80,7 @@ if(media=="movie"){
                     if(results[i].poster_path && results[i].title != "Esta obra no ha de tener título"){
                         peliculas.innerHTML += tira;
                     }
-                }
+                // } //IF
             }
         } else {
             peliculas.innerHTML = "<h3> Lo sentimos, no tenemos películas para mostrarte. </h3>"
@@ -98,7 +98,7 @@ if(media=="movie"){
         let results = data.results
         console.log(results);
         for(let i=0 ; i<200 ; i++){
-            if(id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2]){
+            // if(id == results[i].genre_ids[0] || id == results[i].genre_ids[1] || id == results[i].genre_ids[2]){
                 let id_serie = data.results[i].id
                 let articulo = `<article class="art-peli">
                                     <a class="peli" href='detalleserie.html?id=${id_serie}&media=${media}'>
@@ -110,7 +110,7 @@ if(media=="movie"){
                         peliculas.innerHTML += articulo;
                     }
                    
-            }
+            // } IF
         }
     })
     .catch(function(error){

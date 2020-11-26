@@ -19,7 +19,6 @@ fetch(urlSlider)
     .then(function(data){
         console.log(data);
         let results = data.results
-        console.log(results[0].title);
 
         for(let i=0; i<5; i++){
             let id_p = results[i].id

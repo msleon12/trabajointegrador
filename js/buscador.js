@@ -31,7 +31,17 @@ if(filtro == "movie"){
     let contenedor = document.querySelector("#contenedor")
     let movies = data.results 
 
-    // for(let i=0; i<movies.length; i++){  Lo que escribi abajo es igual a esto 
+    // for(let i=0; i<movies.length; i++){
+    //   const movie = data.results[i]
+    //   if(movie.poster_path){
+    //     contenedor.innerHTML+= `<article class="art-peli">
+    //                             <a class="peli" href=detallepeli.html?id=${movie.id}&media=movie>
+    //                               <img src=${image_url + movie.poster_path} data-movie-id=${movie.id}/>
+    //                               <h3>${movie.title}</h3>
+    //                             </a>
+    //                           </article>`
+    //   }
+    // }
 
     for (const movie of movies) {
       if(movie.poster_path){
@@ -43,7 +53,7 @@ if(filtro == "movie"){
                               </article>`
       }
       
-    }
+    } //for
 })
   .catch(function(error){
     console.log('El error fue: ', error)

@@ -19,7 +19,7 @@ function removeFav(e){
     console.log(e.currentTarget.parentElement)
     
     storageJs = storageJs.filter(function(movie){
-        return elemento.id != movie.id 
+        return elemento.id != movie.id && elemento.tipo != movie.tipo
     })
     
     localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
