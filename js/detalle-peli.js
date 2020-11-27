@@ -1,4 +1,4 @@
-// Paso 1 : obtener la querystring
+// Paso 1 : obtener la querystring 
 let queryString = location.search;
 console.log(queryString);
 
@@ -46,6 +46,7 @@ if(media == "movie"){
                     </article>`
         
         container.innerHTML += movie;
+
         // Favoritos
 
         const boton = document.querySelector('.star')
@@ -59,12 +60,12 @@ if(media == "movie"){
             let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
             let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
 
-            if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ // 
+            if(!storageJs.some (storageItem => objeto.id == storageItem.id && objeto.media == storageItem.media)){ // Se fija si algun elemento del array cumple con la condicion implementada
                 storageJs.push(objeto); // Agregarlo al array
                 boton.style.backgroundColor = "blue"; 
             }
             else{
-                storageJs = storageJs.filter(function(movie){
+                storageJs = storageJs.filter(function(movie){ //Crea un array con todos los elementos que cumplan con la condicion escrita
                     return objeto.id != movie.id && objeto.media != movie.media
                 })
                 boton.style.backgroundColor = "white"; 
@@ -89,7 +90,7 @@ if(media == "movie"){
         console.log(data);
         let results = data.results
 
-        if (results[0]){ //Atajar que no ayan reviews
+        if (results[0]){ //Atajar que no hayan reviews
             for(let i=0; i<5; i++){
                 let comentarios = `<article class="comentarios">
                                     <h3><i class="fas fa-user"></i>${results[i].author}</h3>

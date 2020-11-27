@@ -4,7 +4,6 @@ console.log(storage);
 let storageJs = JSON.parse(storage); // Lo paso a JS
 console.log(storageJs);
 
-// localStorage.clear()
 // Para favoritos
 const contenedor1 = document.querySelector('.favoritos-tira-peli')
 const contenedor2 = document.querySelector('.favoritos-tira-series')
@@ -12,17 +11,21 @@ const api_key  = "12058c71aa3652a9d53642bacf937088"
 const image_url = "https://image.tmdb.org/t/p/w500"
 
 function removeFav(e){
-    let elemento = this
-    let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
-    let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
-    e.currentTarget.parentElement.style.display = "none"
-    console.log(e.currentTarget.parentElement)
+    var resultado = confirm('¿Estas seguro de que queres sacar este favorito?')
+    if(resultado == true){
+        let elemento = this
+        let storage = localStorage.getItem('favoritos') //Para saber cual es el estado del storage
+        let storageJs = JSON.parse(storage); // Pasar de cadena de texto a javascript
+        e.currentTarget.parentElement.style.display = "none"
+        console.log(e.currentTarget.parentElement)
+        
+        storageJs = storageJs.filter(function(movie){
+            return elemento.id != movie.id && elemento.tipo != movie.tipo
+        })
+        
+        localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
+    }
     
-    storageJs = storageJs.filter(function(movie){
-        return elemento.id != movie.id && elemento.tipo != movie.tipo
-    })
-    
-    localStorage.setItem('favoritos', JSON.stringify(storageJs)) //Lo guardo pero en formato string 
 }
 
 if(storageJs.length != 0){
